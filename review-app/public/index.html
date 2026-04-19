@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lean and Agile Review App</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="page-header">
+        <div>
+          <h1>Lean and Agile Review App</h1>
+          <p class="subtitle">AI-driven chapter review with source control and build output.</p>
+        </div>
+        <div class="actions">
+          <button id="reloadChaptersBtn">Reload Chapters</button>
+          <button id="buildBtn">Rebuild Book</button>
+        </div>
+      </header>
+
+      <section class="layout">
+        <aside class="panel library-panel">
+          <h2>Chapters</h2>
+          <div id="chapterList" class="chapter-list"></div>
+        </aside>
+
+        <main class="main-column">
+          <section class="panel intake-panel">
+            <h2>Proposal Intake</h2>
+            <div class="input-grid">
+              <label class="field">
+                <span>Pasted text or Markdown</span>
+                <textarea id="proposalText" rows="10" placeholder="Paste proposed chapter text, AI revision, or feedback-driven rewrite here."></textarea>
+              </label>
+              <div class="field">
+                <span>DOCX intake</span>
+                <input id="docxFile" type="file" accept=".docx" />
+                <div id="docxStatus" class="status"></div>
+              </div>
+            </div>
+            <div class="actions">
+              <button id="usePastedTextBtn">Use Pasted Text</button>
+              <button id="compareBtn" disabled>Compare With Selected Chapter</button>
+            </div>
+          </section>
+
+          <section class="panel compare-panel">
+            <h2>Compare</h2>
+            <div class="compare-grid">
+              <div>
+                <h3>Current Chapter</h3>
+                <pre id="currentContent" class="content-box"></pre>
+              </div>
+              <div>
+                <h3>Proposed Text</h3>
+                <pre id="proposedContent" class="content-box"></pre>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel review-panel">
+            <div class="section-header">
+              <h2>Review Blocks</h2>
+              <button id="applyBtn" disabled>Apply Approved Changes</button>
+            </div>
+            <div id="reviewBlocks" class="review-blocks"></div>
+          </section>
+
+          <section class="panel preview-panel">
+            <h2>Merged Preview</h2>
+            <pre id="mergedPreview" class="content-box"></pre>
+            <div id="buildStatus" class="status"></div>
+          </section>
+        </main>
+      </section>
+    </div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

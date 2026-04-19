@@ -1,0 +1,356 @@
+================================================================================
+LEAN AND AGILE — FEEDBACK, NOTES & SUGGESTIONS
+Living document — started 2026-03-18
+================================================================================
+
+PURPOSE
+-------
+This document tracks editorial feedback, real-world dashboard comparisons, and
+suggestions for completing/improving the book. It will grow as new dashboard
+measurements are built and validated in production. The goal is to close the
+loop: use real working dashboards to finish the book's measurement chapters.
+
+================================================================================
+OVERALL ASSESSMENT
+================================================================================
+
+STRENGTHS
+---------
+- Scenario-based storytelling (Jordan, Lisa, Carmen, Horizon Tech) is genuinely
+  engaging and makes abstract concepts accessible to non-technical readers.
+- Deming is woven throughout consistently — not just a name-drop in Chapter 1.
+- Chapters 1-4 build well: culture → ownership → psychological safety → process.
+- Chapter 4 (Lean Six Sigma) is the strongest chapter. It actually does the math
+  (Takt Time, Little's Law) in a narrative context that lands with practitioners.
+- The "hidden factory" framing in Chapter 1 is memorable and immediately relatable.
+- The book is honest about the failure modes of each methodology — it doesn't
+  treat Lean/Agile/ITIL as magic bullets.
+
+WEAKNESSES
+----------
+1. CHAPTER 5 DOESN'T MEASURE ANYTHING.
+   A chapter titled "How Sprints Empower Teams to Deliver Better, Faster" needs
+   to define "better" and "faster" with actual formulas. It covers philosophy,
+   myths, AI, and tips — but has no measurement section. This is the biggest gap.
+
+2. METRICS ARE CONCENTRATED IN ONE CHAPTER (Ch. 4).
+   Little's Law and Takt Time appear only in the ITSM ticketing scenario. They
+   are never applied to software delivery, story points, or sprint velocity.
+   The concepts translate directly — this is low-hanging fruit.
+
+3. CHAPTER 6 (ITIL) IS A STUB.
+   It has the comparison table but no worked example, no scenario resolution,
+   and no ITIL-specific metrics (MTTR, MTBF, change success rate). It reads like
+   a placeholder that was never filled in.
+
+4. THE "HIDDEN FACTORY" IS NEVER OPERATIONALIZED.
+   Introduced powerfully in Chapter 1, rework is never connected to a measurement.
+   This is a missed opportunity — the connection is one paragraph away.
+
+5. NO MEASUREMENT CHAPTER.
+   A book for practitioners needs at least one chapter or appendix that says:
+   "Here is what you measure, here is the formula, here is what good looks like."
+   The book describes what to do but stops short of how to know if it's working.
+
+6. CHAPTERS 10 AND 11 OVERLAP SIGNIFICANTLY.
+   Both cover AI + methodology integration. Consider merging into one stronger
+   chapter with clearer delineation: AI as a tool vs. AI as a risk.
+
+7. AVERAGES EVERYWHERE, NO PERCENTILES.
+   The book uses average cycle time, average resolution time throughout.
+   In practice, averages are misleading — one outlier skews them.
+   The 85th percentile (time within which 85% of work completes) is more
+   actionable. One paragraph change, significant practitioner value upgrade.
+
+================================================================================
+CHAPTER-BY-CHAPTER STATUS
+================================================================================
+
+Introduction       ✅ Complete — sets context well
+Chapter 1          ✅ Complete — Deming's 14 Points, hidden factory, rework
+Chapter 2          ✅ Complete — management owns process, employees own results
+Chapter 3          ✅ Complete — speak-up culture, psychological safety
+Chapter 4          ✅ Complete — STRONGEST chapter. Lean Six Sigma, Takt Time,
+                               Little's Law, DMAIC, Value Stream Mapping
+Chapter 5          ⚠️  Prose complete, MEASUREMENT SECTION MISSING
+                       - Covers Agile philosophy, myths, AI, practical tips
+                       - Never defines velocity, cycle time, burndown formulas
+                       - "Better, Faster" headline not backed by numbers
+Chapter 6          ⚠️  SHORT/INCOMPLETE — needs worked example and metrics
+Chapter 7          ✅ Complete — leadership enabling vs. directing, Dead Horse
+Chapter 8          ✅ Complete — coders as change agents
+Chapter 9          ✅ Complete — pride in work as performance multiplier
+Chapter 10         ⚠️  SHORT — AI as partner, needs more depth and examples
+Chapter 11         ✅ Complete — AI in Lean/Agile/ITIL
+Chapter 12         ✅ Complete — future-proofing, learning org metrics
+Epilogue           ✅ Complete — Deming 14 Points revisited, 7 Deadly Diseases
+
+================================================================================
+FORMULAS IN THE BOOK (COMPLETE INVENTORY)
+================================================================================
+
+Chapter 4:
+  Takt Time      = Customer Demand / Available Work Time
+                   Example: 480 min / 120 tickets = 4 min/ticket
+  WIP            = Arrival Rate × Cycle Time          [Little's Law]
+  Cycle Time     = WIP / Arrival Rate
+                   Example: 60 tickets / 2 per min = 30 min/ticket
+  Average Resolution Time — narrative only, no formula
+  Customer Satisfaction — mentioned as % improvement, no formula
+
+Chapter 12:
+  Speed of Learning Cycles  — named but not defined
+  Experimentation Rate      — "experiments per quarter" (no formula)
+  Process Evolution Score   — named but not defined
+  Customer Insights Implemented — named but not defined
+
+WHAT'S MISSING FROM THE BOOK (present in real dashboards):
+  - Sprint Velocity formula
+  - Story point delivery rate
+  - Leading vs. Lagging score framework
+  - Cycle time percentiles (50th, 85th, 95th)
+  - Handoff efficiency (BA → Dev lag)
+  - Rework Rate = rework_items / stories_closed
+  - Bug density per story
+  - Epic prioritization scoring
+  - PR turnaround time
+  - Workload balance (std dev across team members)
+
+================================================================================
+REAL DASHBOARD vs. BOOK — COMPARISON
+================================================================================
+
+DASHBOARD METRICS VALIDATED IN PRODUCTION (as of 2026-03-18)
+These are calculated live against ADO data across 5 role-based dashboards:
+Dev, BA, QA, Business Partner (BP), Leadership.
+
+Leadership Dashboard:
+  Leading Score  = activeDays×2 + commits + prsCreated×3 + prsReviewed×2
+                   + comments×1.5  (normalized to 0-100)
+  Lagging Score  = cards + storyPoints×2 + taskHours×0.5 (normalized)
+  Activity Index = (cards×1 + prsCreated×3 + prsReviewed×2 + commits×1
+                   + comments×1.5) × 10 / 10
+  PR Turnaround  = Avg(closedDate - creationDate) in hours/days
+  Correlation    = |leadingScore - laggingScore|
+                   Aligned ≤20 | Watch 20-40 | High Input >40 | High Output <-20
+
+Business Partner Dashboard:
+  Impact         = 0.4×StrategicAlignment + 0.4×RiskAvoidance + 0.2×Financial
+  Priority       = Impact / Effort
+                   Green ≥1.5 | Amber ≥0.8 | Red <0.8
+  Effort mapping = XS=1, S=3, M=5, L=7, XL=9
+  Completion     = deliveredStories / totalStories × 100
+  Stall detection: Story ≥14 days in pre-delivery | Epic ≥30 days | Blocked ≥3
+
+BA Dashboard:
+  BA Coverage    = withBA / stories × 100  (target ≥95%)
+  Readiness      = readyItems / backlog × 100  (target ≥80%)
+  Handoff Lag    = (stateChangedDate - activatedDate) / days  (target <5 days)
+  Workload StdDev = sqrt(sum((count - mean)²) / n)
+  Health Score   = 0.35×baCov + 0.30×ptRate + 0.20×qaCov + 0.15×(1-staleRate)
+
+QA Dashboard:
+  Bug Density    = closedBugs / storiesClosedInPeriod
+  Rework Rate    = reworkItems / storiesClosed × 100
+  Cycle Time     = createdDate → resolvedDate (work days)
+  Buckets        = 0-3d | 4-7d | 8-14d | 15-30d | 31-60d | 60+d
+
+Dev Dashboard:
+  APD            = story points closed with valid close date in period
+  Cycle Time     = activation → closure (work days), 50th/85th/95th percentile
+  Age            = activation → today (work days)
+  Stall          = same board column ≥14 days
+
+CONNECTIONS BETWEEN BOOK CONCEPTS AND DASHBOARD METRICS:
+  Book concept                     → Dashboard metric
+  "Hidden Factory" (Ch.1)          → Rework Rate (QA)
+  Little's Law WIP concept (Ch.4)  → Active WIP count + board column dist. (Dev)
+  Psychological safety (Ch.3)      → Leading/Lagging correlation (not rankers)
+  Deming "improve the system" (Ch1) → Team-level not individual scoring (Leadership)
+  Bottleneck identification (Ch.4) → Stall detection + handoff lag (BA/Dev)
+  Workload balance (Ch.5 AI)       → BA WorkloadStdDev + per-member scoring
+
+GAPS — in book but NOT in dashboards:
+  - Takt Time (demand vs. capacity ratio)
+  - Little's Law surfaced as a formula/visualization
+  - Customer Satisfaction score (external signal)
+  - Sprint commitment vs. delivery ratio
+  - ITIL metrics: MTTR, MTBF, change success rate
+  - Learning velocity metrics (Ch.12)
+
+================================================================================
+SUGGESTED BOOK IMPROVEMENTS
+================================================================================
+
+IMMEDIATE (fixes to existing chapters):
+1. Chapter 5 — Add a "Measuring Agile Success" section with these formulas:
+     Velocity             = story points delivered per sprint (rolling 6-sprint avg)
+     Cycle Time (P85)     = days from start → done for 85% of stories
+     Commitment Accuracy  = delivered / committed × 100
+     WIP Limit            = team size × 1.5 (starting point from Little's Law)
+     Lead Time            = request date → delivery date (full queue time)
+
+2. Chapter 4 — Add one paragraph applying Takt Time to sprint delivery:
+     Sprint Takt = sprint_days / stories_committed
+     If avg cycle time > sprint takt, backlog growth is mathematically inevitable.
+     This directly extends the Horizon Tech ticketing example.
+
+3. Chapter 1 — Close the hidden factory loop:
+     Add one paragraph: "Your hidden factory rate = rework items / stories closed.
+     If it's above 10%, your system is building defects faster than it's catching them."
+
+4. All chapters — Replace "average" with "85th percentile" for cycle time references.
+     One sentence change per instance. Dramatically increases practitioner credibility.
+
+5. Chapter 6 — Add scenario resolution and ITIL metrics:
+     Mean Time to Resolve (MTTR) = avg(incident open → closed)
+     Change Success Rate = successful changes / total changes × 100
+     Service Availability = uptime / total_time × 100
+
+STRUCTURAL (new content):
+6. Add a "From Concept to Dashboard" chapter between Ch. 5 and Ch. 6:
+     - One page per methodology showing: concept → formula → dashboard view
+     - Include Leading/Lagging duality as a named framework
+     - Show the Takt Time → sprint delivery application
+     - Reference real ADO dashboard implementations as examples
+
+7. Add Chapter 12's learning metrics as actual formulas:
+     Speed of Learning Cycles = days from problem identification to validated fix
+     Experimentation Rate = new process tests per quarter
+     Process Evolution Score = employee-initiated changes implemented / proposed
+
+8. Merge Chapters 10 and 11 into one stronger AI chapter with clear structure:
+     Part A: AI as an Agile tool (sprint analytics, backlog prioritization)
+     Part B: AI as a risk (over-automation, black box decisions)
+     Part C: Human elements AI cannot replace
+
+================================================================================
+PROPOSED NEW LEADERSHIP DASHBOARD MEASUREMENTS
+(to be built, then used to illustrate book concepts)
+================================================================================
+
+Priority order for implementation:
+
+1. SPRINT PREDICTABILITY SCORE
+   Formula: stories_delivered / stories_committed × 100
+   Book connection: Ch. 5 "don't overcommit" principle
+   Target: ≥80% | Below 70% = planning problem, not execution problem
+   Status: TODO
+
+2. TAKT TIME vs. CYCLE TIME RATIO
+   Formula: avg_cycle_time_days / (sprint_days / stories_committed)
+   Book connection: Ch. 4 Takt Time / Little's Law — applied to sprint delivery
+   If ratio > 1: backlog is mathematically growing. Visible proof of Ch. 4 concepts.
+   Status: TODO
+
+3. REWORK RATIO BY TEAM
+   Formula: rework_items / total_stories_closed × 100 (per team area path)
+   Book connection: Ch. 1 "hidden factory"
+   Note: requires "Rework" work item type to be used consistently in ADO
+   Status: Partial — QA dashboard has rework rate, not on Leadership view
+
+4. FLOW EFFICIENCY
+   Formula: time_in_active_states / (time_in_active + time_in_waiting) × 100
+   Book connection: Little's Law flow concept from Ch. 4
+   Low flow efficiency (e.g., 20%) = 80% of time is wait/waste
+   Requires: state transition history from ADO
+   Status: TODO — needs state history API query
+
+5. DEFECT ESCAPE RATE
+   Formula: bugs_found_post_delivery / bugs_found_total × 100
+   Book connection: Ch. 1 "quality built in, not inspected" (Deming)
+   Requires: tagging convention for when/where bugs were found
+   Status: TODO
+
+6. BURNOUT RISK INDEX
+   Flag triggers: workload_stddev > 2× mean AND any individual active_days > 18/mo
+                  AND PR review load concentrated on <2 people
+   Book connection: Ch. 5 AI burnout detection concept — non-AI version
+   Status: TODO — data exists, composite logic needed
+
+7. VALUE ALIGNMENT SCORE
+   Formula: stories_linked_to_scored_epic / total_stories_closed × 100
+   Book connection: Ch. 5/12 strategic alignment theme
+   If 30% of delivered work can't be traced to a strategic epic = visibility problem
+   Status: TODO
+
+8. DEPENDENCY DRAG INDEX
+   Formula: avg days blocked due to external team dependency per story
+   Book connection: Ch. 4 bottleneck identification
+   Requires: "Blocked" tag usage + external dependency tagging in ADO
+   Status: TODO
+
+================================================================================
+VERSIONING / CHANGE LOG
+================================================================================
+
+2026-03-18 — Initial document created
+             Source: Full book review + comparison against 5 production dashboards
+             (Dev, BA, QA, BP, Leadership) running against ADO
+             Book file reviewed: "Lean and agile ch5 complete.docx"
+             Next action: Build Sprint Predictability Score and Rework Ratio
+             into Leadership dashboard prototype
+
+================================================================================
+
+================================================================================
+SPC IMPLEMENTATION GUIDE � LESSONS FROM PR #26392
+(For future reference when building SPC charts)
+================================================================================
+
+These issues were caught during code review of the leadership dashboard SPC
+features (LD-13 cycle time, LD-14 velocity). Document here so we get it right
+first time next time.
+
+STATISTICS
+----------
+1. Always use sample std dev (n-1), not population std dev (n).
+   Population formula underestimates sigma on short histories (< 30 points),
+   making control limits too tight and flagging normal variation as outliers.
+   Code: variance = sumOfSquares / (n - 1)
+
+2. Require n >= 2 before computing stats. Return null and show a clear
+   'not enough data' message. Guard all callers against null.
+
+3. Out-of-control means BOTH sides: v > UCL OR (lcl > 0 AND v < LCL).
+   LCL is clipped to 0 for cycle time (can't have negative days), so only
+   apply the lower bound check when lcl > 0.
+
+CHART.JS MIXED CHARTS (bar + line overlay)
+-------------------------------------------
+4. Category-scale bar charts (type: 'bar') require line overlay datasets
+   to use plain number arrays, NOT {x, y} objects.
+   Wrong:  flatLine = val => items.map((_, i) => ({ x: i, y: val }))
+   Right:  flatLine = val => items.map(() => val)
+   The {x,y} format is for scatter/linear scales only.
+
+5. Scatter charts (type: 'scatter') use {x, y} objects � that is correct
+   for the cycle time SPC scatter plot (LD-13).
+
+ADO FIELD NAMES
+---------------
+6. Activated Date is Microsoft.VSTS.Common.ActivatedDate, NOT System.ActivatedDate.
+   System.ActivatedDate does not exist; requesting it returns undefined silently.
+   Always verify field names against the ADO REST API docs before coding.
+
+RENDER / CHART LIFECYCLE
+-------------------------
+7. Every early return in a render function must destroy its chart first.
+   Pattern:
+     const clearChart = () => {
+       if (ldCharts['canvas-id']) { ldCharts['canvas-id'].destroy(); delete ldCharts['canvas-id']; }
+     };
+     if (!data.length) { clearChart(); showEmptyState(); return; }
+
+8. Show an informative message in the DOM when bailing early � don't just
+   return silently. Blank panels with no explanation look like broken code.
+
+ACCESSIBILITY (applies to any new chart canvas)
+------------------------------------------------
+9. Every <canvas> needs: role=img aria-label=descriptive text
+10. Every <th> with tooltip info: use BOTH title= (hover tooltip for mouse
+    users) AND aria-label= (screen reader) � replacing one with the other
+    removes access for half the audience.
+11. New <section> elements need aria-labelledby pointing to their visible
+    heading element (add an id to the heading div).
+

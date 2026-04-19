@@ -1,0 +1,155 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 24px;
+  background: #e8ecef;
+  color: #222;
+}
+
+#app {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.page-header,
+.section-header,
+.actions,
+.review-block-header,
+.decision-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+}
+
+.main-column {
+  display: grid;
+  gap: 16px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #cbd5dc;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.chapter-list {
+  display: grid;
+  gap: 8px;
+}
+
+.chapter-item {
+  text-align: left;
+  border: 1px solid #cbd5dc;
+  border-radius: 6px;
+  padding: 10px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.chapter-item.active,
+.chapter-item:hover {
+  border-color: #2d6cdf;
+  background: #eef4ff;
+}
+
+.chapter-item span {
+  display: block;
+  color: #5e6b76;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.input-grid,
+.compare-grid,
+.review-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+textarea,
+button,
+input[type="file"] {
+  font: inherit;
+}
+
+textarea {
+  width: 100%;
+  min-height: 240px;
+  border: 1px solid #bcc8d0;
+  border-radius: 6px;
+  padding: 10px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+button {
+  border: 1px solid #bcc8d0;
+  background: #fff;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled),
+button.selected {
+  border-color: #2d6cdf;
+  background: #eef4ff;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.content-box,
+.review-block pre {
+  white-space: pre-wrap;
+  background: #f7f9fb;
+  border: 1px solid #d9e1e6;
+  border-radius: 6px;
+  padding: 12px;
+  min-height: 180px;
+  overflow: auto;
+}
+
+.review-blocks {
+  display: grid;
+  gap: 12px;
+}
+
+.review-block {
+  border: 1px solid #d9e1e6;
+  border-radius: 6px;
+  padding: 12px;
+  background: #fbfcfd;
+}
+
+.subtitle,
+.status,
+.muted {
+  color: #5e6b76;
+}
+
+@media (max-width: 1100px) {
+  .layout,
+  .input-grid,
+  .compare-grid,
+  .review-columns {
+    grid-template-columns: 1fr;
+  }
+}

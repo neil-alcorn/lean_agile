@@ -1,0 +1,88 @@
+{
+  "chapters": [
+    {
+      "chapter": 0,
+      "slug": "introduction",
+      "title": "Introduction",
+      "path": "book/chapters/00-introduction.md"
+    },
+    {
+      "chapter": 1,
+      "slug": "deming-s-legacy-the-14-points-and-their-modern-application-in-it",
+      "title": "Chapter 1: Deming\u2019s Legacy: The 14 Points and Their Modern Application in IT",
+      "path": "book/chapters/01-deming-s-legacy-the-14-points-and-their-modern-application-in-it.md"
+    },
+    {
+      "chapter": 2,
+      "slug": "why-management-owns-the-process-but-employees-own-the-results",
+      "title": "Chapter 2: Why Management Owns the Process but Employees Own the Results",
+      "path": "book/chapters/02-why-management-owns-the-process-but-employees-own-the-results.md"
+    },
+    {
+      "chapter": 3,
+      "slug": "building-a-speak-up-culture-from-the-frontlines-to-the-executive-suite",
+      "title": "Chapter 3: Building a Speak-Up Culture - From the Frontlines to the Executive Suite",
+      "path": "book/chapters/03-building-a-speak-up-culture-from-the-frontlines-to-the-executive-suite.md"
+    },
+    {
+      "chapter": 4,
+      "slug": "lean-six-sigma-streamlining-workflows-in-a-digital-age",
+      "title": "Chapter 4: Lean Six Sigma\u2014Streamlining Workflows in a Digital Age",
+      "path": "book/chapters/04-lean-six-sigma-streamlining-workflows-in-a-digital-age.md"
+    },
+    {
+      "chapter": 5,
+      "slug": "agile-in-it-how-sprints-empower-teams-to-deliver-better-faster",
+      "title": "Chapter 5: Agile in IT\u2014How Sprints Empower Teams to Deliver Better, Faster",
+      "path": "book/chapters/05-agile-in-it-how-sprints-empower-teams-to-deliver-better-faster.md"
+    },
+    {
+      "chapter": 6,
+      "slug": "itil-ensuring-stability-in-a-fast-paced-it-environment",
+      "title": "Chapter 6: ITIL\u2014Ensuring Stability in a Fast-Paced IT Environment",
+      "path": "book/chapters/06-itil-ensuring-stability-in-a-fast-paced-it-environment.md"
+    },
+    {
+      "chapter": 7,
+      "slug": "leadership-owns-the-process-what-executives-must-understand-about-continuous-improvement",
+      "title": "Chapter 7: Leadership Owns the Process\u2014What Executives Must Understand About Continuous Improvement",
+      "path": "book/chapters/07-leadership-owns-the-process-what-executives-must-understand-about-continuous-improvement.md"
+    },
+    {
+      "chapter": 8,
+      "slug": "coders-as-change-agents-how-it-employees-shape-organizational-success",
+      "title": "Chapter 8: Coders as Change Agents\u2014How IT Employees Shape Organizational Success",
+      "path": "book/chapters/08-coders-as-change-agents-how-it-employees-shape-organizational-success.md"
+    },
+    {
+      "chapter": 9,
+      "slug": "why-pride-in-work-drives-quality-and-innovation",
+      "title": "Chapter 9: Why Pride in Work Drives Quality and Innovation",
+      "path": "book/chapters/09-why-pride-in-work-drives-quality-and-innovation.md"
+    },
+    {
+      "chapter": 10,
+      "slug": "ai-automation-and-the-human-touch-what-stays-and-what-changes",
+      "title": "Chapter 10: AI, Automation, and the Human Touch\u2014What Stays and What Changes?",
+      "path": "book/chapters/10-ai-automation-and-the-human-touch-what-stays-and-what-changes.md"
+    },
+    {
+      "chapter": 11,
+      "slug": "ai-in-lean-agile-and-itil-optimizing-the-new-it-landscape",
+      "title": "Chapter 11: AI in Lean, Agile, and ITIL\u2014Optimizing the New IT Landscape",
+      "path": "book/chapters/11-ai-in-lean-agile-and-itil-optimizing-the-new-it-landscape.md"
+    },
+    {
+      "chapter": 12,
+      "slug": "future-proofing-your-organization-continuous-learning-and-employee-development",
+      "title": "Chapter 12: Future-Proofing Your Organization\u2014Continuous Learning and Employee Development",
+      "path": "book/chapters/12-future-proofing-your-organization-continuous-learning-and-employee-development.md"
+    },
+    {
+      "chapter": 13,
+      "slug": "epilogue",
+      "title": "Epilogue: The End of the Beginning",
+      "path": "book/chapters/13-epilogue.md"
+    }
+  ]
+}

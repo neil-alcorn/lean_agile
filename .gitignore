@@ -1,0 +1,7 @@
+review-app/node_modules/
+review-app/.cache/
+review-app/server.out.log
+review-app/server.err.log
+book/tests/.tmp/
+__pycache__/
+*.pyc

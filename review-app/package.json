@@ -1,0 +1,17 @@
+{
+  "name": "lean-agile-review-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local review workstation for Lean and Agile book editing",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/run-tests.js"
+  },
+  "dependencies": {
+    "diff": "^7.0.0",
+    "docx": "^9.6.1",
+    "express": "^4.21.2",
+    "mammoth": "^1.8.0"
+  }
+}

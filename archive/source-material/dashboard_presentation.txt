@@ -1,0 +1,325 @@
+================================================================================
+INNOVATION SHOWCASE — PRESENTATION OUTLINE & SPEAKER NOTES
+"From Reports to Signals: Building a Culture of Continuous Improvement"
+20 Minutes | All IT Employees | Neil Alcorn
+================================================================================
+
+TONE GUIDE (read before presenting)
+-------------------------------------
+Humble. We built something useful, not something perfect.
+Helpful. Every metric exists to help the team, not evaluate it.
+Process-first. We measure work, not workers.
+Hopeful. This is a beginning, not a destination.
+
+Keep it conversational. You are not teaching — you are sharing.
+The dashboards are the proof. The story is the point.
+
+================================================================================
+SLIDE 1 — "WHERE DOES YOUR WORK COME FROM?"
+Time: 2 minutes
+================================================================================
+
+HEADLINE:
+  "You can't improve what you can't see."
+
+VISUAL SUGGESTION:
+  Simple flow diagram — a value stream in a Lean Office context:
+    [Request Comes In] → [Work Gets Sized] → [Work Gets Done] → [Value Delivered]
+  OR: pull your Lean Office value stream map slide from LSS training.
+  Keep it generic — this applies to any IT role.
+
+BULLET POINTS TO HIT:
+  • Every one of us is part of a process — even if we don't call it that
+  • Work comes from somewhere. It goes somewhere. There's a customer at the end.
+  • Lean Office asks: where is value created? Where is it lost?
+  • We spend most of our time focused on the task — rarely on the flow
+  • This dashboard project started with one question: "What is our process actually doing?"
+
+SPEAKER NOTES:
+  Open with a question to the room — don't make it rhetorical, let it land.
+  "Think about the last piece of work you completed. Where did it come from?
+  Who asked for it? How long did it sit before you picked it up? How long did
+  it take? Did it come back for rework?"
+
+  Most people have never been asked to think about their work as a process.
+  That's not a criticism — it's an opportunity.
+
+  Loosely connect to the book: the foundation of Lean thinking is understanding
+  your value stream before you try to improve it. You can't improve what you
+  can't see. That's all this is.
+
+  Transition: "We had a tool — Power BI. It told us a lot. But it told us
+  about the past. We wanted something that could help us see the present —
+  and maybe predict the future."
+
+================================================================================
+SLIDE 2 — "WE HAD REPORTS. WE NEEDED SIGNALS."
+Time: 2 minutes
+================================================================================
+
+HEADLINE:
+  "Reports tell you what happened. Signals tell you what to do."
+
+VISUAL SUGGESTION:
+  Two-column side by side:
+    LEFT  — Power BI screenshot (a real one, something clean and familiar)
+    RIGHT — ADO Dashboard screenshot (Dev dashboard or Leadership SPC chart)
+  Label them simply: "Reporting Tool" | "Signal Tool"
+  No winners or losers — just different jobs.
+
+BULLET POINTS TO HIT:
+  • Power BI is excellent — we still use it and will continue to
+  • What it doesn't do well: real-time team visibility, ADO-native signal detection
+  • We asked: what if the team could see their own flow without waiting for a report?
+  • Zero new infrastructure — built on top of tools we already pay for
+  • The team owns it. It isn't run by IT or BI. Anyone with a PAT can use it.
+
+SPEAKER NOTES:
+  Be generous about Power BI. The audience uses it. Some of them built reports in it.
+  The point isn't "we replaced it" — the point is "we found a gap it wasn't designed to fill."
+
+  The innovation here isn't the technology. It's the question we asked:
+  "What does the team need to see TODAY to make a better decision TODAY?"
+
+  Lean principle worth dropping here (lightly, don't lecture):
+  Taiichi Ohno's idea of standing in a circle — go observe actual work before
+  you try to improve it. These dashboards are our way of observing work digitally,
+  in real time, without standing over anyone's shoulder.
+
+  Transition: "So what did we build? Let me show you."
+
+================================================================================
+SLIDE 3 — "WHAT WE MEASURE AND WHY IT MATTERS"
+Time: 2 minutes  (shown briefly before demo — leave it up during demo)
+================================================================================
+
+HEADLINE:
+  "We measure process and capability — not people's worth."
+
+VISUAL SUGGESTION:
+  Three simple icons or columns. Clean, minimal.
+
+  COLUMN 1: FLOW              COLUMN 2: QUALITY           COLUMN 3: SIGNAL
+  "Is work moving?"           "Where does it break?"      "What's worth acting on?"
+  WIP, Cycle Time,            Rework Ratio,               SPC Control Limits,
+  Bottlenecks, Blocked        Hidden Factory,             Leading Indicators,
+  Stories                     Bug patterns                Trend lines
+
+BULLET POINTS TO HIT:
+  • Six dashboards — Dev, BA, QA, UX, Business Process, Leadership
+  • Each one asks: what does THIS role need to see to do better work?
+  • Continuous improvement only works when you can see where you are
+  • These are not scorecards. They are mirrors.
+  • A good process produces good outcomes. We measure the process.
+
+KEY TALKING POINT — SAY THIS OUT LOUD:
+  "Accountability can feel uncomfortable when you're not used to it.
+   But when you have data that helps you advocate for yourself —
+   data that shows your team is understaffed, or blocked, or taking on
+   too much WIP — that same data becomes a security blanket.
+   It stops being used against you and starts working for you."
+
+SPEAKER NOTES:
+  This is the most important slide philosophically. Don't rush it.
+  The audience will have a quiet anxiety about being measured — address it directly.
+
+  The Lean framing: we are measuring capability and process health.
+  A control chart with a point outside the limits isn't a failing grade —
+  it's a question worth asking. "Something changed — do we know what it was?"
+
+  Reference the book lightly: we've been developing a Lean and Agile framework
+  internally that ties these measurements back to established principles —
+  things like Little's Law, Theory of Constraints, value vs. waste.
+  The dashboards are the practical application of that thinking.
+
+  EOS connection (if it feels right to mention): this is how we build
+  data into our operating model. Not as an add-on — as a foundation.
+  Traction starts with visibility.
+
+  Transition: "Let me show you what this looks like in practice."
+
+================================================================================
+DEMO SECTION — "LET ME SHOW YOU"
+Time: 12 minutes total
+================================================================================
+
+--- DEMO BEAT 1: Dev Dashboard — Team Flow (3 min) ---
+
+WHAT TO OPEN: Dev Dashboard → Team Flow lens
+
+POINTS TO HIT WHILE NAVIGATING:
+  • "This is real data — our team's actual ADO work items, live"
+  • Point to WIP total: "Little's Law says WIP × Cycle Time = Throughput.
+    When WIP climbs, cycle time climbs with it. The work slows down."
+  • Point to a bottleneck signal (blocked items, aging work):
+    "This is our digital Andon cord. In a Toyota plant, anyone can pull
+    a cord to stop the line when something's wrong. This is the software equivalent."
+  • Point to team breakdown: "Each team sees their own slice.
+    Not compared to each other — compared to their own history."
+  • "No names on this view. We're looking at flow, not individuals."
+
+--- DEMO BEAT 2: Leadership Dashboard — Activity Table (2 min) ---
+
+WHAT TO OPEN: Leadership Dashboard → Developer Activity section
+
+POINTS TO HIT:
+  • "This is where names appear — but look at what we're measuring"
+  • Cards, PRs, commits, reviews, active days — inputs to the process
+  • "Activity is not productivity. A developer who reviewed 20 PRs this
+    sprint created enormous value that doesn't show up in story points."
+  • Point to LD-12 Leading vs. Lagging section:
+    "This is one of the most important ideas in measurement.
+    Lagging indicators tell you the score after the game.
+    Leading indicators help you win while you're still playing."
+
+--- DEMO BEAT 3: SPC Control Charts — LD-13 Cycle Time (4 min) ---
+
+WHAT TO OPEN: Leadership Dashboard → Cycle Time Control Chart (LD-13)
+
+THIS IS YOUR SHOWSTOPPER. SLOW DOWN HERE.
+
+POINTS TO HIT:
+  • "This is Statistical Process Control — a concept from manufacturing
+    quality engineering, applied to software delivery."
+  • Point to the mean line: "This is our average cycle time — how long
+    it takes a story to go from activated to closed."
+  • Point to UCL/LCL: "These are control limits — not targets, not goals.
+    They represent the natural variation of our process."
+  • Point to a red outlier (if one exists):
+    "A point outside these limits isn't a failure. It's a signal.
+    Something was different about that item. Maybe it was a dependency.
+    Maybe it sat in review too long. The chart doesn't tell us why —
+    it tells us WHERE to ask the question."
+  • "Walter Shewhart invented this in 1924 at Bell Labs.
+    W. Edwards Deming brought it to Japan. We're using it on our sprints."
+  • Key line: "Most performance problems are process problems, not people problems.
+    Deming said 94% of failures belong to the system. This chart helps us see that."
+
+--- DEMO BEAT 4: Rework Ratio + Burnout Signal (3 min) ---
+
+WHAT TO OPEN: LD-15 Rework Ratio, then LD-16 Burnout Risk
+
+REWORK (1.5 min):
+  • "This is the hidden factory — a Lean concept for work that happens
+    but doesn't show up in official metrics."
+  • "Every rework item is a story about a process that could be stronger —
+    a requirement that wasn't clear, a handoff that didn't land, a test
+    that didn't catch something. No blame. Just signal."
+
+BURNOUT (1.5 min):
+  • "This one I want to be careful about — and that carefulness is intentional."
+  • "This uses a statistical measure called a z-score to flag when someone's
+    activity is significantly higher than their teammates' over time."
+  • "This is NOT a productivity ranking. A high z-score might mean someone
+    is energized and deep in a project. Or it might mean they're covering
+    for understaffing. The chart prompts a CONVERSATION — it doesn't
+    answer the question."
+  • "This is the security blanket I mentioned earlier. If you're carrying
+    more than your share, this makes it visible. Data you can take to
+    your manager. Data that advocates for you."
+
+================================================================================
+SLIDE 4 — "WHERE WE GO FROM HERE"
+Time: 2 minutes
+================================================================================
+
+HEADLINE:
+  "This is a beginning, not a destination."
+
+VISUAL SUGGESTION:
+  Simple PDCA wheel or a clean roadmap with 3 phases.
+  OR: just three clean bullet groups.
+
+BULLET POINTS TO HIT:
+
+  RIGHT NOW:
+  • Six dashboards live and in use
+  • SPC control charts in the Leadership view — proving the concept
+  • Lean and Agile measurement framework in development (the book)
+
+  NEXT:
+  • React/modern rewrite — same concepts, better experience
+  • Connect measurements to sprint ceremonies — use the data in the room
+  • Expand SPC to more metrics as we validate the approach
+
+  THE BIGGER IDEA:
+  • This is an operating model, not a reporting tool
+  • EOS thinking: visibility → accountability → traction
+  • Continuous improvement isn't a project. It's a practice.
+
+CLOSING LINE (say this, don't put it on the slide):
+  "We didn't build these dashboards to watch people.
+   We built them so the team could watch the process —
+   and own what they find.
+   The goal isn't perfect metrics. The goal is a team that
+   gets a little better every sprint, knows why, and can prove it."
+
+SPEAKER NOTES:
+  Keep this short. The demo did the work.
+  End on culture, not technology.
+  Leave the audience with the feeling that this is something they could
+  participate in — not something being done to them.
+
+  If time allows, mention the book project briefly:
+  "We're also documenting the thinking behind this — a Lean and Agile
+  framework written for software teams, grounded in what we're actually
+  measuring. We'll be sharing that as it develops."
+
+================================================================================
+TIMING GUIDE
+================================================================================
+
+  00:00 — 02:00  Slide 1: Where does your work come from?
+  02:00 — 04:00  Slide 2: Reports vs. Signals (Power BI → Custom)
+  04:00 — 06:00  Slide 3: What we measure and why (leave up during demo)
+  06:00 — 09:00  Demo Beat 1: Dev Dashboard — Team Flow
+  09:00 — 11:00  Demo Beat 2: Leadership — Activity + Leading/Lagging
+  11:00 — 15:00  Demo Beat 3: SPC Control Charts (SLOW DOWN HERE)
+  15:00 — 18:00  Demo Beat 4: Rework + Burnout
+  18:00 — 20:00  Slide 4: Where we go from here + closing line
+
+================================================================================
+BACKUP SLIDES (have these ready, hidden at end of deck)
+================================================================================
+
+  BACKUP A: Screenshot of Dev Dashboard — Team Flow lens
+  BACKUP B: Screenshot of LD-13 Cycle Time SPC (with a visible outlier if possible)
+  BACKUP C: Screenshot of LD-15 Rework Ratio table
+  BACKUP D: Screenshot of LD-16 Burnout Risk table
+  BACKUP E: Shewhart control chart diagram from your LSS training slides
+             (classic bell curve with UCL/LCL — great if the live demo fails)
+
+================================================================================
+LSS TRAINING SLIDES TO PULL
+================================================================================
+
+  MUST HAVE:
+  • Control chart / SPC diagram — the classic Shewhart chart
+  • Lean Office value stream or "where does work come from" flow
+  • Hidden Factory concept slide
+
+  NICE TO HAVE:
+  • Little's Law formula (can just write it on a slide: WIP = R × CT)
+  • Andon cord photo or concept (Toyota factory or stylized)
+  • PDCA wheel for the closing slide
+
+  LEAVE OUT FOR THIS AUDIENCE:
+  • DMAIC deep dives
+  • Cp/Cpk process capability formulas
+  • Fishbone / root cause tools
+  • Anything that feels like a training course
+
+================================================================================
+KEY PHRASES — KNOW THESE, DON'T READ THEM
+================================================================================
+
+  "We measure process and capability — not people's worth."
+  "A signal outside the control limits isn't a failure. It's a question."
+  "Activity is not productivity."
+  "The hidden factory is the work that happens but doesn't count."
+  "Data that helps you advocate for yourself becomes a security blanket."
+  "94% of failures belong to the system. — Deming"
+  "This is a mirror, not a scorecard."
+  "Continuous improvement isn't a project. It's a practice."
+
+================================================================================
