@@ -76,6 +76,10 @@ body {
   gap: 16px;
 }
 
+.compare-grid-three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .field {
   display: grid;
   gap: 8px;

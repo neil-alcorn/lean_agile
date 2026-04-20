@@ -1,7 +1,9 @@
 const state = {
   chapters: [],
   selectedChapterPath: "",
-  selectedChapterContent: "",
+  selectedSourceContent: "",
+  selectedDraftContent: "",
+  selectedDraftPath: "",
   proposalText: "",
   reviewBlocks: [],
   decisions: {},
@@ -14,6 +16,7 @@ const els = {
   docxStatus: document.getElementById("docxStatus"),
   compareBtn: document.getElementById("compareBtn"),
   currentContent: document.getElementById("currentContent"),
+  draftContent: document.getElementById("draftContent"),
   proposedContent: document.getElementById("proposedContent"),
   reviewBlocks: document.getElementById("reviewBlocks"),
   mergedPreview: document.getElementById("mergedPreview"),
@@ -44,12 +47,17 @@ function renderChapterList() {
     button.innerHTML = `
       <strong>${chapter.chapter}. ${escapeHtml(chapter.title)}</strong>
       <span>${escapeHtml(chapter.path)}</span>
+      <span>${chapter.hasDraft ? "Edit copy ready" : "Edit copy will be created on open"}</span>
     `;
     button.addEventListener("click", async () => {
       state.selectedChapterPath = chapter.path;
       const result = await api(`/api/chapter?path=${encodeURIComponent(chapter.path)}`);
-      state.selectedChapterContent = result.content;
-      els.currentContent.textContent = result.content;
+      state.selectedSourceContent = result.sourceContent;
+      state.selectedDraftContent = result.draftContent;
+      state.selectedDraftPath = result.draftPath;
+      els.currentContent.textContent = result.sourceContent;
+      els.draftContent.textContent = result.draftContent;
+      els.mergedPreview.textContent = result.draftContent;
       renderChapterList();
       updateCompareEnabled();
     });
@@ -125,7 +133,10 @@ async function refreshMergedPreview() {
   });
 
   state.reviewBlocks = payload.reviewBlocks;
-  els.currentContent.textContent = payload.currentContent;
+  state.selectedSourceContent = payload.sourceContent;
+  state.selectedDraftContent = payload.draftContent;
+  els.currentContent.textContent = payload.sourceContent;
+  els.draftContent.textContent = payload.draftContent;
   els.proposedContent.textContent = payload.proposedText;
 
   const merged = await api("/api/apply", {
@@ -161,9 +172,13 @@ async function compareSelected() {
     }),
   });
   state.reviewBlocks = payload.reviewBlocks;
-  els.currentContent.textContent = payload.currentContent;
+  state.selectedSourceContent = payload.sourceContent;
+  state.selectedDraftContent = payload.draftContent;
+  state.selectedDraftPath = payload.draftPath || state.selectedDraftPath;
+  els.currentContent.textContent = payload.sourceContent;
+  els.draftContent.textContent = payload.draftContent;
   els.proposedContent.textContent = payload.proposedText;
-  els.mergedPreview.textContent = payload.currentContent;
+  els.mergedPreview.textContent = payload.draftContent;
   renderReviewBlocks();
   await refreshMergedPreview();
 }
@@ -201,16 +216,17 @@ async function applyApprovedChanges() {
     }),
   });
 
-  els.currentContent.textContent = result.mergedContent;
+  state.selectedDraftContent = result.mergedContent;
+  els.draftContent.textContent = result.mergedContent;
   els.mergedPreview.textContent = result.mergedContent;
-  els.buildStatus.textContent = `Saved approved changes to ${state.selectedChapterPath}`;
+  els.buildStatus.textContent = `Saved approved changes to draft copy ${result.draftPath || state.selectedDraftPath}`;
 }
 
 async function rebuildBook() {
-  els.buildStatus.textContent = "Rebuilding book...";
+  els.buildStatus.textContent = "Rebuilding book from edit copies...";
   const result = await api("/api/build", { method: "POST", body: JSON.stringify({}) });
   els.buildStatus.textContent = result.ok
-    ? `Build complete. Outputs: ${result.outputs.docx} and ${result.outputs.markdown}`
+    ? `Build complete from edit copies. Outputs: ${result.outputs.docx} and ${result.outputs.markdown}`
     : `Build failed: ${result.stderr || result.stdout || "unknown error"}`;
 }
 

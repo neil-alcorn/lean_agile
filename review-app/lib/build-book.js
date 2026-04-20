@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { Document, HeadingLevel, ImageRun, Packer, Paragraph, TextRun } = require("docx");
 
-const { ROOT } = require("./book-files");
+const { ROOT, draftPathForChapterPath, resolveRepoPath } = require("./book-files");
 const { parseMarkdownDocument } = require("./review-logic");
 
 const FIGURE_SLOT_RE = /<!--\s*FIGURE_SLOT:\s*([a-zA-Z0-9._-]+)\s*-->/g;
@@ -37,7 +37,11 @@ function buildMarkdownBook() {
   const chapterPaths = bookConfig.chapters
     .slice()
     .sort((a, b) => a.chapter - b.chapter)
-    .map((chapter) => path.join(ROOT, chapter.path));
+    .map((chapter) => {
+      const draftPath = draftPathForChapterPath(chapter.path);
+      const draftAbsolute = resolveRepoPath(draftPath);
+      return fs.existsSync(draftAbsolute) ? draftAbsolute : path.join(ROOT, chapter.path);
+    });
 
   const renderedChapters = chapterPaths.map((chapterPath) => {
     const source = fs.readFileSync(chapterPath, "utf8");

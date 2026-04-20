@@ -5,6 +5,7 @@ const {
   createReviewBlocks,
   applyReviewDecisions,
 } = require("../lib/review-logic");
+const { draftPathForChapterPath } = require("../lib/book-files");
 
 function run(name, fn) {
   try {
@@ -68,4 +69,15 @@ run("applyReviewDecisions rejects proposed block", () => {
 
   assert.match(merged, /Paragraph one\./);
   assert.doesNotMatch(merged, /Paragraph one updated\./);
+});
+
+run("draftPathForChapterPath maps source chapter into drafts tree", () => {
+  const draftPath = draftPathForChapterPath(
+    "book/chapters/05-agile-in-it-how-sprints-empower-teams-to-deliver-better-faster.md",
+  );
+
+  assert.equal(
+    draftPath,
+    "book/drafts/chapters/05-agile-in-it-how-sprints-empower-teams-to-deliver-better-faster.md",
+  );
 });

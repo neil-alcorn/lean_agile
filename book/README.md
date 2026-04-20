@@ -5,6 +5,7 @@ This directory is the active source tree for the book.
 ## Canonical Sources
 
 - `chapters/` contains the canonical manuscript source files.
+- `drafts/chapters/` contains the editable working copies used by the review app.
 - `assets/images/` contains graphics used by the book.
 - `notes/` contains editorial feedback, chapter review notes, and working guidance that has not yet been folded into prose.
 - `config/book.json` defines chapter order.
@@ -54,6 +55,16 @@ Treat this like an application for a book:
 
 The goal is to make editing easy without losing the ability to assemble a clean whole.
 
+## Copy Model
+
+There are now two chapter tracks:
+
+- `chapters/` is the stable build/source copy
+- `drafts/chapters/` is the editable review copy
+
+The review app writes approved edits into `drafts/chapters/`.
+Builds prefer the draft copy when it exists.
+
 ## Review Workflow
 
 The repository also includes a local browser review workstation under [review-app](C:\Users\nalco\OneDrive\Lean and Agile\review-app).
@@ -63,5 +74,5 @@ Use it to:
 - compare a chapter against proposed text
 - import `.docx` material for review
 - accept or reject change blocks
-- write approved changes back into the canonical chapter source
+- write approved changes into the editable draft copy
 - trigger a rebuild of the compiled manuscript

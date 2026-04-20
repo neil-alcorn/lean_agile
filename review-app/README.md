@@ -5,18 +5,23 @@ This is the local browser review workstation for the book.
 ## What It Does
 
 - loads canonical chapters from `book/chapters/`
+- loads editable working copies from `book/drafts/chapters/`
 - accepts proposal text pasted into the browser
 - imports `.docx` content for review
-- compares current chapter text against proposed text
+- compares the stable build copy and editable draft against proposed text
 - lets the reviewer accept, reject, or flag changed blocks
-- writes accepted content back into the canonical chapter file
-- triggers the existing book rebuild
+- writes accepted content into the draft chapter file
+- triggers the existing book rebuild from the draft copy
 
-## Source of Truth
+## Source of Truth and Working Copy
 
-The browser app is a review surface. The canonical manuscript still lives in:
+The browser app is a review surface. The stable manuscript still lives in:
 
 - `book/chapters/*.md`
+
+The editable working copy lives in:
+
+- `book/drafts/chapters/*.md`
 
 Imported `.docx` files are intake material, not the persistent source of truth.
 
@@ -45,8 +50,8 @@ Then open:
 3. Click compare.
 4. Review changed blocks.
 5. Accept or reject changes.
-6. Apply approved changes to the chapter source.
-7. Rebuild the manuscript.
+6. Apply approved changes to the draft chapter copy.
+7. Rebuild the manuscript from the draft copy.
 
 ## DOCX Intake
 

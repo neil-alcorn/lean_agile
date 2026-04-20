@@ -1,13 +1,11 @@
 const express = require("express");
-const mammoth = require("mammoth");
 const path = require("node:path");
-const { spawn } = require("node:child_process");
+const mammoth = require("mammoth");
 
 const {
   listChapters,
-  readChapter,
-  writeChapter,
-  ROOT,
+  readChapterPair,
+  writeDraftChapter,
 } = require("./lib/book-files");
 const {
   parseMarkdownDocument,
@@ -33,7 +31,7 @@ app.get("/api/chapters", (_req, res) => {
 app.get("/api/chapter", (req, res) => {
   try {
     const chapterPath = req.query.path;
-    const chapter = readChapter(chapterPath);
+    const chapter = readChapterPair(chapterPath);
     res.json(chapter);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -83,18 +81,21 @@ app.post("/api/compare", (req, res) => {
       return res.status(400).json({ error: "chapterPath and proposedText are required." });
     }
 
-    const chapter = readChapter(chapterPath);
-    const parsedCurrent = parseMarkdownDocument(chapter.content);
+    const chapter = readChapterPair(chapterPath);
+    const parsedSource = parseMarkdownDocument(chapter.sourceContent);
+    const parsedDraft = parseMarkdownDocument(chapter.draftContent);
     const parsedProposed = parseMarkdownDocument(proposedText);
-    const currentBody = parsedCurrent.body.trim();
+    const currentBody = parsedDraft.body.trim();
     const proposedBody = (Object.keys(parsedProposed.frontMatter).length ? parsedProposed.body : proposedText).trim();
     const reviewBlocks = createReviewBlocks(currentBody, proposedBody);
     const mergedBody = applyReviewDecisions(currentBody, proposedBody, reviewBlocks, {});
-    const mergedContent = rebuildMarkdown(parsedCurrent.frontMatter, mergedBody);
+    const mergedContent = rebuildMarkdown(parsedDraft.frontMatter, mergedBody);
 
     return res.json({
       chapterPath,
-      currentContent: chapter.content,
+      draftPath: chapter.draftPath,
+      sourceContent: chapter.sourceContent,
+      draftContent: chapter.draftContent,
       currentBody,
       proposedText,
       proposedBody,
@@ -118,22 +119,23 @@ app.post("/api/apply", (req, res) => {
       return res.status(400).json({ error: "chapterPath and proposedText are required." });
     }
 
-    const chapter = readChapter(chapterPath);
-    const parsedCurrent = parseMarkdownDocument(chapter.content);
+    const chapter = readChapterPair(chapterPath);
+    const parsedDraft = parseMarkdownDocument(chapter.draftContent);
     const parsedProposed = parseMarkdownDocument(proposedText);
-    const currentBody = parsedCurrent.body.trim();
+    const currentBody = parsedDraft.body.trim();
     const proposedBody = (Object.keys(parsedProposed.frontMatter).length ? parsedProposed.body : proposedText).trim();
     const reviewBlocks = createReviewBlocks(currentBody, proposedBody);
     const mergedBody = applyReviewDecisions(currentBody, proposedBody, reviewBlocks, decisions);
-    const mergedContent = rebuildMarkdown(parsedCurrent.frontMatter, mergedBody);
+    const mergedContent = rebuildMarkdown(parsedDraft.frontMatter, mergedBody);
 
     if (!previewOnly) {
-      writeChapter(chapterPath, mergedContent.endsWith("\n") ? mergedContent : `${mergedContent}\n`);
+      writeDraftChapter(chapterPath, mergedContent.endsWith("\n") ? mergedContent : `${mergedContent}\n`);
     }
 
     return res.json({
       ok: true,
       chapterPath,
+      draftPath: chapter.draftPath,
       mergedContent,
       reviewBlocks,
     });
