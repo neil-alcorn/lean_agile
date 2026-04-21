@@ -221,6 +221,41 @@ Rules:
 
 The book may feel morally grounded without becoming explicitly confessional.
 
+## Citation and Attribution Philosophy
+
+This book should be intellectually generous and operationally disciplined about citing the work of others.
+
+### Core Rule
+
+When an idea, framework, quote, model, statistic, or distinctive formulation comes from someone else, the book should credit that source clearly and appropriately.
+
+### What Must Be Credited
+
+- direct quotes
+- named frameworks and methods
+- distinctive concepts strongly associated with a thinker or school
+- research findings, metrics, and claims that are not common knowledge
+- charts, diagrams, images, and tables adapted from or based on external work
+
+### Preferred Behavior
+
+- name the thinker or source in the prose when that helps the reader
+- keep citations clear without making the book feel academic or cluttered
+- prefer graceful attribution over footnote spam
+- preserve trust by being explicit when we are borrowing, adapting, or building on someone else's work
+
+### Tone Rule
+
+Credit should feel confident and natural, not defensive or performative. The reader should feel that the book is in conversation with serious thinkers and practitioners, not pretending to invent every useful idea from scratch.
+
+### Asset Rule
+
+If a visual asset, table, diagram, or quote block depends on external work, the source and credit information must be tracked in asset metadata even if the final reader-facing treatment is brief.
+
+### Build Rule
+
+Editorial/source notes about citation should remain in the source and asset metadata, but only reader-facing attribution should survive into the compiled book.
+
 ## Authorial Posture
 
 The author should sound:

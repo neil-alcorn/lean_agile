@@ -5,14 +5,15 @@ const mammoth = require("mammoth");
 const {
   listChapters,
   readChapterPair,
-  writeDraftChapter,
 } = require("./lib/book-files");
 const {
-  parseMarkdownDocument,
   createReviewBlocks,
-  applyReviewDecisions,
 } = require("./lib/review-logic");
-const { runBuild } = require("./lib/build-book");
+const {
+  readReviewSession,
+  writeReviewSession,
+  clearReviewSession,
+} = require("./lib/review-sessions");
 
 const app = express();
 const port = process.env.PORT || 4173;
@@ -32,7 +33,10 @@ app.get("/api/chapter", (req, res) => {
   try {
     const chapterPath = req.query.path;
     const chapter = readChapterPair(chapterPath);
-    res.json(chapter);
+    res.json({
+      ...chapter,
+      reviewSession: readReviewSession(chapterPath),
+    });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -76,91 +80,62 @@ app.post("/api/proposal/docx", async (req, res) => {
 app.post("/api/compare", (req, res) => {
   try {
     const chapterPath = req.body?.chapterPath;
-    const proposedText = req.body?.proposedText || "";
-    if (!chapterPath || !proposedText.trim()) {
-      return res.status(400).json({ error: "chapterPath and proposedText are required." });
+    if (!chapterPath) {
+      return res.status(400).json({ error: "chapterPath is required." });
     }
 
     const chapter = readChapterPair(chapterPath);
-    const parsedSource = parseMarkdownDocument(chapter.sourceContent);
-    const parsedDraft = parseMarkdownDocument(chapter.draftContent);
-    const parsedProposed = parseMarkdownDocument(proposedText);
-    const currentBody = parsedDraft.body.trim();
-    const proposedBody = (Object.keys(parsedProposed.frontMatter).length ? parsedProposed.body : proposedText).trim();
-    const reviewBlocks = createReviewBlocks(currentBody, proposedBody);
-    const mergedBody = applyReviewDecisions(currentBody, proposedBody, reviewBlocks, {});
-    const mergedContent = rebuildMarkdown(parsedDraft.frontMatter, mergedBody);
+    const reviewBlocks = createReviewBlocks(chapter.sourceBody.trim(), chapter.draftBody.trim());
 
     return res.json({
       chapterPath,
       draftPath: chapter.draftPath,
       sourceContent: chapter.sourceContent,
       draftContent: chapter.draftContent,
-      currentBody,
-      proposedText,
-      proposedBody,
+      sourceBody: chapter.sourceBody,
+      draftBody: chapter.draftBody,
       reviewBlocks,
-      mergedBody,
-      mergedContent,
+      reviewSession: readReviewSession(chapterPath),
     });
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
 });
 
-app.post("/api/apply", (req, res) => {
+app.post("/api/review-session/save", (req, res) => {
   try {
     const chapterPath = req.body?.chapterPath;
-    const proposedText = req.body?.proposedText || "";
-    const decisions = req.body?.decisions || {};
-    const previewOnly = Boolean(req.body?.previewOnly);
+    const blocks = req.body?.blocks || [];
 
-    if (!chapterPath || !proposedText.trim()) {
-      return res.status(400).json({ error: "chapterPath and proposedText are required." });
+    if (!chapterPath) {
+      return res.status(400).json({ error: "chapterPath is required." });
     }
 
-    const chapter = readChapterPair(chapterPath);
-    const parsedDraft = parseMarkdownDocument(chapter.draftContent);
-    const parsedProposed = parseMarkdownDocument(proposedText);
-    const currentBody = parsedDraft.body.trim();
-    const proposedBody = (Object.keys(parsedProposed.frontMatter).length ? parsedProposed.body : proposedText).trim();
-    const reviewBlocks = createReviewBlocks(currentBody, proposedBody);
-    const mergedBody = applyReviewDecisions(currentBody, proposedBody, reviewBlocks, decisions);
-    const mergedContent = rebuildMarkdown(parsedDraft.frontMatter, mergedBody);
-
-    if (!previewOnly) {
-      writeDraftChapter(chapterPath, mergedContent.endsWith("\n") ? mergedContent : `${mergedContent}\n`);
-    }
+    const saved = writeReviewSession(chapterPath, { blocks });
 
     return res.json({
       ok: true,
       chapterPath,
-      draftPath: chapter.draftPath,
-      mergedContent,
-      reviewBlocks,
+      sessionPath: saved.sessionPath,
+      reviewSession: saved.payload,
     });
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
 });
 
-app.post("/api/build", async (_req, res) => {
+app.post("/api/review-session/clear", (req, res) => {
   try {
-    const result = await runBuild();
-    res.json(result);
+    const chapterPath = req.body?.chapterPath;
+    if (!chapterPath) {
+      return res.status(400).json({ error: "chapterPath is required." });
+    }
+    clearReviewSession(chapterPath);
+    res.json({ ok: true, chapterPath });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(400).json({ error: error.message });
   }
 });
-
-function rebuildMarkdown(frontMatter, body) {
-  const lines = ["---"];
-  for (const [key, value] of Object.entries(frontMatter)) {
-    lines.push(`${key}: ${value}`);
-  }
-  lines.push("---", "", body.trim(), "");
-  return lines.join("\n");
-}
 
 app.listen(port, () => {
   console.log(`Review app listening on http://localhost:${port}`);

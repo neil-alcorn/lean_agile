@@ -4,6 +4,7 @@ const {
   parseMarkdownDocument,
   createReviewBlocks,
   applyReviewDecisions,
+  createHighlightedDiffHtml,
 } = require("../lib/review-logic");
 const { draftPathForChapterPath } = require("../lib/book-files");
 
@@ -80,4 +81,11 @@ run("draftPathForChapterPath maps source chapter into drafts tree", () => {
     draftPath,
     "book/drafts/chapters/05-agile-in-it-how-sprints-empower-teams-to-deliver-better-faster.md",
   );
+});
+
+run("createHighlightedDiffHtml marks insertions and deletions", () => {
+  const diff = createHighlightedDiffHtml("Paragraph one old.", "Paragraph one updated.");
+
+  assert.match(diff.currentHtml, /diff-removed/);
+  assert.match(diff.editHtml, /diff-added/);
 });

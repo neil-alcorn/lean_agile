@@ -6,6 +6,8 @@ const { ROOT, draftPathForChapterPath, resolveRepoPath } = require("./book-files
 const { parseMarkdownDocument } = require("./review-logic");
 
 const FIGURE_SLOT_RE = /<!--\s*FIGURE_SLOT:\s*([a-zA-Z0-9._-]+)\s*-->/g;
+const VISUAL_RE =
+  /<!--\s*VISUAL:\s*([a-zA-Z0-9._-]+)\s*\|\s*id:([a-zA-Z0-9._-]+)\s*\|\s*purpose:(.*?)-->/gi;
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -14,7 +16,23 @@ function readJson(filePath) {
 function resolveBookArtifacts() {
   const bookConfig = readJson(path.join(ROOT, "book", "config", "book.json"));
   const figures = readJson(path.join(ROOT, "book", "config", "figures.json"));
-  return { bookConfig, figures };
+  const assetsPath = path.join(ROOT, "book", "config", "assets.json");
+  const assets = fs.existsSync(assetsPath) ? readJson(assetsPath) : {};
+  return { bookConfig, figures, assets };
+}
+
+function assetToMarkdown(assetId, asset, issues) {
+  const sourcePath = asset.source_path || asset.path || "";
+  if (!sourcePath) {
+    issues.push(`Asset '${assetId}' has no source path.`);
+    return `[ASSET MISSING PATH: ${assetId}]`;
+  }
+  const imageLine = `![${asset.alt_text || asset.alt || assetId}](${sourcePath})`;
+  const parts = [imageLine];
+  if (asset.caption) parts.push(`*${asset.caption}*`);
+  if (asset.footer) parts.push(asset.footer);
+  if (asset.reference) parts.push(`Source: ${asset.reference}`);
+  return parts.join("\n\n");
 }
 
 function renderFigureMarkdown(slot, figures, issues) {
@@ -23,16 +41,36 @@ function renderFigureMarkdown(slot, figures, issues) {
     issues.push(`Unresolved figure slot: ${slot}`);
     return `[FIGURE MISSING: ${slot}]`;
   }
-  const imageLine = `![${figure.alt || slot}](${figure.path})`;
-  return figure.caption ? `${imageLine}\n\n*${figure.caption}*` : imageLine;
+  return assetToMarkdown(
+    slot,
+    {
+      source_path: figure.path,
+      alt_text: figure.alt,
+      caption: figure.caption,
+      footer: figure.footer,
+      reference: figure.reference,
+    },
+    issues,
+  );
 }
 
-function renderChapterBody(markdown, figures, issues) {
-  return markdown.replace(FIGURE_SLOT_RE, (_match, slot) => renderFigureMarkdown(slot, figures, issues));
+function renderChapterBody(markdown, figures, assets, issues) {
+  const withFigures = markdown.replace(FIGURE_SLOT_RE, (_match, slot) =>
+    renderFigureMarkdown(slot, figures, issues),
+  );
+
+  return withFigures.replace(VISUAL_RE, (_match, _kind, assetId) => {
+    const asset = assets[assetId];
+    if (!asset) {
+      issues.push(`Unresolved visual asset id: ${assetId}`);
+      return `[VISUAL MISSING: ${assetId}]`;
+    }
+    return assetToMarkdown(assetId, asset, issues);
+  });
 }
 
 function buildMarkdownBook() {
-  const { bookConfig, figures } = resolveBookArtifacts();
+  const { bookConfig, figures, assets } = resolveBookArtifacts();
   const issues = [];
   const chapterPaths = bookConfig.chapters
     .slice()
@@ -46,7 +84,7 @@ function buildMarkdownBook() {
   const renderedChapters = chapterPaths.map((chapterPath) => {
     const source = fs.readFileSync(chapterPath, "utf8");
     const parsed = parseMarkdownDocument(source);
-    return renderChapterBody(parsed.body.trim(), figures, issues);
+    return renderChapterBody(parsed.body.trim(), figures, assets, issues);
   });
 
   return {
@@ -127,10 +165,13 @@ async function runBuild() {
   fs.mkdirSync(buildDir, { recursive: true });
 
   const markdownPath = path.join(buildDir, "Lean-and-Agile.md");
+  const draftMarkdownPath = path.join(buildDir, "Lean-and-Agile-draft.md");
   const validationPath = path.join(buildDir, "validation-report.txt");
   const docxPath = path.join(buildDir, "Lean-and-Agile.docx");
+  const draftDocxPath = path.join(buildDir, "Lean-and-Agile-draft.docx");
 
   fs.writeFileSync(markdownPath, markdown, "utf8");
+  fs.writeFileSync(draftMarkdownPath, markdown, "utf8");
   fs.writeFileSync(
     validationPath,
     issues.length ? `${issues.join("\n")}\n` : "No validation issues detected.\n",
@@ -147,13 +188,16 @@ async function runBuild() {
 
   const buffer = await Packer.toBuffer(document);
   fs.writeFileSync(docxPath, buffer);
+  fs.writeFileSync(draftDocxPath, buffer);
 
   return {
     ok: true,
     issues,
     outputs: {
       markdown: "book/build/Lean-and-Agile.md",
+      draftMarkdown: "book/build/Lean-and-Agile-draft.md",
       docx: "book/build/Lean-and-Agile.docx",
+      draftDocx: "book/build/Lean-and-Agile-draft.docx",
       validation: "book/build/validation-report.txt",
     },
   };

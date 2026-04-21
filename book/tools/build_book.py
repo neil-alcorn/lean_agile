@@ -9,10 +9,15 @@ from docx import Document
 ROOT = Path(__file__).resolve().parents[2]
 BOOK_DIR = ROOT / "book"
 CHAPTERS_DIR = BOOK_DIR / "chapters"
+DRAFTS_DIR = BOOK_DIR / "drafts" / "chapters"
 CONFIG_DIR = BOOK_DIR / "config"
 BUILD_DIR = BOOK_DIR / "build"
 
 FIGURE_SLOT_RE = re.compile(r"<!--\s*FIGURE_SLOT:\s*([a-zA-Z0-9._-]+)\s*-->")
+VISUAL_RE = re.compile(
+    r"<!--\s*VISUAL:\s*([a-zA-Z0-9._-]+)\s*\|\s*id:([a-zA-Z0-9._-]+)\s*\|\s*purpose:(.*?)-->",
+    re.IGNORECASE,
+)
 SECTION_RE = re.compile(r"^(Introduction|Chapter\s+\d+|Epilogue)\b", re.IGNORECASE)
 CHAPTER_NUMBER_RE = re.compile(r"^Chapter\s+(\d+)\b", re.IGNORECASE)
 
@@ -102,7 +107,29 @@ def read_text(path):
     return Path(path).read_text(encoding="utf-8")
 
 
-def replace_figure_slots(body, figures, issues):
+def asset_to_markdown(asset_id, asset, issues):
+    source_path = asset.get("source_path", "")
+    if not source_path:
+        issues.append(f"Asset '{asset_id}' has no source_path.")
+        return f"\n[ASSET MISSING PATH: {asset_id}]\n"
+
+    alt = asset.get("alt_text", asset_id)
+    caption = asset.get("caption", "")
+    footer = asset.get("footer", "")
+    reference = asset.get("reference", "")
+    blocks = [f"![{alt}]({source_path})"]
+
+    if caption:
+        blocks.append(f"*{caption}*")
+    if footer:
+        blocks.append(footer)
+    if reference:
+        blocks.append(f"Source: {reference}")
+
+    return "\n" + "\n\n".join(blocks) + "\n"
+
+
+def replace_figure_slots(body, figures, assets, issues):
     def repl(match):
         slot = match.group(1)
         figure = figures.get(slot)
@@ -110,18 +137,34 @@ def replace_figure_slots(body, figures, issues):
             issues.append(f"Unresolved figure slot: {slot}")
             return f"\n[FIGURE MISSING: {slot}]\n"
 
-        alt = figure.get("alt", slot)
-        caption = figure.get("caption", "")
-        path = figure.get("path", "")
-        image_block = f"![{alt}]({path})"
-        if caption:
-            image_block += f"\n\n*{caption}*"
-        return "\n" + image_block + "\n"
+        return asset_to_markdown(
+            slot,
+            {
+                "source_path": figure.get("path", ""),
+                "alt_text": figure.get("alt", slot),
+                "caption": figure.get("caption", ""),
+                "footer": figure.get("footer", ""),
+                "reference": figure.get("reference", ""),
+            },
+            issues,
+        )
 
-    return FIGURE_SLOT_RE.sub(repl, body)
+    def visual_repl(match):
+        visual_kind = match.group(1)
+        asset_id = match.group(2)
+        _purpose = match.group(3).strip()
+        asset = assets.get(asset_id)
+        if not asset:
+            issues.append(f"Unresolved visual asset id: {asset_id}")
+            return f"\n[VISUAL MISSING: {visual_kind} | {asset_id}]\n"
+        return asset_to_markdown(asset_id, asset, issues)
+
+    body = FIGURE_SLOT_RE.sub(repl, body)
+    body = VISUAL_RE.sub(visual_repl, body)
+    return body
 
 
-def validate_chapter_file(chapter_path, figures):
+def validate_chapter_file(chapter_path, figures, assets):
     text = read_text(chapter_path)
     meta, body = parse_front_matter(text)
     issues = []
@@ -133,16 +176,20 @@ def validate_chapter_file(chapter_path, figures):
         if slot not in figures:
             issues.append(f"{chapter_path.name}: unresolved figure slot '{slot}'")
 
+    for _visual_kind, asset_id, _purpose in VISUAL_RE.findall(body):
+        if asset_id not in assets:
+            issues.append(f"{chapter_path.name}: unresolved visual asset '{asset_id}'")
+
     return issues
 
 
-def render_markdown_book(chapter_paths, figures):
+def render_markdown_book(chapter_paths, figures, assets):
     rendered = []
     for chapter_path in chapter_paths:
         text = read_text(chapter_path)
         _, body = parse_front_matter(text)
         issues = []
-        rendered_body = replace_figure_slots(body.strip(), figures, issues)
+        rendered_body = replace_figure_slots(body.strip(), figures, assets, issues)
         rendered.append(rendered_body.strip())
     return "\n\n---\n\n".join(part for part in rendered if part)
 
@@ -175,8 +222,8 @@ def add_markdown_to_docx(doc, markdown_text):
             doc.add_paragraph(raw_line)
 
 
-def build_docx(chapter_paths, figures, output_path):
-    markdown = render_markdown_book(chapter_paths, figures)
+def build_docx(chapter_paths, figures, assets, output_path):
+    markdown = render_markdown_book(chapter_paths, figures, assets)
     document = Document()
     add_markdown_to_docx(document, markdown)
     document.save(str(output_path))
@@ -186,6 +233,12 @@ def load_figures(figures_path):
     if not figures_path.exists():
         return {}
     return json.loads(figures_path.read_text(encoding="utf-8"))
+
+
+def load_assets(assets_path):
+    if not assets_path.exists():
+        return {}
+    return json.loads(assets_path.read_text(encoding="utf-8"))
 
 
 def load_book_config(config_path):
@@ -291,19 +344,37 @@ def chapter_paths_from_config(book_config):
     return paths
 
 
+def draft_chapter_paths_from_config(book_config):
+    paths = []
+    for item in sorted(book_config["chapters"], key=lambda row: row["chapter"]):
+        draft_path = DRAFTS_DIR / Path(item["path"]).name
+        if draft_path.exists():
+            paths.append(draft_path)
+        else:
+            paths.append(ROOT / item["path"])
+    return paths
+
+
 def build_outputs():
     book_config = load_book_config(CONFIG_DIR / "book.json")
     figures = load_figures(CONFIG_DIR / "figures.json")
+    assets = load_assets(CONFIG_DIR / "assets.json")
     chapter_paths = chapter_paths_from_config(book_config)
+    draft_paths = draft_chapter_paths_from_config(book_config)
 
     issues = []
     for chapter_path in chapter_paths:
-        issues.extend(validate_chapter_file(chapter_path, figures))
+        issues.extend(validate_chapter_file(chapter_path, figures, assets))
+    for chapter_path in draft_paths:
+        issues.extend(validate_chapter_file(chapter_path, figures, assets))
 
-    combined_markdown = render_markdown_book(chapter_paths, figures)
+    combined_markdown = render_markdown_book(chapter_paths, figures, assets)
+    draft_markdown = render_markdown_book(draft_paths, figures, assets)
     BUILD_DIR.mkdir(parents=True, exist_ok=True)
     write_text(BUILD_DIR / "Lean-and-Agile.md", combined_markdown)
-    build_docx(chapter_paths, figures, BUILD_DIR / "Lean-and-Agile.docx")
+    write_text(BUILD_DIR / "Lean-and-Agile-draft.md", draft_markdown)
+    build_docx(chapter_paths, figures, assets, BUILD_DIR / "Lean-and-Agile.docx")
+    build_docx(draft_paths, figures, assets, BUILD_DIR / "Lean-and-Agile-draft.docx")
     write_text(BUILD_DIR / "validation-report.txt", "\n".join(issues) if issues else "No validation issues detected.\n")
 
 
@@ -323,10 +394,11 @@ def main():
     if command == "validate":
         book_config = load_book_config(CONFIG_DIR / "book.json")
         figures = load_figures(CONFIG_DIR / "figures.json")
+        assets = load_assets(CONFIG_DIR / "assets.json")
         chapter_paths = chapter_paths_from_config(book_config)
         issues = []
         for chapter_path in chapter_paths:
-            issues.extend(validate_chapter_file(chapter_path, figures))
+            issues.extend(validate_chapter_file(chapter_path, figures, assets))
         print("\n".join(issues) if issues else "No validation issues detected.")
         return 0
 

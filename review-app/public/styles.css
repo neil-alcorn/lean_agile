@@ -76,10 +76,6 @@ body {
   gap: 16px;
 }
 
-.compare-grid-three {
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
 .field {
   display: grid;
   gap: 8px;
@@ -121,7 +117,8 @@ button:disabled {
 }
 
 .content-box,
-.review-block pre {
+.review-block pre,
+.diff-box {
   white-space: pre-wrap;
   background: #f7f9fb;
   border: 1px solid #d9e1e6;
@@ -143,6 +140,29 @@ button:disabled {
   background: #fbfcfd;
 }
 
+.review-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.block-status {
+  color: #5e6b76;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.diff-added {
+  background: #dff7df;
+  color: #135b13;
+}
+
+.diff-removed {
+  background: #fde0df;
+  color: #8b1f1b;
+}
+
 .subtitle,
 .status,
 .muted {
@@ -153,7 +173,8 @@ button:disabled {
   .layout,
   .input-grid,
   .compare-grid,
-  .review-columns {
+  .review-columns,
+  .review-fields {
     grid-template-columns: 1fr;
   }
 }

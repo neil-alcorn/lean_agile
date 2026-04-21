@@ -1,3 +1,5 @@
+const { diffWordsWithSpace } = require("diff");
+
 function parseMarkdownDocument(source) {
   if (!source.startsWith("---\n")) {
     return { frontMatter: {}, body: source };
@@ -60,6 +62,7 @@ function createReviewBlocks(currentBody, proposedBody) {
       type,
       currentText,
       proposedText,
+      ...createHighlightedDiffHtml(currentText, proposedText),
     });
   }
 
@@ -112,8 +115,41 @@ function applyReviewDecisions(currentBody, proposedBody, reviewBlocks, decisions
   return merged.join("\n\n");
 }
 
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function createHighlightedDiffHtml(currentText, proposedText) {
+  const currentParts = [];
+  const editParts = [];
+  const diff = diffWordsWithSpace(currentText || "", proposedText || "");
+
+  for (const part of diff) {
+    const safe = escapeHtml(part.value);
+    if (part.added) {
+      editParts.push(`<span class="diff-added">${safe}</span>`);
+      continue;
+    }
+    if (part.removed) {
+      currentParts.push(`<span class="diff-removed">${safe}</span>`);
+      continue;
+    }
+    currentParts.push(safe);
+    editParts.push(safe);
+  }
+
+  return {
+    currentHtml: currentParts.join(""),
+    editHtml: editParts.join(""),
+  };
+}
+
 module.exports = {
   parseMarkdownDocument,
   createReviewBlocks,
   applyReviewDecisions,
+  createHighlightedDiffHtml,
 };

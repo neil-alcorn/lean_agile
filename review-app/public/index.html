@@ -11,11 +11,13 @@
       <header class="page-header">
         <div>
           <h1>Lean and Agile Review App</h1>
-          <p class="subtitle">AI-driven chapter review with source control and build output.</p>
+          <p class="subtitle">Review Book Copy against Edit Copy, approve blocks, and leave temporary AI notes.</p>
         </div>
         <div class="actions">
-          <button id="reloadChaptersBtn">Reload Chapters</button>
-          <button id="buildBtn">Rebuild Book</button>
+          <button id="reloadChaptersBtn" title="Reload chapter files and draft files from disk. Use this after Codex updates files or after you pull new changes.">Reload Chapters</button>
+          <button id="compareBtn" disabled title="Compare the official book chapter against the current edit draft for the selected chapter.">Compare Book vs Edit</button>
+          <button id="saveSessionBtn" disabled title="Save your per-block decisions and notes as a temporary local review session that Codex can read later.">Save Review Session</button>
+          <button id="clearSessionBtn" disabled title="Clear the saved temporary review session for the selected chapter. This does not change the book or edit files.">Clear Review Session</button>
         </div>
       </header>
 
@@ -26,28 +28,12 @@
         </aside>
 
         <main class="main-column">
-          <section class="panel intake-panel">
-            <h2>Proposal Intake</h2>
-            <div class="input-grid">
-              <label class="field">
-                <span>Pasted text or Markdown</span>
-                <textarea id="proposalText" rows="10" placeholder="Paste proposed chapter text, AI revision, or feedback-driven rewrite here."></textarea>
-              </label>
-              <div class="field">
-                <span>DOCX intake</span>
-                <input id="docxFile" type="file" accept=".docx" />
-                <div id="docxStatus" class="status"></div>
-              </div>
-            </div>
-            <div class="actions">
-              <button id="usePastedTextBtn">Use Pasted Text</button>
-              <button id="compareBtn" disabled>Compare With Selected Chapter</button>
-            </div>
-          </section>
-
           <section class="panel compare-panel">
-            <h2>Compare</h2>
-            <div class="compare-grid compare-grid-three">
+            <div class="section-header">
+              <h2>Chapter Compare</h2>
+              <div id="chapterStatus" class="status"></div>
+            </div>
+            <div class="compare-grid">
               <div>
                 <h3>Build Copy</h3>
                 <pre id="currentContent" class="content-box"></pre>
@@ -56,25 +42,15 @@
                 <h3>Edit Copy</h3>
                 <pre id="draftContent" class="content-box"></pre>
               </div>
-              <div>
-                <h3>Proposed Text</h3>
-                <pre id="proposedContent" class="content-box"></pre>
-              </div>
             </div>
           </section>
 
           <section class="panel review-panel">
             <div class="section-header">
               <h2>Review Blocks</h2>
-              <button id="applyBtn" disabled>Apply Approved Changes</button>
+              <div id="reviewSummary" class="status"></div>
             </div>
             <div id="reviewBlocks" class="review-blocks"></div>
-          </section>
-
-          <section class="panel preview-panel">
-            <h2>Edit Copy Preview</h2>
-            <pre id="mergedPreview" class="content-box"></pre>
-            <div id="buildStatus" class="status"></div>
           </section>
         </main>
       </section>

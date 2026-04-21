@@ -1,5 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { parseMarkdownDocument } = require("./review-logic");
 
 const ROOT = path.resolve(__dirname, "..", "..");
 const BOOK_DIR = path.join(ROOT, "book");
@@ -92,6 +93,8 @@ function readChapterPair(relativePath) {
   const source = readChapter(relativePath);
   const { draftRelativePath, draftAbsolutePath } = ensureDraftForChapter(relativePath);
   const draftContent = fs.readFileSync(draftAbsolutePath, "utf8");
+  const parsedSource = parseMarkdownDocument(source.content);
+  const parsedDraft = parseMarkdownDocument(draftContent);
   const sourceStats = fs.statSync(source.absolutePath);
   const draftStats = fs.statSync(draftAbsolutePath);
 
@@ -103,6 +106,8 @@ function readChapterPair(relativePath) {
     draftAbsolutePath,
     sourceContent: source.content,
     draftContent,
+    sourceBody: parsedSource.body,
+    draftBody: parsedDraft.body,
     sourceLastModified: sourceStats.mtime.toISOString(),
     draftLastModified: draftStats.mtime.toISOString(),
   };

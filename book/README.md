@@ -7,9 +7,11 @@ This directory is the active source tree for the book.
 - `chapters/` contains the canonical manuscript source files.
 - `drafts/chapters/` contains the editable working copies used by the review app.
 - `assets/images/` contains graphics used by the book.
+- `assets/` contains the production asset folders for diagrams, tables, quotes, callouts, and images.
 - `notes/` contains editorial feedback, chapter review notes, and working guidance that has not yet been folded into prose.
 - `config/book.json` defines chapter order.
 - `config/figures.json` registers reusable figure assets and captions.
+- `config/assets.json` tracks richer visual assets, including captions, references, and attribution metadata.
 
 ## Build Workflow
 
