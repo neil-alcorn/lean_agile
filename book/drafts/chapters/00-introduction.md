@@ -33,15 +33,15 @@ Different Roles, Same Goal—Delivering Value and Quality
 
 At its core, this book is about alignment—helping executives and employees see their different roles as part of the same journey toward delivering value. IT teams, sales, operations, HR and others are often tasked with the work of translating leadership’s strategic goals into tangible results. They’re the ones who make the real magic happen, often under intense deadlines and with high expectations.
 
-Executives, on the other hand, are responsible for setting the vision, for deciding which methodologies to embrace and how to lead the organization forward. And yet, these roles share the same end goal: to deliver a product or service that brings quality and value. This book recognizes that employees to executives are essential to the process and aims to build a bridge between them by offering insights that both sides can use to work more effectively together.
+Executives, on the other hand, are responsible for setting the vision, for deciding which methodologies to embrace and how to lead the organization forward. And yet, these roles share the same end goal: to deliver a product or service that brings quality and value. This book recognizes that both coders and executives are essential to the process and aims to build a bridge between them by offering insights that both sides can use to work more effectively together.
 
-By understanding Lean, Agile, and ITIL in a broader, more flexible context, we can create a corporate environment where everyone feels aligned, valued, and ready to tackle the complexities of the AI age.
+By understanding Lean, Agile, and ITIL in a broader, more flexible context, we can create a corporate environment where coders and executives alike feel aligned, valued, and ready to tackle the complexities of the AI age.
 
 A Path Forward in a World of Change
 
 Lean and Agile are more than just frameworks; they’re philosophies that, when embraced, can redefine how organizations work and deliver results. This book aims to make these methodologies relatable, practical, and even enjoyable. So, whether you’re a coder, a manager, or an executive, this book will help you understand the purpose behind these approaches and how to use them to foster a culture of quality and adaptability in the ever-evolving digital landscape.
 
-Whether you’re here to better understand your role, to improve your team, or simply to find a way to survive the next corporate reorg with your sanity intact, this book is for you.  This is your guide to making sense of Lean and Agile—and finding purpose, pride, and maybe a bit of humor in the process.
+Whether you’re here to better understand your role, to improve your team, or simply to find a way to survive the next corporate reorg with your sanity intact, this book is for you. Whether you’re a coder, a project manager, an executive, or someone in-between, this book is your guide to making sense of Lean and Agile—and finding purpose, pride, and maybe a bit of humor in the process.
 
 Part 1: Foundations of Continuous Improvement
 

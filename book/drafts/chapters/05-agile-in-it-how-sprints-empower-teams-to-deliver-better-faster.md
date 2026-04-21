@@ -13,9 +13,9 @@ Meet Jordan, a product manager caught in the loop of shifting priorities, urgent
 
 For the first few weeks, everything feels like progress. The team is engaged. There are daily stand-ups, sleek slide decks, colorful Gantt charts, and a flurry of Slack messages that create the comforting illusion of forward momentum. Jordan feels like things are moving. The CTO mentions their project in a town hall, and an internal newsletter even highlights the “exciting work happening in digital transformation.”
 
-Then—right around month three—the first shift happens. A leadership priority changes, a high-paying client needs a feature yesterday, or someone at the VP level asks, "Why are we even doing this?" Suddenly, the carefully plotted roadmap is out the window. The project is re-scoped in a frantic Friday meeting, and by Monday, half the backlog has been deprioritized in favor of “more urgent” work.
+Then—right around week three—the first shift happens. A leadership priority changes, a high-paying client needs a feature yesterday, or someone at the VP level asks, "Why are we even doing this?" Suddenly, the carefully plotted roadmap is out the window. The project is re-scoped in a frantic Friday meeting, and by Monday, half the backlog has been deprioritized in favor of “more urgent” work.
 
-Jordan updates the roadmap, refocuses his team, and moves forward—again. There are more meetings, more executive check-ins, and even an impromptu workshop to get “alignment.” Another month passes, and ‘to get things back on track’ the project is re-scoped yet again.
+Jordan updates the roadmap, refocuses his team, and moves forward—again. There are more meetings, more executive check-ins, and even an impromptu workshop to get “alignment.” Another week passes, and the project is re-scoped yet again.
 
 Meanwhile, leadership still talks about “momentum.” Promotions are handed out for teams that are "driving digital transformation" even though nothing tangible has actually shipped. Burndown charts look more like burn-it-down charts, with work piling up faster than the team can clear it. Morale starts to dip, and the team—once excited—grows disengaged, knowing that whatever they’re working on today could be scrapped next week.
 
