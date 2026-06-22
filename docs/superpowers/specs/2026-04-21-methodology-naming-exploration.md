@@ -119,6 +119,115 @@ This is not the final naming decision. It is the first shortlist that survives t
 
 ### 1. Guided
 
+**Why it survives**
+
+- plain English
+- clearly signals human judgment over AI activity
+- broad enough for a whole operating model, not just software coding
+- close to the book's real argument: AI can execute faster, but people still need to guide intent, risk, governance, and adoption
+
+**Why it is risky**
+
+- can sound a little soft if not paired with strong supporting language
+- "guided" appears in software/product contexts, so the book subtitle and framing would need to do more work
+
+**Current verdict**
+
+Most promising overall.
+
+### 2. Steady
+
+**Why it survives**
+
+- strong contrast with chaos, churn, and AI-fueled thrash
+- supports the service-management and governance side of the method
+- sounds like something executives and practitioners could both say with a straight face
+
+**Why it is risky**
+
+- can sound slower or more conservative than the book intends
+- there are existing products and frameworks using the word, so it is not clean territory
+
+**Current verdict**
+
+Strong conceptually, but more collision-prone and slightly too calm.
+
+### 3. Sound
+
+**Why it survives**
+
+- one syllable
+- connotes sound judgment, sound engineering, and sound process
+- fits the book's case that rigor matters more, not less, in the AI era
+
+**Why it is risky**
+
+- discoverability is messy because "sound" is saturated with audio-related usage
+- the word can read as quality commentary rather than a movement or method name
+
+**Current verdict**
+
+Sharp and defensible, but commercially noisy.
+
+### 4. Measured
+
+**Why it survives**
+
+- ties naturally to Deming, metrics, pacing, and disciplined delivery
+- works beyond software because it speaks to management judgment and operational control
+- pushes against hype without sounding antique
+
+**Why it is risky**
+
+- less energetic than Agile or Lean
+- can drift toward "slow and bureaucratic" if we are not careful in framing
+
+**Current verdict**
+
+A sleeper candidate. Better than it first sounds.
+
+### 5. Sane
+
+**Why it survives**
+
+- blunt, memorable, anti-hype
+- directly rebukes the drift toward AI chaos, ritual excess, and management theater
+- easy to say and hard to forget
+
+**Why it is risky**
+
+- smug if mishandled
+- may sound like it is insulting existing methods or practitioners
+- collisions exist outside software and AI
+
+**Current verdict**
+
+Memorable, but highest tone risk.
+
+## Working Ranking
+
+If we had to narrow today, the current order is:
+
+1. Guided
+2. Measured
+3. Steady
+4. Sound
+5. Sane
+
+## Current Recommendation
+
+The real contenders right now are:
+
+- **Guided** if we want the clearest expression of human judgment, gates, and upstream decision quality
+- **Measured** if we want a more serious and enterprise-credible name anchored in discipline, evidence, and control
+- **Steady** if we want a more operational and service-aware signal, though this likely needs the most branding help
+
+Everything else should now be treated as:
+
+- rejected
+- secondary
+- or useful only as internal contrast
+
 Why it works:
 
 - simple

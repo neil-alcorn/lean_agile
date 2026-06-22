@@ -95,6 +95,8 @@ A common mistake teams make when adopting Agile is thinking that it’s about ge
 
 Agile isn’t about speed—it’s about flowing value sooner. Instead of waiting six months for a project to be “done,” Agile teams aim to deliver something useful at the end of every sprint—even if it’s a small piece of the bigger picture.
 
+That distinction matters even more in the age of AI. If code, drafts, prototypes, and first-pass solutions can now be produced far more quickly, then the point of Agile is not reduced to “machines make sprints obsolete.” The point of Agile becomes clearer: learning loops still matter, but the bottleneck is shifting from pure production toward context, prioritization, integration, and judgment.
+
 A well-functioning Agile team doesn’t feel like it’s moving fast in a chaotic way. It feels focused. Work moves forward in predictable cycles. Feedback happens in real-time. Adjustments are made while there’s still time to act on them.
 
 Most importantly, Agile gives teams the ability to course-correct before it’s too late.
@@ -116,6 +118,8 @@ A Guide, Not a Boss
 A common misconception is that Scrum Masters and Black Belts are just another layer of management. In reality, they have no formal authority over the team—their influence comes from expertise, facilitation skills, and the ability to build trust and engagement.
 
 If Lean Six Sigma has Black Belts, Agile has Scrum Masters. Both roles serve as the heartbeat of improvement, but their focus differs slightly:
+
+This is one of those places where organizations change labels faster than they change needs. The title may differ, but the recurring organizational problem is familiar: someone has to facilitate better work, expose friction, and help teams improve without becoming a miniature bureaucrat with a calendar.
 
 Black Belts focus on reducing waste and improving efficiency. They take a broad view, often working across multiple teams or departments to optimize systems holistically, identifying bottlenecks and eliminating inefficiencies.
 

@@ -7,7 +7,7 @@ source: Lean and Agile.docx
 ---
 
 # Epilogue: The End of the Beginning
-We’ve covered a lot of ground—from Lean and Agile to Six Sigma, ITIL, and AI. But at the core of it all, this book has been about something much simpler: the pursuit of quality, the power of continuous improvement, and the role that leadership, culture, and process play in making that happen.
+We’ve covered a lot of ground—from Lean and Agile to Six Sigma, ITIL, PMBOK, BABOK, and AI. But at the core of it all, this book has been about something much simpler: the pursuit of quality, the power of continuous improvement, and the role that leadership, culture, data, and process play in making that happen.
 
 More than anything, it’s been about people.
 
@@ -16,6 +16,8 @@ Leaders who want to drive improvement but are overwhelmed by complexity.
 Organizations that aspire to deliver value but struggle to align efforts.
 
 W. Edwards Deming understood this better than anyone. He didn’t just teach quality management—he transformed the way businesses operate by proving that the most significant improvements don’t come from tools, software, or quick fixes. They come from a commitment to long-term change, from leaders who remove barriers, and from teams that take pride in their work.
+
+He also understood something organizations still resist because it ruins several convenient excuses at once: if you want a better culture, you need better process and better use of data. Those are not separate projects. They are different windows into the same system.
 
 Deming’s 14 Points Revisited
 

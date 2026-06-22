@@ -37,6 +37,8 @@ Psychological Safety: The Foundation of Progress
 
 W. Edwards Deming’s call to “Drive out fear” highlights a fundamental truth: fear is the enemy of trust, creativity, and continuous improvement. Psychological safety—the assurance that one can speak honestly without fear of retribution—underpins a healthy, innovative workplace. As Stephen Covey explains in The Speed of Trust, trust isn’t just a soft skill; it’s an economic driver. When trust is present, collaboration accelerates, decision-making improves, and progress becomes sustainable. Psychological safety lays the groundwork for this trust, enabling teams to innovate and solve problems effectively.
 
+It also improves data quality. In fearful cultures, bad news gets softened, process issues go unnamed, and metrics become performance props instead of learning tools. A speak-up culture is not merely nice. It is one of the few reliable ways to keep process, data, and decision-making connected to reality.
+
 Why Psychological Safety Drives Results
 
 Psychological safety enables organizations to unlock hidden potential by fostering an environment where employees feel empowered to contribute. This cultural shift directly impacts performance metrics, driving measurable improvements across the board:

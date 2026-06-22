@@ -73,6 +73,8 @@ Eliminate Waste: Look for steps that don’t add value, such as unnecessary meet
 
 Measure and Improve: Use data-driven analysis to monitor progress and ensure changes are sustainable.
 
+This is also where process management quietly becomes culture management. When teams map the work, measure what matters, and manage the process in the open, people stop arguing only from instinct and memory. That does not remove disagreement, but it does make the disagreement more honest.
+
 Unlike the visible inefficiencies of manufacturing, IT waste is sneaky. It hides in the delays between tasks, the duplicated efforts, and the energy spent navigating bureaucracy. Lean Six Sigma brings these hidden inefficiencies into the light.
 
 A New Lens for IT Work
@@ -92,6 +94,8 @@ The beauty of Lean Six Sigma is that it forces teams to confront the reality of 
 In IT, where the work is complex and constantly evolving, this shift is critical. Without it, teams risk falling into a cycle of busywork that masks deeper inefficiencies. But with Lean Six Sigma, IT teams gain the clarity, tools, and mindset to focus on what truly matters: solving problems, creating value, and continuously improving.
 
 The 8 Types of Waste in IT (Lean’s Contribution)
+
+<!-- VISUAL: comparison-table | id:framework-map-ai-era | purpose: Reinforce how Lean identifies waste and flow while complementing Agile, ITIL, PMBOK, and BABOK rather than competing with them. -->
 
 Imagine a manufacturing floor: a malfunctioning conveyor belt stops production, piles of unsold inventory clutter storage space, or machines sit idle due to poor scheduling. The waste is visible, tangible, and easy to point out. Now, step into an IT department. There are no machines or conveyor belts—at least not in the physical sense. But make no mistake: the waste is still there. It’s just harder to see.
 
