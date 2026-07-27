@@ -78,6 +78,18 @@ The feedback suggests a future measurement appendix or chapter covering:
 - flow efficiency
 - value alignment
 
+## Status Addendum (2026-07-26 measurement pass, drafts/chapters/)
+
+Applied against the revised draft copies, not the stable `chapters/` copies:
+
+- Major Gap 1 (Ch. 5 measurement section): **addressed** — "Measuring Agile Success (Without Weaponizing the Numbers)": velocity-as-planning-only, commitment accuracy with healthy bands, P85 cycle time vs. averages, lead-time/cycle-time gap as queue diagnosis, Little's Law tie-back to Ch. 4.
+- Major Gap 3 (Ch. 6 worked example + ITIL metrics): **addressed** — "The Numbers That Tell the Truth": MTTR with detect/engage/restore segmentation, change success rate as upstream-context diagnostic, availability translated to hours-per-year, worked before/after example in Priya's scenario (figures illustrative pending real data — flagged in-file).
+- Major Gap 4 (hidden factory → measurable link): **addressed** — Ch. 1 now defines rework rate with the 10-person/30%/3-FTE worked example and the Deming don't-weaponize rule.
+- Ch. 12 learning metrics: **addressed** — "Giving Learning a Number": time to competence (ties to Ch. 10 ladder problem), repeat-issue rate, improvement adoption, skill coverage.
+- Gap 6 (Ch. 10/11 overlap): **resolved by revision** — drafts now split as human-side (10) vs. operating-posture (11), with the jobs-misdiagnosis, induced-demand pattern, ladder problem, and reach/trust threads in 10 and the compressed-adjustment-cycle argument in 11. See `ai-era-logic-brief.md`.
+- Gap 7 (percentiles over averages): **applied** in every new measurement passage (P85 in Ch. 5 and Ch. 6).
+- Still open: Gap 2 (metrics concentrated in Ch. 4 — now partially diffused), Gap 5 (dedicated measurement appendix decision), and all citation/data EDITORIAL_NOTEs awaiting real-world evidence from the research emails.
+
 ## Usage Rule
 
 Do not treat this file as manuscript prose. It is a tracked editorial backlog.

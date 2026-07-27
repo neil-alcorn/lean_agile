@@ -59,6 +59,18 @@ But because the AI era punishes organizations that are vague, theatrical, contra
 
 It is less a new doctrine than a way of keeping the main thing the main thing while the tools get faster.
 
+Why Now: The Compressed Adjustment Cycle
+
+Every major tool since the Industrial Revolution has followed the same arc: it raised the general quality of life while disrupting specific trades along the way, and the humane-or-brutal character of that disruption was decided less by the technology than by the people running the organizations that adopted it.
+
+That part is not new. What is new is the clock speed.
+
+Photography took decades to redistribute professional roles. Desktop publishing took years. AI-driven shifts are arriving in quarters. A compressed adjustment cycle means less time for individuals to retrain, less time for teams to renegotiate their roles, and less time for leaders to notice a mistake before it compounds.
+
+Compression does not change what good leadership is. It changes how visible the difference becomes. A well-led organization and a poorly-led one, given the same tools, used to drift apart over a decade. Now the gap opens in a year, in public, in the metrics. The technology is an amplifier of management quality in both directions — which is precisely why an operating posture, not a tool purchase, is the decision that matters.
+
+<!-- VISUAL: chart | id:adoption-compression-timeline | purpose: Show adoption cycles compressing from 75 years (telephone) to 2 months (ChatGPT), making the case that leaders have less time to adapt than any previous generation of tools allowed. -->
+
 What the Older Methods Still Contribute
 
 Lean still contributes waste awareness, flow thinking, and respect for the people closest to the work.

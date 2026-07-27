@@ -43,6 +43,16 @@ One of the most pervasive yet overlooked challenges in any organization is what 
 
 For example, in a software development team, frequent bugs in production may lead developers to create temporary workarounds instead of addressing the root problem. Over time, this habit becomes ingrained, creating a culture where rework is normalized and unchallenged. Though this rework is “invisible” and not tracked as part of official project timelines, its impact is costly, both financially and in terms of team morale.
 
+The hidden factory stays hidden for a simple reason: nobody has assigned it a number. So assign it one.
+
+**Rework rate = time spent on unplanned, corrective work ÷ total work time.**
+
+That is the whole formula. The measurement challenge is not the arithmetic; it is the honesty. Bug fixes, re-done requirements, tickets reopened, reports rebuilt because the first version answered the wrong question, workarounds maintained by hand every Friday — all of it counts as the numerator, whether or not the project plan admits it exists.
+
+Run the number and the invisible becomes uncomfortably visible. A ten-person team running a 30 percent rework rate — a figure many teams meet or exceed the first time they look — is quietly staffing a three-person hidden factory. Three full-time employees, on the payroll, producing nothing new. No budget line shows them. No org chart contains them. But they show up every day, and the exhaustion on the team is partly their salary.
+
+One caution, and it is pure Deming: the number exists to make the system visible, not to grade the people trapped inside it. The developer maintaining the Friday workaround is not the problem; the process that made the workaround necessary is. Measure the rework to find the root cause. The moment the rework rate becomes a performance target, people will stop reporting rework, and the factory will simply go back underground — with better lighting.
+
 This all reaches a boiling point eventually and it’s decided a complete reset is necessary.  We need to adopt some new technology, vendor or method that will solve all our problems.  Unfortunately, without addressing the culture and root cause on perceptions of quality it will only last a few years until another reset is needed.  The cycle is just long enough that it can be explained away as isolated problems and leaders move around too often to see the pattern.
 
 In Deming’s view, quality is built, not inspected, meaning that true quality comes from processes designed to prevent errors from occurring, rather than from fixing them after the fact. Applying this to IT, organizations can reduce rework by creating robust, well-documented systems and empowering employees to address issues systematically, not reactively.
@@ -132,7 +142,3 @@ The Bigger Picture:
 How aligned are your daily efforts with the long-term goals of your organization?
 
 What steps could you take to ensure that your team’s focus on quality supports those broader objectives?
-
-<!-- FIGURE_SLOT: hidden-costs-of-rework -->
-
-<!-- EDITORIAL_NOTE: Connect the hidden factory concept to a measurable rework-rate formula. -->

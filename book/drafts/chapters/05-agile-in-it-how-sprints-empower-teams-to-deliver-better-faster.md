@@ -683,6 +683,22 @@ They simply adjust and keep moving forward.
 
 This is Agile in action.
 
+Measuring Agile Success (Without Weaponizing the Numbers)
+
+Jordan’s team got better before any dashboard could prove it. That is normal. But “trust me, it feels better” is not a sentence that survives contact with a CFO, and — more importantly — a team cannot improve a system it cannot see. So here are the four numbers worth watching, what each one is for, and the specific way each one gets ruined.
+
+**Velocity** is the average story points a team completes per sprint. Its only legitimate job is planning: if the team historically finishes about 30 points, do not commit to 50. That is the entire use case. The moment velocity becomes a performance target — compared across teams, praised in reviews, demanded upward — teams will deliver exactly what was asked: bigger numbers. Points inflate, estimates balloon, and velocity “improves” while nothing ships faster. Velocity is a weather report, not a grade.
+
+**Commitment accuracy** is delivered points ÷ committed points. A team living around 85 to 95 percent is planning honestly. A team chronically at 60 percent is not lazy — its planning is fiction, usually because someone upstream keeps stuffing the sprint. And a team that hits exactly 100 percent every single sprint deserves a gentle question too, because perfect predictability usually means comfortable sandbagging. The healthy sign is not perfection; it is honesty with a small error bar.
+
+**Cycle time** is the clock from when work starts to when it is done — and here averages will lie to you with a straight face. A team can have an average cycle time of four days while one item in six takes three weeks. Ask instead for the 85th percentile: “85 percent of our items finish within ___ days.” That is the number that answers the only question stakeholders actually ask — *when will it really be done* — and it is the number that exposes the stuck items an average politely launders away.
+
+**Lead time** starts the clock earlier: from when the work was requested, not when the team picked it up. The gap between lead time and cycle time is the invisible queue — work aging in a backlog while the customer waits. When lead time is twelve weeks and cycle time is one, the team does not have a speed problem. It has a waiting problem, and no amount of working faster will fix a line that forms before the work begins.
+
+These four connect through a relationship Chapter 4 already introduced: Little’s Law says cycle time rises with work in progress. Which yields the cheapest process improvement in this entire book — start less. A team that stops starting and starts finishing will watch its cycle time drop without anyone working a single extra hour.
+
+One rule governs all four numbers, and it is the same rule as Chapter 1’s rework rate: measure the system, not the people. Every one of these metrics is a diagnostic for finding where the process fights the team. The day any of them becomes a target for individuals is the day the numbers begin lying — politely, precisely, and permanently.
+
 Reflection Questions
 
 When priorities shift in your team, how does work actually get adjusted? Are changes deliberate, or do they create chaos? How would Agile’s iterative approach change that?
@@ -695,4 +711,3 @@ Is AI already supporting Agile in your organization, or is it an untapped resour
 
 If you were to introduce one Agile experiment in the next month, what would it be? Could it be a better stand-up, a structured retrospective, or limiting work-in-progress to improve flow?
 
-<!-- EDITORIAL_NOTE: Add a measurement section covering velocity, cycle time percentiles, commitment accuracy, and lead time. -->

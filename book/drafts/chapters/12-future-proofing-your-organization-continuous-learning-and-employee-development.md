@@ -214,6 +214,20 @@ Some of that is useful. But learning becomes much more powerful when the organiz
 
 That is how learning becomes continuous improvement instead of continuing education.
 
+Giving Learning a Number
+
+Training hours logged is a measure of attendance, not learning. If learning is going to be managed as seriously as delivery, it needs numbers that describe whether the organization is actually getting smarter. Four candidates earn their keep:
+
+**Time to competence** — the time from when a person starts a new role, tool, or responsibility until they can work unsupervised, where “unsupervised” is defined by a short, concrete checklist agreed in advance, not by vibes. This is the metric that reveals whether the apprenticeship still works — the ladder problem from Chapter 10, in measurable form. If AI has absorbed the junior work and time to competence is quietly stretching, the pipeline is starving and no amount of hiring seniors will fix it.
+
+**Repeat-issue rate** — incidents or defects recurring from an already-known root cause ÷ total incidents or defects. This is the single sharpest test of organizational learning, because it distinguishes *resolving* problems from *learning* from them. A team can close every ticket on time and still have a repeat-issue rate that says the organization has learned nothing all year.
+
+**Improvement adoption** — the count of frontline-proposed improvements that actually reached standard work this quarter. Not suggestions collected; changes adopted. This measures whether learning travels upward and outward or dies in a suggestion box. A big collection number with a small adoption number is not a learning culture. It is a listening performance.
+
+**Skill coverage** — for each critical skill or system, how many people can genuinely hold it. Every entry sitting at one is a resignation letter away from being an outage. Watching this number forces the succession conversations that organizations otherwise schedule for the week after the crisis.
+
+The same governing rule applies here as everywhere else in this book: these numbers diagnose the system. The moment time-to-competence becomes a stopwatch held on individuals, or repeat-issue rate becomes a stick, people will game the checklist and stop connecting incidents to old root causes — and the organization will be measurably ignorant of its own ignorance, which is the most expensive kind.
+
 What a Sane Learning Culture Looks Like
 
 A sane learning culture is not one where everyone is permanently in training.

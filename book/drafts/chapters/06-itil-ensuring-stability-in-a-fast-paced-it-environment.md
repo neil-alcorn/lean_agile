@@ -247,6 +247,20 @@ If leadership manages by anecdote, culture will become political.
 
 That chain is more common than most organizations like to admit.
 
+The Numbers That Tell the Truth
+
+If a service is going to be managed in the open, three numbers do most of the honest work. None of them is exotic. All of them are routinely ruined.
+
+**Mean time to restore (MTTR)** is total downtime ÷ number of incidents — how long, on average, customers wait for the service to come back. The word to distrust is *average*. A team with an MTTR of two hours may resolve most incidents in twenty minutes and then lose an entire day twice a quarter, and it is those two days the customers will remember. So look at the 85th percentile alongside the mean, and split the clock into its real segments: how long to *detect*, how long to *engage the right person*, how long to *restore*. Organizations are frequently shocked to discover the fix took eleven minutes and finding the person who could apply it took three hours. That is not a technology problem. It is an ownership problem wearing a pager.
+
+**Change success rate** is changes implemented without causing an incident or rollback ÷ total changes. Healthy operations tend to live above 95 percent. But the diagnostic value is in the failures: when the rate sags, the reflex is to add more approval steps, and the approvals almost never help — because most failed changes do not fail from insufficient signatures. They fail from missing context: an undocumented dependency, an environment nobody knew had drifted, a consumer of the service nobody told. A falling change success rate is an upstream information problem, which is exactly why this chapter keeps insisting that context travel with the work.
+
+**Availability** is the percentage of time the service actually works, and it is best understood translated out of decimal worship. 99.9 percent availability is about eight and a half hours of downtime a year. 99.99 percent is about fifty-three minutes. Each additional nine costs real money — redundancy, failover, on-call depth — and the sane question is not “how many nines can we get?” but “what does one more nine buy this particular service’s customers, and what would they rather we spend the money on?” A reporting tool and a payment system do not deserve the same answer.
+
+A worked example, from Priya’s world. Before the reset, her service logged 14 incidents a quarter with an “acceptable” MTTR of two hours — an average concealing two all-day disasters — and a change success rate of 88 percent, which everyone explained away one change at a time. Afterward, with the process mapped and ownership explicit, incidents fell to nine, but the more telling shift was inside the clock: detection time fell by half because monitoring finally watched what customers experience, and engagement time collapsed because nobody had to ask who owned the service anymore. The change success rate climbed to 96 percent — not because approvals multiplied, but because change records started arriving with their context attached. Same team. Same technology. The difference was that the system had become legible enough to improve.
+
+<!-- EDITORIAL_NOTE: Worked-example figures are illustrative pending real data from the measurement research (see notes/ai-era-logic-brief.md); replace or validate with actual MTTR/CSR ranges when available. -->
+
 Takeaway Insight: Stability Enables Better Change
 
 Many organizations still treat stability as the boring cousin of innovation.

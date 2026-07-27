@@ -52,6 +52,42 @@ Judgment about what is missing.
 Judgment about what problem is actually being solved.
 Judgment about where the machine is helpful and where it is confidently wandering off into the woods.
 
+This Has Happened Before
+
+The question people actually ask about AI — usually at night, usually about themselves — is simpler than any of that: “Will it take my job?”
+
+It is an honest question. It is also the wrong one, in roughly the way “Will the camera kill painting?” was the wrong question in 1850.
+
+The better question is: what happens to work when something that used to be scarce becomes cheap?
+
+History has run this experiment several times, and the results are stranger than either the optimists or the doomsayers predict.
+
+When photography arrived, portrait painters had every reason to panic. A machine could do in a minute what took them weeks. What happened next was not fewer images made by fewer people. The number of images of human faces exploded by orders of magnitude. Photography became a profession that had never existed. Painting did not die; it moved, specializing into what a camera could not do. And when the smartphone made photography effectively free, we did not get fewer photographs. We got more photographs taken every few minutes than the entire nineteenth century produced — along with wedding photographers, photojournalists, product photographers, and a whole economy of people paid to point cameras at things.
+
+YouTube ran the same experiment on video. Production and distribution used to require a studio, a broadcast license, and someone’s permission. YouTube collapsed the cost of distribution to nearly zero, and the result was not less video work for fewer people. It was more video produced in a year than the old industry managed in decades, done by job titles that did not previously exist: creator, editor, thumbnail designer, channel strategist.
+
+Here is the pattern: when a tool collapses the cost of making a thing, the world does not make the same amount of that thing with fewer people. It makes vastly more of the thing, with different people, in different roles. Economists have names for cousins of this pattern — induced demand, the Jevons paradox — but you do not need the vocabulary to see the shape.
+
+<!-- EDITORIAL_NOTE: Attribution pass — Jevons deserves a graceful name-check; verify photography/video volume claims before print. -->
+
+Software is next in line. AI is collapsing the cost of producing code, and any confident prediction that this means fewer software careers has to explain why software would break a pattern that photography, video, spreadsheets, and desktop publishing all followed. The likelier outcome is more software than anyone can currently absorb — which is exactly what the opening scenario of this chapter shows, and exactly why judgment became the bottleneck.
+
+The Honest Part: Two Things Are True at Once
+
+If the chapter stopped there, it would be a pep talk, and you have already sat through enough of those.
+
+The field grows, and your particular rung of the ladder can still disappear. The portrait painter of 1850 was not comforted by the news that “imaging, as a sector” would be fine. Aggregate statistics are a cold companion when the disruption lands on your own desk. A leader who quotes the photography story to a worried team without acknowledging this has stopped leading and started marketing.
+
+It is also worth being honest about what is actually driving many of the layoffs that arrive wearing an AI name tag. AI transformation is expensive up front — compute, licenses, data work, integration — and its returns arrive later. Headcount is the fastest budget lever an organization has, whether or not the tools replaced anyone’s actual work. And “AI efficiencies” makes a much better press release than “we cut staff to fund a capital bet.” The first sounds like the future. The second sounds like a gamble. So the replacement story gets told more often than it happens.
+
+<!-- EDITORIAL_NOTE: Needs citation — AI capex vs. headcount reallocation reporting; keep claim at “a significant and under-reported driver,” not “the dominant driver,” until sourced. -->
+
+The distinction matters to leaders for a practical reason: if you believe the machine replaced the work, you will not backfill the judgment — and the work will come back as rework, in the hidden factory, where this book started.
+
+And there is one place where the historical analogy genuinely creaks. Call it the ladder problem. The camera never threatened the way painters learned to paint. But AI is unusually good at exactly the work we have always given to beginners — the first-draft code, the routine analysis, the standard ticket. Junior work was never just output; it was the apprenticeship by which a profession grows its seniors. An organization can automate its bottom rungs, enjoy the savings for five years, and then look up to discover it has nobody ready to become the judgment it now depends on.
+
+That is not an argument against the tools. It is an argument that the apprenticeship must be rebuilt on purpose — around judgment, context, and verification rather than syntax — because it will no longer happen by accident. That is a leadership decision. No model will make it for you.
+
 AI as a Partner, Not a Replacement
 
 That phrase can sound annoyingly safe, as if it were drafted by a committee charged with preventing panic during a product launch. But it remains mostly right.
@@ -213,6 +249,20 @@ AI does not erase the old managerial sins. It reveals them in higher resolution.
 
 <!-- VISUAL: comparison-table | id:terminology-crosswalk | purpose: Clarify which older terms and roles still apply in the AI era, what shifts in meaning, and which concepts are genuinely new. -->
 
+The Other Thing That Got Cheap: Reach
+
+Production is not the only cost AI collapsed. So did influence.
+
+One person with these tools can now produce a month’s worth of communication in an afternoon — polished, confident, and multiplied across every channel the organization owns. This is genuinely useful. It is also the same amplifier that made photographs multiply and videos multiply, now attached to persuasion.
+
+Two uncomfortable corollaries follow.
+
+First, intentionality has to scale with reach. When broadcasting was hard, a careless memo died in one inbox. Now a half-considered position can be everywhere, beautifully formatted, before its author has finished considering it. The easier it becomes to say things, the more deliberate a leader must be about what is worth saying. The effort that used to go into production must now go into intent.
+
+Second, deception scales on the same curve as truth. The amplifier does not check credentials. Errors, spin, and outright fabrication propagate at the same speed and polish as legitimate insight, and the reader’s old heuristic — did this look professionally produced? — is now worthless, because everything looks professionally produced. The old wisdom literature spent a surprising amount of ink on honest scales and careful speech; its authors never met a language model, but they understood amplification. The practical translation for a modern leader: accuracy, sourcing, and honesty about uncertainty are no longer courtesies. They are the scarce assets.
+
+In a world where anyone can sound credible, being credible — slowly, verifiably, over years — becomes the one differentiator no tool can generate. Trust is the single deliverable that cannot be batch-produced.
+
 What a Sane AI Posture Looks Like
 
 This is where the book’s newer theme should stay practical.
@@ -284,3 +334,5 @@ Reflection Questions
 - Which management failures would AI amplify most quickly in your organization?
 - What parts of human judgment are becoming more valuable, not less, as execution gets faster?
 - If AI made your current process ten times faster tomorrow, which problems would become impossible to ignore?
+- If AI absorbs your team’s junior work, what is your deliberate plan for growing the next generation of senior judgment — and who owns that plan?
+- Your communication reach has multiplied. Has your care in using it multiplied to match? What would it be worth to be the one source people never have to double-check?
