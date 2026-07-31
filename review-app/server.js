@@ -1,13 +1,19 @@
 const express = require("express");
 const path = require("node:path");
+const { execFile } = require("node:child_process");
 const mammoth = require("mammoth");
 
 const {
+  ROOT,
   listChapters,
   readChapterPair,
+  writeChapter,
+  writeDraftChapter,
 } = require("./lib/book-files");
 const {
   createReviewBlocks,
+  applyEditedBlocks,
+  replaceDocumentBody,
 } = require("./lib/review-logic");
 const {
   readReviewSession,
@@ -100,6 +106,126 @@ app.post("/api/compare", (req, res) => {
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
+});
+
+app.post("/api/apply-edits", (req, res) => {
+  try {
+    const chapterPath = req.body?.chapterPath;
+    const blocks = req.body?.blocks || [];
+    if (!chapterPath) {
+      return res.status(400).json({ error: "chapterPath is required." });
+    }
+
+    const chapter = readChapterPair(chapterPath);
+    const { body, changed } = applyEditedBlocks(chapter.draftBody.trim(), blocks);
+
+    if (changed) {
+      const newContent = replaceDocumentBody(chapter.draftContent, body);
+      writeDraftChapter(chapterPath, newContent);
+    }
+
+    const applied = new Set(
+      blocks
+        .filter((b) => b.status === "accepted" && (b.editedText || "").trim())
+        .map((b) => b.id)
+    );
+    const remaining = blocks.map((b) =>
+      applied.has(b.id) ? { ...b, editedText: "" } : b
+    );
+    writeReviewSession(chapterPath, { blocks: remaining });
+
+    const fresh = readChapterPair(chapterPath);
+    return res.json({
+      ok: true,
+      changed,
+      chapterPath,
+      draftContent: fresh.draftContent,
+      sourceContent: fresh.sourceContent,
+      reviewBlocks: createReviewBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
+      reviewSession: readReviewSession(chapterPath),
+    });
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+});
+
+app.post("/api/promote", (req, res) => {
+  try {
+    const chapterPath = req.body?.chapterPath;
+    if (!chapterPath) {
+      return res.status(400).json({ error: "chapterPath is required." });
+    }
+
+    const chapter = readChapterPair(chapterPath);
+    const reviewBlocks = createReviewBlocks(
+      chapter.sourceBody.trim(),
+      chapter.draftBody.trim()
+    );
+
+    if (reviewBlocks.length > 0) {
+      const session = readReviewSession(chapterPath);
+      const statuses = new Map(
+        (session?.blocks || []).map((b) => [b.id, b.status])
+      );
+      const unapproved = reviewBlocks.filter(
+        (b) => statuses.get(b.id) !== "accepted"
+      );
+      if (unapproved.length > 0) {
+        return res.status(409).json({
+          error: `${unapproved.length} block(s) are not accepted yet. Accept every block (or resolve flags) before promoting.`,
+        });
+      }
+    }
+
+    writeChapter(chapterPath, chapter.draftContent);
+    clearReviewSession(chapterPath);
+
+    const fresh = readChapterPair(chapterPath);
+    return res.json({
+      ok: true,
+      chapterPath,
+      sourceContent: fresh.sourceContent,
+      draftContent: fresh.draftContent,
+      reviewBlocks: createReviewBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
+    });
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+});
+
+app.get("/api/history", (req, res) => {
+  const chapterPath = req.query.path;
+  if (!chapterPath) {
+    return res.status(400).json({ error: "path is required." });
+  }
+  const draftPath = chapterPath.replace("book/chapters/", "book/drafts/chapters/");
+  execFile(
+    "git",
+    [
+      "log",
+      "-n",
+      "12",
+      "--date=format:%Y-%m-%d %H:%M",
+      "--pretty=format:%h%x09%ad%x09%s",
+      "--",
+      chapterPath,
+      draftPath,
+    ],
+    { cwd: ROOT },
+    (error, stdout) => {
+      if (error) {
+        return res.status(500).json({ error: error.message });
+      }
+      const entries = stdout
+        .split("\n")
+        .filter(Boolean)
+        .map((line) => {
+          const [hash, date, ...subject] = line.split("\t");
+          return { hash, date, subject: subject.join("\t") };
+        });
+      return res.json({ chapterPath, entries });
+    }
+  );
 });
 
 app.post("/api/review-session/save", (req, res) => {

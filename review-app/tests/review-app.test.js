@@ -89,3 +89,33 @@ run("createHighlightedDiffHtml marks insertions and deletions", () => {
   assert.match(diff.currentHtml, /diff-removed/);
   assert.match(diff.editHtml, /diff-added/);
 });
+
+const { applyEditedBlocks, replaceDocumentBody } = require("../lib/review-logic");
+
+run("applyEditedBlocks writes accepted edited wording into the draft body", () => {
+  const draft = "# Chapter 5\n\nParagraph one updated.\n\nParagraph two.";
+  const { body, changed } = applyEditedBlocks(draft, [
+    { id: "block-1", status: "accepted", editedText: "Paragraph one, editor's cut." },
+    { id: "block-2", status: "flagged", editedText: "Should be ignored." },
+  ]);
+  assert.equal(changed, true);
+  assert.match(body, /editor's cut/);
+  assert.match(body, /Paragraph two\./);
+  assert.doesNotMatch(body, /Should be ignored/);
+});
+
+run("applyEditedBlocks reports no change when nothing accepted has edits", () => {
+  const draft = "# Chapter 5\n\nParagraph one.";
+  const { changed } = applyEditedBlocks(draft, [
+    { id: "block-1", status: "accepted", editedText: "" },
+  ]);
+  assert.equal(changed, false);
+});
+
+run("replaceDocumentBody preserves front matter", () => {
+  const full = "---\nchapter: 05\ntitle: Chapter 5\n---\n\n# Old body\n";
+  const result = replaceDocumentBody(full, "# New body\n\nParagraph.");
+  assert.match(result, /^---\nchapter: 05/);
+  assert.match(result, /# New body/);
+  assert.doesNotMatch(result, /# Old body/);
+});

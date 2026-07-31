@@ -147,9 +147,51 @@ function createHighlightedDiffHtml(currentText, proposedText) {
   };
 }
 
+function applyEditedBlocks(draftBody, sessionBlocks) {
+  const blocks = splitBlocks(draftBody);
+  let changed = false;
+
+  for (const sessionBlock of sessionBlocks || []) {
+    if (sessionBlock.status !== "accepted") {
+      continue;
+    }
+    const edited = (sessionBlock.editedText || "").trim();
+    if (!edited) {
+      continue;
+    }
+    const index = Number.parseInt(String(sessionBlock.id).replace("block-", ""), 10);
+    if (Number.isNaN(index) || index < 0) {
+      continue;
+    }
+    if (index < blocks.length) {
+      if (blocks[index] !== edited) {
+        blocks[index] = edited;
+        changed = true;
+      }
+    } else {
+      blocks.push(edited);
+      changed = true;
+    }
+  }
+
+  return { body: blocks.join("\n\n"), changed };
+}
+
+function replaceDocumentBody(fullContent, newBody) {
+  if (fullContent.startsWith("---\n")) {
+    const parts = fullContent.split("\n---\n", 2);
+    if (parts.length === 2) {
+      return `${parts[0]}\n---\n\n${newBody.trim()}\n`;
+    }
+  }
+  return `${newBody.trim()}\n`;
+}
+
 module.exports = {
   parseMarkdownDocument,
   createReviewBlocks,
   applyReviewDecisions,
+  applyEditedBlocks,
+  replaceDocumentBody,
   createHighlightedDiffHtml,
 };

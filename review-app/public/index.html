@@ -3,57 +3,85 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lean and Agile Review App</title>
+    <title>Lean &amp; Agile — Editing Desk</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div id="app">
       <header class="page-header">
         <div>
-          <h1>Lean and Agile Review App</h1>
-          <p class="subtitle">Review Book Copy against Edit Copy, approve blocks, and leave temporary AI notes.</p>
+          <h1>Lean &amp; Agile <span class="thin">Editing Desk</span></h1>
         </div>
-        <div class="actions">
-          <button id="reloadChaptersBtn" title="Reload chapter files and draft files from disk. Use this after Codex updates files or after you pull new changes.">Reload Chapters</button>
-          <button id="compareBtn" disabled title="Compare the official book chapter against the current edit draft for the selected chapter.">Compare Book vs Edit</button>
-          <button id="saveSessionBtn" disabled title="Save your per-block decisions and notes as a temporary local review session that Codex can read later.">Save Review Session</button>
-          <button id="clearSessionBtn" disabled title="Clear the saved temporary review session for the selected chapter. This does not change the book or edit files.">Clear Review Session</button>
+        <div class="header-status">
+          <span id="saveIndicator" class="save-indicator"></span>
         </div>
       </header>
 
       <section class="layout">
         <aside class="panel library-panel">
-          <h2>Chapters</h2>
+          <div class="sidebar-head">
+            <h2>Chapters</h2>
+            <button id="reloadChaptersBtn" class="icon-btn" title="Reload chapters from disk">&#8635;</button>
+          </div>
           <div id="chapterList" class="chapter-list"></div>
         </aside>
 
         <main class="main-column">
-          <section class="panel compare-panel">
-            <div class="section-header">
-              <h2>Chapter Compare</h2>
-              <div id="chapterStatus" class="status"></div>
-            </div>
-            <div class="compare-grid">
-              <div>
-                <h3>Build Copy</h3>
-                <pre id="currentContent" class="content-box"></pre>
-              </div>
-              <div>
-                <h3>Edit Copy</h3>
-                <pre id="draftContent" class="content-box"></pre>
-              </div>
-            </div>
-          </section>
+          <div id="emptyState" class="panel empty-state">
+            <p>Select a chapter to start editing.</p>
+            <p class="muted">Each chapter shows the Book Copy beside the Edit Copy. Work through the changed blocks: fix the wording, then <strong>Accept</strong> it — or <strong>Flag</strong> it with a note for the AI pass (including &ldquo;delete this block&rdquo; requests).</p>
+            <p class="muted">Your decisions save automatically. <strong>Apply</strong> writes your wording into the Edit Copy; <strong>Promote</strong> updates the Book Copy once every block is accepted.</p>
+          </div>
 
-          <section class="panel review-panel">
-            <div class="section-header">
-              <h2>Review Blocks</h2>
-              <div id="reviewSummary" class="status"></div>
+          <div id="chapterView" class="chapter-view" hidden>
+            <div class="panel chapter-toolbar">
+              <div class="toolbar-info">
+                <h2 id="chapterTitle"></h2>
+                <div id="chapterStatus" class="status"></div>
+              </div>
+              <div class="toolbar-actions">
+                <button id="applyBtn" class="primary" title="Write your accepted wording changes into the Edit Copy file.">Apply edits to Edit Copy</button>
+                <button id="promoteBtn" title="Copy the Edit Copy over the Book Copy. Only allowed when every changed block is accepted.">Promote to Book Copy</button>
+                <button id="historyBtn" class="quiet" title="Show recent saved versions of this chapter.">History</button>
+                <button id="clearBtn" class="quiet danger" title="Clear all decisions and notes for this chapter.">Clear decisions</button>
+              </div>
             </div>
-            <div id="reviewBlocks" class="review-blocks"></div>
-          </section>
+
+            <section class="panel review-panel">
+              <div class="section-header">
+                <h3>Changed blocks</h3>
+                <div id="reviewSummary" class="status"></div>
+              </div>
+              <div id="reviewBlocks" class="review-blocks"></div>
+            </section>
+
+            <section class="panel compare-panel">
+              <details>
+                <summary>Full chapter, side by side</summary>
+                <div class="compare-grid">
+                  <div>
+                    <h4>Book Copy</h4>
+                    <pre id="currentContent" class="content-box"></pre>
+                  </div>
+                  <div>
+                    <h4>Edit Copy</h4>
+                    <pre id="draftContent" class="content-box"></pre>
+                  </div>
+                </div>
+              </details>
+            </section>
+          </div>
         </main>
       </section>
+
+      <aside id="historyDrawer" class="history-drawer" hidden>
+        <div class="drawer-head">
+          <h3>Chapter history</h3>
+          <button id="closeHistoryBtn" class="icon-btn" title="Close history">&times;</button>
+        </div>
+        <p class="muted drawer-hint">Saved versions of this chapter (Book and Edit copies).</p>
+        <ol id="historyList" class="history-list"></ol>
+      </aside>
     </div>
     <script src="/app.js" defer></script>
   </body>
