@@ -1,4 +1,4 @@
-const { diffWordsWithSpace } = require("diff");
+const { diffWordsWithSpace, diffArrays } = require("diff");
 
 function parseMarkdownDocument(source) {
   if (!source.startsWith("---\n")) {
@@ -147,6 +147,76 @@ function createHighlightedDiffHtml(currentText, proposedText) {
   };
 }
 
+function createAlignedBlocks(currentBody, proposedBody) {
+  const currentBlocks = splitBlocks(currentBody);
+  const proposedBlocks = splitBlocks(proposedBody);
+  const parts = diffArrays(currentBlocks, proposedBlocks);
+  const aligned = [];
+  let currentIndex = 0;
+  let proposedIndex = 0;
+  let pendingRemoved = [];
+
+  const flushPairs = (added) => {
+    const count = Math.max(pendingRemoved.length, added.length);
+    for (let k = 0; k < count; k += 1) {
+      const removed = pendingRemoved[k];
+      const inserted = added[k];
+      const currentText = removed ? removed.text : "";
+      const proposedText = inserted ? inserted.text : "";
+
+      let type = "replace";
+      if (!currentText) type = "insert";
+      else if (!proposedText) type = "delete";
+
+      aligned.push({
+        id: inserted ? `block-${inserted.index}` : `block-d${removed.index}`,
+        index: inserted ? inserted.index : removed.index,
+        type,
+        changed: true,
+        currentText,
+        proposedText,
+        ...createHighlightedDiffHtml(currentText, proposedText),
+      });
+    }
+    pendingRemoved = [];
+  };
+
+  for (const part of parts) {
+    if (part.removed) {
+      for (const text of part.value) {
+        pendingRemoved.push({ text, index: currentIndex });
+        currentIndex += 1;
+      }
+      continue;
+    }
+    if (part.added) {
+      const added = part.value.map((text) => {
+        const entry = { text, index: proposedIndex };
+        proposedIndex += 1;
+        return entry;
+      });
+      flushPairs(added);
+      continue;
+    }
+    flushPairs([]);
+    for (const text of part.value) {
+      aligned.push({
+        id: `block-${proposedIndex}`,
+        index: proposedIndex,
+        type: "same",
+        changed: false,
+        currentText: text,
+        proposedText: text,
+      });
+      currentIndex += 1;
+      proposedIndex += 1;
+    }
+  }
+  flushPairs([]);
+
+  return aligned;
+}
+
 function applyEditedBlocks(draftBody, sessionBlocks) {
   const blocks = splitBlocks(draftBody);
   let changed = false;
@@ -190,6 +260,7 @@ function replaceDocumentBody(fullContent, newBody) {
 module.exports = {
   parseMarkdownDocument,
   createReviewBlocks,
+  createAlignedBlocks,
   applyReviewDecisions,
   applyEditedBlocks,
   replaceDocumentBody,

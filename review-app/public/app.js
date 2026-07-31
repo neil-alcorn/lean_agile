@@ -1,10 +1,9 @@
 const state = {
   chapters: [],
   selectedChapterPath: "",
-  sourceContent: "",
-  draftContent: "",
-  reviewBlocks: [],
+  alignedBlocks: [],
   session: { blocks: [] },
+  openBlockId: "",
   saveTimer: null,
 };
 
@@ -19,9 +18,7 @@ const els = {
   promoteBtn: document.getElementById("promoteBtn"),
   historyBtn: document.getElementById("historyBtn"),
   clearBtn: document.getElementById("clearBtn"),
-  currentContent: document.getElementById("currentContent"),
-  draftContent: document.getElementById("draftContent"),
-  reviewBlocks: document.getElementById("reviewBlocks"),
+  manuscriptBody: document.getElementById("manuscriptBody"),
   reviewSummary: document.getElementById("reviewSummary"),
   saveIndicator: document.getElementById("saveIndicator"),
   historyDrawer: document.getElementById("historyDrawer"),
@@ -57,7 +54,6 @@ function chapterLabel(chapter) {
 function shortTitle(chapter) {
   let title = chapter.title || "";
   title = title.replace(/^Chapter\s+\d+:\s*/i, "");
-  title = title.replace(/^Epilogue:\s*/i, "Epilogue: ");
   return title;
 }
 
@@ -70,6 +66,10 @@ function getSessionBlock(blockId) {
   const fresh = { id: blockId, status: "pending", note: "", editedText: "" };
   state.session.blocks.push(fresh);
   return fresh;
+}
+
+function changedBlocks() {
+  return (state.alignedBlocks || []).filter((b) => b.changed);
 }
 
 /* ---------------------------------------------------------- autosave ---- */
@@ -113,16 +113,17 @@ function renderChapterList() {
     button.className = `chapter-item${
       state.selectedChapterPath === chapter.path ? " active" : ""
     }`;
-    button.title = shortTitle(chapter);
     button.innerHTML = `
       <span class="chapter-no">${escapeHtml(chapterLabel(chapter))}</span>
       <span class="chapter-name">${escapeHtml(shortTitle(chapter))}</span>
     `;
     button.addEventListener("click", async () => {
       state.selectedChapterPath = chapter.path;
+      state.openBlockId = "";
       closeHistory();
       await loadSelectedChapter();
       renderChapterList();
+      window.scrollTo({ top: 0 });
     });
     els.chapterList.appendChild(button);
   });
@@ -149,140 +150,168 @@ async function loadSelectedChapter() {
 }
 
 function applyCompareResult(result) {
-  state.sourceContent = result.sourceContent;
-  state.draftContent = result.draftContent;
-  state.reviewBlocks = result.reviewBlocks || [];
+  state.alignedBlocks = result.alignedBlocks || [];
   if (result.reviewSession) {
     state.session = result.reviewSession;
   } else {
     state.session = { chapterPath: state.selectedChapterPath, blocks: [] };
   }
-  els.currentContent.textContent = result.sourceContent;
-  els.draftContent.textContent = result.draftContent;
   els.chapterStatus.textContent = "";
-  renderReviewBlocks();
+  renderManuscript();
 }
 
-/* ------------------------------------------------------------- blocks ---- */
+/* --------------------------------------------------------- manuscript ---- */
 
 const STATUS_LABELS = {
   pending: "Pending",
   accepted: "Accepted",
-  flagged: "Flagged for review",
+  flagged: "Flagged",
 };
 
-function renderReviewBlocks() {
-  els.reviewBlocks.innerHTML = "";
-  const blocks = state.reviewBlocks || [];
-  if (!blocks.length) {
-    els.reviewBlocks.innerHTML =
-      "<p class='muted all-clear'>Book Copy and Edit Copy match. Nothing to review in this chapter.</p>";
-    els.reviewSummary.textContent = "";
-    updateToolbar();
-    return;
-  }
+function renderManuscript() {
+  els.manuscriptBody.innerHTML = "";
+  const blocks = state.alignedBlocks || [];
+  const changed = changedBlocks();
+  let changeNumber = 0;
 
-  blocks.forEach((block, position) => {
+  blocks.forEach((block) => {
+    if (!block.changed) {
+      const row = document.createElement("div");
+      row.className = "ms-row same";
+      row.innerHTML = `
+        <div class="ms-cell">${escapeHtml(block.currentText)}</div>
+        <div class="ms-cell">${escapeHtml(block.proposedText)}</div>
+      `;
+      els.manuscriptBody.appendChild(row);
+      return;
+    }
+
+    changeNumber += 1;
     const sessionBlock = getSessionBlock(block.id);
     const status = sessionBlock.status || "pending";
+    const isOpen = state.openBlockId === block.id;
 
-    const wrapper = document.createElement("article");
-    wrapper.className = `review-block status-${status}`;
-    wrapper.innerHTML = `
-      <div class="review-block-header">
-        <div class="block-id">
-          <span class="block-count">${position + 1} of ${blocks.length}</span>
-          <span class="status-chip chip-${status}">${STATUS_LABELS[status] || status}</span>
-        </div>
-        <div class="decision-group">
-          <button data-action="accepted" class="accept-btn" title="Approve this block. Your wording below becomes the Edit Copy when you Apply.">Accept</button>
-          <button data-action="flagged" class="flag-btn" title="Flag this block for another pass. Use the note to say what should change (including 'delete this block').">Flag for review</button>
-        </div>
-      </div>
-      <div class="review-columns">
-        <div>
-          <h4>Book Copy</h4>
-          <div class="diff-box">${block.currentHtml || escapeHtml(block.currentText || "[not in book copy]")}</div>
-        </div>
-        <div>
-          <h4>Edit Copy</h4>
-          <div class="diff-box">${block.editHtml || escapeHtml(block.proposedText || "[removed in edit copy]")}</div>
-        </div>
-      </div>
-      <div class="review-fields">
-        <label class="field">
-          <span>Your wording <span class="muted">(starts from the Edit Copy — change anything)</span></span>
-          <textarea data-role="editedText" rows="4">${escapeHtml(
-            sessionBlock.editedText || block.proposedText || ""
-          )}</textarea>
-        </label>
-        <label class="field">
-          <span>Note <span class="muted">(for the AI pass, reasons, or delete requests)</span></span>
-          <textarea data-role="note" rows="2">${escapeHtml(sessionBlock.note || "")}</textarea>
-        </label>
-      </div>
+    const row = document.createElement("div");
+    row.className = `ms-row changed status-${status}${isOpen ? " open" : ""}`;
+
+    const pair = document.createElement("div");
+    pair.className = "ms-pair";
+    pair.title = isOpen ? "Click to close the editor" : "Click to edit this change";
+    pair.innerHTML = `
+      <div class="ms-cell">${block.currentHtml || "<span class='ghost'>not in Book Copy</span>"}</div>
+      <div class="ms-cell">${block.editHtml || "<span class='ghost'>removed in Edit Copy</span>"}</div>
+      <span class="change-tag chip-${status}">${changeNumber}. ${STATUS_LABELS[status]}</span>
     `;
-
-    wrapper.querySelectorAll("button[data-action]").forEach((button) => {
-      if (status === button.dataset.action) {
-        button.classList.add("selected");
+    pair.addEventListener("click", () => {
+      state.openBlockId = isOpen ? "" : block.id;
+      renderManuscript();
+      if (!isOpen) {
+        const opened = document.getElementById(`editor-${block.id}`);
+        opened?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        opened?.querySelector("textarea")?.focus();
       }
-      button.addEventListener("click", () => {
-        const sb = getSessionBlock(block.id);
-        sb.status = sb.status === button.dataset.action ? "pending" : button.dataset.action;
-        if (sb.status === "accepted" && !sb.editedText) {
-          const textarea = wrapper.querySelector('[data-role="editedText"]');
-          if (textarea.value.trim() !== (block.proposedText || "").trim()) {
-            sb.editedText = textarea.value;
-          }
-        }
-        scheduleSave();
-        renderReviewBlocks();
-      });
     });
+    row.appendChild(pair);
 
-    wrapper.querySelector('[data-role="editedText"]').addEventListener("input", (event) => {
-      getSessionBlock(block.id).editedText = event.target.value;
-      scheduleSave();
-    });
+    if (isOpen) {
+      row.appendChild(buildEditor(block, sessionBlock));
+    }
 
-    wrapper.querySelector('[data-role="note"]').addEventListener("input", (event) => {
-      getSessionBlock(block.id).note = event.target.value;
-      scheduleSave();
-    });
-
-    els.reviewBlocks.appendChild(wrapper);
+    els.manuscriptBody.appendChild(row);
   });
 
-  updateSummary();
-  updateToolbar();
+  updateSummary(changed);
+  updateToolbar(changed);
 }
 
-function updateSummary() {
-  const blocks = state.reviewBlocks || [];
+function buildEditor(block, sessionBlock) {
+  const editor = document.createElement("div");
+  editor.className = "ms-editor";
+  editor.id = `editor-${block.id}`;
+  editor.innerHTML = `
+    <label class="field">
+      <span>Your wording <span class="muted">(starts from the Edit Copy)</span></span>
+      <textarea data-role="editedText" rows="5">${escapeHtml(
+        sessionBlock.editedText || block.proposedText || ""
+      )}</textarea>
+    </label>
+    <div class="editor-foot">
+      <div class="decision-group">
+        <button data-action="accepted" class="accept-btn${
+          sessionBlock.status === "accepted" ? " selected" : ""
+        }">Accept</button>
+        <button data-action="flagged" class="flag-btn${
+          sessionBlock.status === "flagged" ? " selected" : ""
+        }">Flag for review</button>
+      </div>
+      <label class="field note-field">
+        <span class="muted">Note (for the AI pass, reasons, or delete requests)</span>
+        <textarea data-role="note" rows="1">${escapeHtml(sessionBlock.note || "")}</textarea>
+      </label>
+    </div>
+  `;
+
+  editor.addEventListener("click", (event) => event.stopPropagation());
+
+  editor.querySelectorAll("button[data-action]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const sb = getSessionBlock(block.id);
+      sb.status = sb.status === button.dataset.action ? "pending" : button.dataset.action;
+      const textarea = editor.querySelector('[data-role="editedText"]');
+      if (
+        sb.status === "accepted" &&
+        textarea.value.trim() !== (block.proposedText || "").trim()
+      ) {
+        sb.editedText = textarea.value;
+      }
+      if (sb.status === "accepted") {
+        state.openBlockId = "";
+      }
+      scheduleSave();
+      renderManuscript();
+    });
+  });
+
+  editor.querySelector('[data-role="editedText"]').addEventListener("input", (event) => {
+    getSessionBlock(block.id).editedText = event.target.value;
+    scheduleSave();
+  });
+
+  editor.querySelector('[data-role="note"]').addEventListener("input", (event) => {
+    getSessionBlock(block.id).note = event.target.value;
+    scheduleSave();
+  });
+
+  return editor;
+}
+
+function updateSummary(changed) {
+  if (!changed.length) {
+    els.reviewSummary.textContent = "Book Copy and Edit Copy match — nothing to review.";
+    return;
+  }
   let accepted = 0;
   let flagged = 0;
-  for (const block of blocks) {
+  for (const block of changed) {
     const sb = getSessionBlock(block.id);
     if (sb.status === "accepted") accepted += 1;
     if (sb.status === "flagged") flagged += 1;
   }
-  const pending = blocks.length - accepted - flagged;
-  els.reviewSummary.textContent = `${blocks.length} changed · ${accepted} accepted · ${flagged} flagged · ${pending} pending`;
+  const pending = changed.length - accepted - flagged;
+  els.reviewSummary.textContent = `${changed.length} changes · ${accepted} accepted · ${flagged} flagged · ${pending} pending`;
 }
 
-function updateToolbar() {
-  const blocks = state.reviewBlocks || [];
+function updateToolbar(changed) {
   const allAccepted =
-    blocks.length > 0 &&
-    blocks.every((b) => getSessionBlock(b.id).status === "accepted");
+    changed.length > 0 &&
+    changed.every((b) => getSessionBlock(b.id).status === "accepted");
   els.promoteBtn.disabled = !allAccepted;
   els.promoteBtn.title = allAccepted
     ? "Copy the Edit Copy over the Book Copy."
-    : blocks.length === 0
+    : changed.length === 0
       ? "Nothing to promote — the copies already match."
-      : "Accept every changed block first.";
-  els.applyBtn.disabled = blocks.length === 0;
+      : "Accept every change first.";
+  els.applyBtn.disabled = changed.length === 0;
 }
 
 /* ------------------------------------------------------------ actions ---- */
@@ -298,6 +327,7 @@ async function applyEdits() {
         blocks: state.session.blocks || [],
       }),
     });
+    state.openBlockId = "";
     applyCompareResult(result);
     els.chapterStatus.textContent = result.changed
       ? "Your wording is now in the Edit Copy."
@@ -318,6 +348,7 @@ async function promoteChapter() {
       method: "POST",
       body: JSON.stringify({ chapterPath: state.selectedChapterPath }),
     });
+    state.openBlockId = "";
     applyCompareResult(result);
     els.chapterStatus.textContent = "Promoted. Book Copy now matches the Edit Copy.";
     await loadChapters();
@@ -335,7 +366,8 @@ async function clearDecisions() {
     body: JSON.stringify({ chapterPath: state.selectedChapterPath }),
   });
   state.session = { chapterPath: state.selectedChapterPath, blocks: [] };
-  renderReviewBlocks();
+  state.openBlockId = "";
+  renderManuscript();
   els.chapterStatus.textContent = "Decisions cleared.";
 }
 

@@ -119,3 +119,29 @@ run("replaceDocumentBody preserves front matter", () => {
   assert.match(result, /# New body/);
   assert.doesNotMatch(result, /# Old body/);
 });
+
+const { createAlignedBlocks } = require("../lib/review-logic");
+
+run("createAlignedBlocks returns every block pair with changed flags", () => {
+  const current = "# Title\n\nSame paragraph.\n\nOld wording.";
+  const proposed = "# Title\n\nSame paragraph.\n\nNew wording.";
+  const aligned = createAlignedBlocks(current, proposed);
+  assert.equal(aligned.length, 3);
+  assert.equal(aligned[0].changed, false);
+  assert.equal(aligned[1].changed, false);
+  assert.equal(aligned[2].changed, true);
+  assert.equal(aligned[2].type, "replace");
+  assert.ok(aligned[2].currentHtml);
+});
+
+run("createAlignedBlocks keeps alignment across insertions", () => {
+  const current = "# Title\n\nAlpha.\n\nBeta.\n\nGamma.";
+  const proposed = "# Title\n\nAlpha.\n\nInserted paragraph.\n\nBeta.\n\nGamma.";
+  const aligned = createAlignedBlocks(current, proposed);
+  const changed = aligned.filter((b) => b.changed);
+  assert.equal(changed.length, 1);
+  assert.equal(changed[0].type, "insert");
+  assert.match(changed[0].proposedText, /Inserted paragraph/);
+  const same = aligned.filter((b) => !b.changed);
+  assert.equal(same.length, 4);
+});

@@ -9,16 +9,12 @@
   <body>
     <div id="app">
       <header class="page-header">
-        <div>
-          <h1>Lean &amp; Agile <span class="thin">Editing Desk</span></h1>
-        </div>
-        <div class="header-status">
-          <span id="saveIndicator" class="save-indicator"></span>
-        </div>
+        <h1>Lean &amp; Agile <span class="thin">Editing Desk</span></h1>
+        <span id="saveIndicator" class="save-indicator"></span>
       </header>
 
       <section class="layout">
-        <aside class="panel library-panel">
+        <aside class="library-panel">
           <div class="sidebar-head">
             <h2>Chapters</h2>
             <button id="reloadChaptersBtn" class="icon-btn" title="Reload chapters from disk">&#8635;</button>
@@ -27,49 +23,34 @@
         </aside>
 
         <main class="main-column">
-          <div id="emptyState" class="panel empty-state">
+          <div id="emptyState" class="empty-state">
             <p>Select a chapter to start editing.</p>
-            <p class="muted">Each chapter shows the Book Copy beside the Edit Copy. Work through the changed blocks: fix the wording, then <strong>Accept</strong> it — or <strong>Flag</strong> it with a note for the AI pass (including &ldquo;delete this block&rdquo; requests).</p>
-            <p class="muted">Your decisions save automatically. <strong>Apply</strong> writes your wording into the Edit Copy; <strong>Promote</strong> updates the Book Copy once every block is accepted.</p>
+            <p class="muted">The chapter reads side by side: <strong>Book Copy</strong> on the left, <strong>Edit Copy</strong> on the right. Changed paragraphs are tinted &mdash; click one to edit its wording, <strong>Accept</strong> it, or <strong>Flag</strong> it with a note (including &ldquo;delete this&rdquo; requests). Everything saves as you go.</p>
+            <p class="muted">When you're done: <strong>Apply</strong> writes your wording into the Edit Copy; <strong>Promote</strong> updates the Book Copy once every change is accepted.</p>
           </div>
 
-          <div id="chapterView" class="chapter-view" hidden>
-            <div class="panel chapter-toolbar">
+          <div id="chapterView" hidden>
+            <div class="chapter-toolbar">
               <div class="toolbar-info">
                 <h2 id="chapterTitle"></h2>
-                <div id="chapterStatus" class="status"></div>
+                <div id="reviewSummary" class="status"></div>
+                <div id="chapterStatus" class="status message"></div>
               </div>
               <div class="toolbar-actions">
-                <button id="applyBtn" class="primary" title="Write your accepted wording changes into the Edit Copy file.">Apply edits to Edit Copy</button>
-                <button id="promoteBtn" title="Copy the Edit Copy over the Book Copy. Only allowed when every changed block is accepted.">Promote to Book Copy</button>
-                <button id="historyBtn" class="quiet" title="Show recent saved versions of this chapter.">History</button>
+                <button id="applyBtn" class="primary" title="Write your accepted wording changes into the Edit Copy file.">Apply edits</button>
+                <button id="promoteBtn" title="Copy the Edit Copy over the Book Copy. Only allowed when every change is accepted.">Promote to Book Copy</button>
+                <button id="historyBtn" class="quiet" title="Recent saved versions of this chapter.">History</button>
                 <button id="clearBtn" class="quiet danger" title="Clear all decisions and notes for this chapter.">Clear decisions</button>
               </div>
             </div>
 
-            <section class="panel review-panel">
-              <div class="section-header">
-                <h3>Changed blocks</h3>
-                <div id="reviewSummary" class="status"></div>
+            <div class="manuscript">
+              <div class="manuscript-head">
+                <h3>Book Copy</h3>
+                <h3>Edit Copy</h3>
               </div>
-              <div id="reviewBlocks" class="review-blocks"></div>
-            </section>
-
-            <section class="panel compare-panel">
-              <details>
-                <summary>Full chapter, side by side</summary>
-                <div class="compare-grid">
-                  <div>
-                    <h4>Book Copy</h4>
-                    <pre id="currentContent" class="content-box"></pre>
-                  </div>
-                  <div>
-                    <h4>Edit Copy</h4>
-                    <pre id="draftContent" class="content-box"></pre>
-                  </div>
-                </div>
-              </details>
-            </section>
+              <div id="manuscriptBody"></div>
+            </div>
           </div>
         </main>
       </section>

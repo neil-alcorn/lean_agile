@@ -12,6 +12,7 @@ const {
 } = require("./lib/book-files");
 const {
   createReviewBlocks,
+  createAlignedBlocks,
   applyEditedBlocks,
   replaceDocumentBody,
 } = require("./lib/review-logic");
@@ -101,6 +102,7 @@ app.post("/api/compare", (req, res) => {
       sourceBody: chapter.sourceBody,
       draftBody: chapter.draftBody,
       reviewBlocks,
+      alignedBlocks: createAlignedBlocks(chapter.sourceBody.trim(), chapter.draftBody.trim()),
       reviewSession: readReviewSession(chapterPath),
     });
   } catch (error) {
@@ -142,6 +144,7 @@ app.post("/api/apply-edits", (req, res) => {
       draftContent: fresh.draftContent,
       sourceContent: fresh.sourceContent,
       reviewBlocks: createReviewBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
+      alignedBlocks: createAlignedBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
       reviewSession: readReviewSession(chapterPath),
     });
   } catch (error) {
@@ -157,17 +160,17 @@ app.post("/api/promote", (req, res) => {
     }
 
     const chapter = readChapterPair(chapterPath);
-    const reviewBlocks = createReviewBlocks(
+    const changedBlocks = createAlignedBlocks(
       chapter.sourceBody.trim(),
       chapter.draftBody.trim()
-    );
+    ).filter((b) => b.changed);
 
-    if (reviewBlocks.length > 0) {
+    if (changedBlocks.length > 0) {
       const session = readReviewSession(chapterPath);
       const statuses = new Map(
         (session?.blocks || []).map((b) => [b.id, b.status])
       );
-      const unapproved = reviewBlocks.filter(
+      const unapproved = changedBlocks.filter(
         (b) => statuses.get(b.id) !== "accepted"
       );
       if (unapproved.length > 0) {
@@ -187,6 +190,7 @@ app.post("/api/promote", (req, res) => {
       sourceContent: fresh.sourceContent,
       draftContent: fresh.draftContent,
       reviewBlocks: createReviewBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
+      alignedBlocks: createAlignedBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
     });
   } catch (error) {
     return res.status(400).json({ error: error.message });
