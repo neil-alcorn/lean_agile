@@ -365,6 +365,98 @@ button.quiet.danger:hover:not(:disabled) {
   font-size: 0.85rem;
 }
 
+.ms-row.same.quiet .ms-pair {
+  cursor: pointer;
+}
+
+.ms-row.same.quiet .ms-pair:hover {
+  background: #f6f8fa;
+}
+
+.ms-row.same.annotated .ms-pair {
+  cursor: pointer;
+  background: var(--accent-soft);
+  border-top: 1px solid #cfdcea;
+  border-bottom: 1px solid #cfdcea;
+}
+
+.ms-row.same.annotated.status-flagged .ms-pair {
+  background: var(--flag-soft);
+  border-color: #ecd9b4;
+}
+
+.ms-row.same.annotated.status-accepted .ms-pair {
+  background: var(--good-soft);
+  border-color: #cfe7d6;
+}
+
+.chip-note {
+  background: #d6e3f0;
+  color: var(--accent);
+}
+
+/* ------------------------------------------------------------ figures ---- */
+
+.figure-embed {
+  display: block;
+  margin: 10px 0 4px;
+  font-family: system-ui, sans-serif;
+}
+
+.figure-embed img {
+  display: block;
+  max-width: 100%;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fff;
+  padding: 8px;
+}
+
+.figure-caption {
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--sub);
+  margin-top: 5px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.figure-id {
+  display: inline-block;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.68rem;
+  color: var(--sub);
+  background: #eef0f2;
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-top: 3px;
+}
+
+.figure-missing {
+  display: block;
+  font-family: system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--flag);
+  background: var(--flag-soft);
+  border-radius: 4px;
+  padding: 6px 10px;
+  margin: 8px 0;
+}
+
+.editorial-note {
+  display: block;
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--flag);
+  background: var(--flag-soft);
+  border-left: 3px solid var(--flag);
+  border-radius: 0 4px 4px 0;
+  padding: 5px 10px;
+  margin: 6px 0;
+}
+
 .diff-added {
   background: #d5eed5;
   color: #135b13;

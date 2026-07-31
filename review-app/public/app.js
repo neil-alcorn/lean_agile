@@ -2,6 +2,7 @@ const state = {
   chapters: [],
   selectedChapterPath: "",
   alignedBlocks: [],
+  assets: {},
   session: { blocks: [] },
   openBlockId: "",
   saveTimer: null,
@@ -57,15 +58,27 @@ function shortTitle(chapter) {
   return title;
 }
 
-function getSessionBlock(blockId) {
+function peekSessionBlock(blockId) {
   const found = (state.session.blocks || []).find((block) => block.id === blockId);
-  if (found) {
-    if (found.status === "needs_ai_revision") found.status = "flagged";
-    return found;
-  }
+  if (found && found.status === "needs_ai_revision") found.status = "flagged";
+  return found || null;
+}
+
+function getSessionBlock(blockId) {
+  const found = peekSessionBlock(blockId);
+  if (found) return found;
   const fresh = { id: blockId, status: "pending", note: "", editedText: "" };
   state.session.blocks.push(fresh);
   return fresh;
+}
+
+function hasAnnotation(sessionBlock) {
+  if (!sessionBlock) return false;
+  return (
+    (sessionBlock.status && sessionBlock.status !== "pending") ||
+    (sessionBlock.note || "").trim() !== "" ||
+    (sessionBlock.editedText || "").trim() !== ""
+  );
 }
 
 function changedBlocks() {
@@ -88,7 +101,7 @@ async function saveSession() {
       method: "POST",
       body: JSON.stringify({
         chapterPath: state.selectedChapterPath,
-        blocks: state.session.blocks || [],
+        blocks: (state.session.blocks || []).filter(hasAnnotation),
       }),
     });
     state.session = result.reviewSession;
@@ -151,6 +164,7 @@ async function loadSelectedChapter() {
 
 function applyCompareResult(result) {
   state.alignedBlocks = result.alignedBlocks || [];
+  state.assets = result.assets || state.assets || {};
   if (result.reviewSession) {
     state.session = result.reviewSession;
   } else {
@@ -158,6 +172,44 @@ function applyCompareResult(result) {
   }
   els.chapterStatus.textContent = "";
   renderManuscript();
+}
+
+/* ------------------------------------------------------------ figures ---- */
+
+const VISUAL_RE = /<!--\s*VISUAL:\s*[\w.-]+\s*\|\s*id:([\w.-]+)[\s\S]*?-->/g;
+const FIGURE_SLOT_RE = /<!--\s*FIGURE_SLOT:\s*([\w.-]+)\s*-->/g;
+const EDITORIAL_RE = /<!--\s*EDITORIAL_NOTE:\s*([\s\S]*?)-->/g;
+
+function figureHtml(assetId) {
+  const asset = state.assets[assetId];
+  if (!asset || !asset.src) {
+    return `<span class="figure-missing">[figure &ldquo;${escapeHtml(assetId)}&rdquo; is not registered yet]</span>`;
+  }
+  return `
+    <span class="figure-embed">
+      <img src="${escapeHtml(asset.src)}" alt="${escapeHtml(asset.caption || assetId)}" loading="lazy" />
+      <span class="figure-caption">${escapeHtml(asset.caption || "")}</span>
+      <span class="figure-id">${escapeHtml(assetId)}</span>
+    </span>`;
+}
+
+function decorateCellHtml(escapedOrDiffHtml, rawText) {
+  let html = escapedOrDiffHtml;
+  html = html.replaceAll(
+    /&lt;!--\s*(?:VISUAL|FIGURE_SLOT):[\s\S]*?--&gt;/g,
+    ""
+  );
+  html = html.replaceAll(
+    /&lt;!--\s*EDITORIAL_NOTE:\s*([\s\S]*?)--&gt;/g,
+    '<span class="editorial-note">Editorial note: $1</span>'
+  );
+  const figures = [];
+  for (const match of rawText.matchAll(VISUAL_RE)) figures.push(match[1]);
+  for (const match of rawText.matchAll(FIGURE_SLOT_RE)) figures.push(match[1]);
+  for (const id of figures) {
+    html += figureHtml(id);
+  }
+  return html;
 }
 
 /* --------------------------------------------------------- manuscript ---- */
@@ -175,32 +227,48 @@ function renderManuscript() {
   let changeNumber = 0;
 
   blocks.forEach((block) => {
-    if (!block.changed) {
-      const row = document.createElement("div");
-      row.className = "ms-row same";
-      row.innerHTML = `
-        <div class="ms-cell">${escapeHtml(block.currentText)}</div>
-        <div class="ms-cell">${escapeHtml(block.proposedText)}</div>
-      `;
-      els.manuscriptBody.appendChild(row);
-      return;
-    }
-
-    changeNumber += 1;
-    const sessionBlock = getSessionBlock(block.id);
-    const status = sessionBlock.status || "pending";
+    const sessionBlock = peekSessionBlock(block.id);
+    const annotated = hasAnnotation(sessionBlock);
+    const status = sessionBlock?.status || "pending";
     const isOpen = state.openBlockId === block.id;
 
+    let rowClass;
+    let tag = "";
+    if (block.changed) {
+      changeNumber += 1;
+      rowClass = `ms-row changed status-${status}`;
+      tag = `<span class="change-tag chip-${status}">${changeNumber}. ${STATUS_LABELS[status]}</span>`;
+    } else if (annotated) {
+      rowClass = `ms-row same annotated status-${status}`;
+      const label = status === "flagged" ? "Flagged" : status === "accepted" ? "Edited" : "Note";
+      tag = `<span class="change-tag chip-${status === "pending" ? "note" : status}">${label}</span>`;
+    } else {
+      rowClass = "ms-row same quiet";
+    }
+    if (isOpen) rowClass += " open";
+
     const row = document.createElement("div");
-    row.className = `ms-row changed status-${status}${isOpen ? " open" : ""}`;
+    row.className = rowClass;
 
     const pair = document.createElement("div");
     pair.className = "ms-pair";
-    pair.title = isOpen ? "Click to close the editor" : "Click to edit this change";
+    pair.title = isOpen
+      ? "Click to close the editor"
+      : block.changed
+        ? "Click to edit this change"
+        : "Click to comment or edit this paragraph";
+
+    const leftHtml = block.changed
+      ? block.currentHtml || "<span class='ghost'>not in Book Copy</span>"
+      : escapeHtml(block.currentText);
+    const rightHtml = block.changed
+      ? block.editHtml || "<span class='ghost'>removed in Edit Copy</span>"
+      : escapeHtml(block.proposedText);
+
     pair.innerHTML = `
-      <div class="ms-cell">${block.currentHtml || "<span class='ghost'>not in Book Copy</span>"}</div>
-      <div class="ms-cell">${block.editHtml || "<span class='ghost'>removed in Edit Copy</span>"}</div>
-      <span class="change-tag chip-${status}">${changeNumber}. ${STATUS_LABELS[status]}</span>
+      <div class="ms-cell">${decorateCellHtml(leftHtml, block.currentText || "")}</div>
+      <div class="ms-cell">${decorateCellHtml(rightHtml, block.proposedText || "")}</div>
+      ${tag}
     `;
     pair.addEventListener("click", () => {
       state.openBlockId = isOpen ? "" : block.id;
@@ -214,7 +282,7 @@ function renderManuscript() {
     row.appendChild(pair);
 
     if (isOpen) {
-      row.appendChild(buildEditor(block, sessionBlock));
+      row.appendChild(buildEditor(block, sessionBlock || getSessionBlock(block.id)));
     }
 
     els.manuscriptBody.appendChild(row);
@@ -286,25 +354,34 @@ function buildEditor(block, sessionBlock) {
 }
 
 function updateSummary(changed) {
+  const changedIds = new Set(changed.map((b) => b.id));
+  let sameNotes = 0;
+  for (const sb of state.session.blocks || []) {
+    if (!changedIds.has(sb.id) && hasAnnotation(sb)) sameNotes += 1;
+  }
+  const notesSuffix = sameNotes
+    ? ` · ${sameNotes} note${sameNotes === 1 ? "" : "s"} on matching text`
+    : "";
+
   if (!changed.length) {
-    els.reviewSummary.textContent = "Book Copy and Edit Copy match — nothing to review.";
+    els.reviewSummary.textContent = `Book Copy and Edit Copy match — nothing to review.${notesSuffix}`;
     return;
   }
   let accepted = 0;
   let flagged = 0;
   for (const block of changed) {
-    const sb = getSessionBlock(block.id);
-    if (sb.status === "accepted") accepted += 1;
-    if (sb.status === "flagged") flagged += 1;
+    const sb = peekSessionBlock(block.id);
+    if (sb?.status === "accepted") accepted += 1;
+    if (sb?.status === "flagged") flagged += 1;
   }
   const pending = changed.length - accepted - flagged;
-  els.reviewSummary.textContent = `${changed.length} changes · ${accepted} accepted · ${flagged} flagged · ${pending} pending`;
+  els.reviewSummary.textContent = `${changed.length} changes · ${accepted} accepted · ${flagged} flagged · ${pending} pending${notesSuffix}`;
 }
 
 function updateToolbar(changed) {
   const allAccepted =
     changed.length > 0 &&
-    changed.every((b) => getSessionBlock(b.id).status === "accepted");
+    changed.every((b) => peekSessionBlock(b.id)?.status === "accepted");
   els.promoteBtn.disabled = !allAccepted;
   els.promoteBtn.title = allAccepted
     ? "Copy the Edit Copy over the Book Copy."

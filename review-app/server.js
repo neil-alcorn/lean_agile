@@ -27,6 +27,37 @@ const port = process.env.PORT || 4173;
 
 app.use(express.json({ limit: "10mb" }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/book-assets", express.static(path.join(ROOT, "book", "assets")));
+
+function loadAssetCatalog() {
+  const catalog = {};
+  const read = (file) => {
+    try {
+      return JSON.parse(
+        require("node:fs").readFileSync(path.join(ROOT, "book", "config", file), "utf8")
+      );
+    } catch {
+      return {};
+    }
+  };
+  const figures = read("figures.json");
+  for (const [id, fig] of Object.entries(figures)) {
+    catalog[id] = {
+      src: `/book-assets/${(fig.path || "").replace("book/assets/", "")}`,
+      caption: fig.caption || "",
+      type: "figure",
+    };
+  }
+  const assets = read("assets.json");
+  for (const [id, asset] of Object.entries(assets)) {
+    catalog[id] = {
+      src: `/book-assets/${(asset.source_path || "").replace("book/assets/", "")}`,
+      caption: asset.caption || "",
+      type: asset.type || "asset",
+    };
+  }
+  return catalog;
+}
 
 app.get("/api/health", (_req, res) => {
   res.json({ ok: true });
@@ -104,6 +135,7 @@ app.post("/api/compare", (req, res) => {
       reviewBlocks,
       alignedBlocks: createAlignedBlocks(chapter.sourceBody.trim(), chapter.draftBody.trim()),
       reviewSession: readReviewSession(chapterPath),
+      assets: loadAssetCatalog(),
     });
   } catch (error) {
     return res.status(400).json({ error: error.message });
@@ -146,6 +178,7 @@ app.post("/api/apply-edits", (req, res) => {
       reviewBlocks: createReviewBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
       alignedBlocks: createAlignedBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
       reviewSession: readReviewSession(chapterPath),
+      assets: loadAssetCatalog(),
     });
   } catch (error) {
     return res.status(400).json({ error: error.message });
@@ -181,7 +214,15 @@ app.post("/api/promote", (req, res) => {
     }
 
     writeChapter(chapterPath, chapter.draftContent);
-    clearReviewSession(chapterPath);
+    const oldSession = readReviewSession(chapterPath);
+    const keptNotes = (oldSession?.blocks || []).filter(
+      (b) => b.status === "flagged" || (b.note || "").trim()
+    );
+    if (keptNotes.length > 0) {
+      writeReviewSession(chapterPath, { blocks: keptNotes });
+    } else {
+      clearReviewSession(chapterPath);
+    }
 
     const fresh = readChapterPair(chapterPath);
     return res.json({
@@ -191,6 +232,8 @@ app.post("/api/promote", (req, res) => {
       draftContent: fresh.draftContent,
       reviewBlocks: createReviewBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
       alignedBlocks: createAlignedBlocks(fresh.sourceBody.trim(), fresh.draftBody.trim()),
+      reviewSession: readReviewSession(chapterPath),
+      assets: loadAssetCatalog(),
     });
   } catch (error) {
     return res.status(400).json({ error: error.message });
