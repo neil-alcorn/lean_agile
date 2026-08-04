@@ -8,7 +8,7 @@ source: Lean and Agile.docx
 
 # Chapter 9: Why Pride in Work Drives Quality and Innovation
 
-Opening Scenario: The Team That Stopped Caring Just Enough to Survive
+## Opening Scenario: The Team That Stopped Caring Just Enough to Survive
 
 The team still met its deadlines, technically speaking.
 
@@ -30,7 +30,7 @@ The team had not become lazy. It had become detached.
 
 Pride had drained out of the system not because people suddenly lost character, but because the process kept teaching them that care and carelessness produced roughly the same reward.
 
-Big Idea: Pride in Work Is a System Outcome, Not a Personality Trait
+## Big Idea: Pride in Work Is a System Outcome, Not a Personality Trait
 
 Deming cared deeply about pride in workmanship, and for good reason. People want to do good work. Most employees do not show up hoping to produce mediocrity, irritate customers, or build something they would be embarrassed to explain at dinner.
 
@@ -51,7 +51,7 @@ It grows where people can:
 
 Where those conditions are absent, pride does not vanish because employees are defective. It erodes because the system keeps training them to detach.
 
-The Hidden Link Between Pride, Process, and Data
+## The Hidden Link Between Pride, Process, and Data
 
 This is where the book’s argument needs to stay stubbornly clear: process, data, and culture are not separate domains.
 
@@ -73,7 +73,7 @@ When the process is visible, when data is useful, when standards are clear, and 
 
 Pride grows where quality has a chance.
 
-Comparing Methodologies: How the Toolbox Supports Pride
+## Comparing Methodologies: How the Toolbox Supports Pride
 
 Lean supports pride by eliminating waste that insults human effort. Rework, unnecessary motion, duplicate approvals, unclear handoffs, and waiting are not only expensive. They are demoralizing. Lean helps protect human energy from preventable nonsense.
 
@@ -99,7 +99,7 @@ The failure modes are equally revealing:
 
 None of those outcomes makes people proud.
 
-Counterintuitive Insight: Standardization Can Increase Ownership
+## Counterintuitive Insight: Standardization Can Increase Ownership
 
 People often hear “standard work” and imagine a gray corridor of joyless compliance.
 
@@ -131,7 +131,7 @@ Standard work for leaders matters too:
 When leaders are erratic, employees learn that quality is negotiable.
 When leaders are consistent, employees gain confidence that effort can compound.
 
-What AI Changes—and What It Doesn’t
+## What AI Changes—and What It Doesn’t
 
 The AI era complicates pride in two opposite ways.
 
@@ -156,7 +156,7 @@ That is a sane use of AI.
 
 An insane use of AI is producing more output than the system can meaningfully absorb, then congratulating itself for acceleration while employees quietly detach from the work.
 
-Pride Drives Innovation Because People Protect What They Respect
+## Pride Drives Innovation Because People Protect What They Respect
 
 People who take pride in their work notice things earlier.
 
@@ -182,7 +182,7 @@ Those questions are not ornamental. They are how organizations grow up.
 
 <!-- VISUAL: image | id:hidden-costs-of-rework | purpose: Reinforce how rework drains money, energy, and pride from a system even when it remains invisible on formal reports. -->
 
-What Leaders Misread
+## What Leaders Misread
 
 Weak leadership often misreads disengagement as laziness, compliance as commitment, and silence as agreement.
 
@@ -205,7 +205,45 @@ Leaders who want pride in work need to ask better questions:
 
 Those are not morale questions in disguise. They are management questions.
 
-Takeaway Insight: Pride Is Built, Not Requested
+## A Metric I Designed So That Honesty Could Not Be Punished
+
+There is a version of this chapter that stays comfortable, and I would rather show you a decision I made and the arithmetic underneath it.
+
+In my own delivery system, work that gets reopened — sent back because it was not actually finished — earns **zero** points. Not negative points. Zero.
+
+That looks like a rounding decision. It is the most important design choice in the entire scoring model, and the reason is one sentence long: **negative scoring discourages honest reopening of defective work.**
+
+Think about what a penalty would actually buy. If reopening carries a cost, the rational move for anyone being measured is to not reopen. Argue the defect is out of scope. Log it as a new item so the original still counts as clean. Fix it quietly and let the record show a first-time pass. None of that improves the software. All of it improves the number, and every bit of it corrodes the thing pride is made of, which is being able to say *this is not done yet* out loud.
+
+Zero is the honest setting. Reopened work earned nothing, because it produced nothing yet — but it costs you nothing extra to admit it. The measure is deliberately blunt at precisely the point where sharpness would buy dishonesty.
+
+This is Deming's argument about fear, expressed as a scoring rule rather than a value statement. You cannot exhort people into pride while running a measurement system that punishes them for telling you the truth about their own work. Point 8 is "drive out fear," and fear in a measured organization is rarely about shouting. It is about arithmetic.
+
+Here is what it looked like in practice. Across 184 units of work, **35 were rejected at a gate — an 11% rework rate.** The rejections concentrated almost entirely in the two gates that require a second human to look: implementation took 22, security took 11. The other seven gates produced two rejections between them.
+
+And the reasons are not abstractions. Each one is a real, dated event in my own logs:
+
+- "Implementation commits not present on master; routes still mock-backed; 25 tests on master, not 87"
+- "4 security fixes are unstaged — not present in committed code"
+- "`npm audit` shows 2 HIGH in production path — contradicts the 0 HIGH/CRITICAL claim"
+- "AC test-coverage claims do not match test files — five ACs lack any test"
+- "doctor accepts placeholder `YOUR_BEACON_API_KEY` as a configured key"
+
+Every one of those is work that was reported finished and was not. That is the hidden factory from Chapter 1 — not a metaphor this time, a log.
+
+I want to be clear about what an 11% rework rate means, because it would be easy to read it as a failure. It is not. It is the rate at which a system that was *looking* found things. The organizations that report 2% rework are not usually building better software; they are usually not looking, or they are counting differently, or their people have learned what the number is supposed to say. A measured rework rate is a sign of a functioning immune system. A suspiciously clean one is a sign that reopening got expensive.
+
+Pride, in the end, is what people feel when they are allowed to care about the work in public. A scoring rule that charges them for that is not a neutral technical choice.
+
+<!-- EDITORIAL_NOTE (FIGURE IDEA): Two-panel figure. Left: horizontal bar of rejections by gate
+     (implementation 22, security 11, all seven other gates 2 combined) — the concentration is the story,
+     and it visually restates that human review is where defects surface. Right: a simple 2x2 or decision
+     sketch contrasting "reopened work scores ZERO" vs "reopened work scores NEGATIVE", with the second
+     column listing the four gaming behaviours a penalty buys (argue scope / relog as new / fix silently /
+     claim first-pass). The right panel is the chapter's argument in one glance.
+     Source: notes/evidence/conduit-measured-evidence.md, Chapter 01 section. -->
+
+## Takeaway Insight: Pride Is Built, Not Requested
 
 You cannot demand pride from people while giving them a system that insults their intelligence.
 
@@ -221,7 +259,7 @@ Pride is built when:
 - leaders are consistent
 - and people can see that better work actually matters
 
-Closing Scenario: A Better Kind of Consistency
+## Closing Scenario: A Better Kind of Consistency
 
 A few months later, Elena’s team still used the spreadsheet, but it no longer ate souls for a living.
 
@@ -239,7 +277,7 @@ But it had become respectable again.
 
 That may be one of the most underrated achievements in management: creating a system in which people can look at the work they do and not feel quietly diminished by it.
 
-Reflection Questions
+## Reflection Questions
 
 - Where in your organization does rework quietly drain pride from otherwise capable people?
 - What standards or standard work would create a healthier baseline without becoming deadening bureaucracy?

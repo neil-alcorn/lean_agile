@@ -8,7 +8,7 @@ source: Lean and Agile.docx
 
 # Chapter 11: AI in Lean, Agile, and ITIL—Optimizing the New IT Landscape
 
-Opening Scenario: The Organization with Every Tool and No Coherent Method
+## Opening Scenario: The Organization with Every Tool and No Coherent Method
 
 The CIO had reason to be optimistic on paper.
 
@@ -22,7 +22,7 @@ The organization did not lack methods.
 
 It lacked a sane way to make them work together in the age of AI.
 
-Big Idea: The Next Step Is Not a New Religion. It Is a Better Operating Posture.
+## Big Idea: The Next Step Is Not a New Religion. It Is a Better Operating Posture.
 
 By now, the pattern should be clear.
 
@@ -59,7 +59,7 @@ But because the AI era punishes organizations that are vague, theatrical, contra
 
 It is less a new doctrine than a way of keeping the main thing the main thing while the tools get faster.
 
-What the Older Methods Still Contribute
+## What the Older Methods Still Contribute
 
 Lean still contributes waste awareness, flow thinking, and respect for the people closest to the work.
 
@@ -83,7 +83,7 @@ That stack might sound like this:
 
 None of this is glamorous. Good. Glamour is not usually what organizations are missing.
 
-What Sane Adds
+## What Sane Adds
 
 Sane does not pretend to invent quality, flow, iteration, service management, or governance.
 
@@ -108,7 +108,7 @@ Sane says:
 
 That is not a whole new worldview. It is old management truth made harder to ignore.
 
-Comparing the Methods in the AI Era
+## Comparing the Methods in the AI Era
 
 This is the point where books often become taxonomy museums. Let’s resist that.
 
@@ -147,7 +147,7 @@ It is better understood as the operating posture that keeps them from working at
 
 <!-- VISUAL: comparison-table | id:framework-map-ai-era | purpose: Compare Lean, Agile, ITIL, PMBOK, BABOK, and the Sane operating posture by problem solved, strength, failure mode, and AI-era relevance. -->
 
-The New Lifecycle of Work
+## The New Lifecycle of Work
 
 One reason older methods strain under AI pressure is that many organizations still imagine delivery as a fairly linear handoff sequence:
 
@@ -188,7 +188,7 @@ This is why the operating posture matters as much as the tools.
 
 <!-- VISUAL: flow-diagram | id:work-lifecycle-map | purpose: Show the modern lifecycle of work from need to learning, including where AI assists, where governance belongs, and how context should travel with the work. -->
 
-Roles Are Shifting, But Responsibility Is Not Disappearing
+## Roles Are Shifting, But Responsibility Is Not Disappearing
 
 Another way to say this is that the organization does not need fewer responsible adults. It needs clearer ones.
 
@@ -208,7 +208,7 @@ The organizations that adapt best will treat that shift as a redesign problem, n
 
 <!-- VISUAL: comparison-table | id:role-shift-map | purpose: Show how project managers, business analysts, developers, QA, architects, service owners, and AI agents change roles in the AI era without pretending accountability disappears. -->
 
-Counterintuitive Insight: Better AI Requires More Intentional Human Structure
+## Counterintuitive Insight: Better AI Requires More Intentional Human Structure
 
 Many executives still assume that better AI will eventually reduce the need for process.
 
@@ -235,7 +235,41 @@ A sane operating posture should feel:
 If the organization gets this right, AI becomes a force multiplier.
 If it gets this wrong, AI becomes a confusion multiplier.
 
-Where Weak Leadership Shows Up in the New Landscape
+## What Happened When I Measured My Own Pipeline
+
+I can put numbers on this, because I built a delivery system, instrumented it, and ran it for four months.
+
+The system moves each unit of work through nine review gates. Seven of them can be evaluated by machine. Two of them — implementation and security — require a second human being. Across 1,195 recorded gate latencies, the shape was unambiguous.
+
+Every machine-evaluable gate cleared in seconds. Median latency at intake, requirements, design, unit QA, regression QA, and communications was under a hundredth of an hour. Not fast. Effectively free.
+
+The two gates requiring a second human behaved like a different species. Implementation had a median of about eleven minutes but a mean of 6.6 hours and a maximum of 259 hours. Security ran a mean of 3.9 hours against a median of three minutes. Between them, those two gates accounted for **65 of the 89 holds longer than an hour, and 11 of the 13 longer than a day.**
+
+Here is what that means, and it is the most useful thing I learned from four months of my own telemetry.
+
+**Automation made the automatable steps effectively free and left the human steps exactly where they were. The bottleneck did not move. It became more visible.**
+
+Goldratt would recognize this immediately. Automating the non-constraint does not increase throughput; it just makes the constraint easier to see. Everyone who has ever bought a faster tool for a step that was never the problem has run this experiment without instrumenting it. I instrumented it, and the constraint turned out to be the two places where a second person has to look at something and decide.
+
+That is not a defect. Those two gates are where the value is. But it does mean that the honest question about AI in a delivery system is not "how much faster is the machine work?" It is "what did we just do to the queue in front of the human work?"
+
+⚠ And now the caveat, which matters more than the numbers.
+
+Most of those latencies measure **how long recording took, not how long reviewing took**. The median gap between a gate request and its approval was twenty-five seconds — which is a measurement of someone clicking, not someone thinking. I know exactly one review duration that was genuinely measured end to end: a security gate that ran **three hours and thirty-nine minutes** across two council rounds.
+
+That figure matters because it demolished a conclusion I had already drawn. Looking at three- and four-second timestamp deltas, I had inferred that reviews were being rubber-stamped. They were not. The timestamps were recording latency, not review latency, and I had read a property of my logging as a property of my colleagues.
+
+So the sentence I would carry out of this chapter is narrower than the table: **timing is not evidence of review depth.** What survives from my data is the *shape* — which gates have fat tails — not the absolute values. A book that prints the table without that caveat would be doing the exact thing this chapter warns against: trusting a proxy at a scope wider than it covers.
+
+<!-- EDITORIAL_NOTE (FIGURE IDEA): The single strongest visual in the author's corpus. A horizontal
+     dot/strip plot, one row per gate (0-8), log-scaled x-axis in hours, each row showing median and the
+     tail out to max. Seven rows collapse against the left axis; gates 3 and 5 stretch far right. No
+     annotation needed — the constraint is visible as pure shape, which is the section's whole argument.
+     Mark the two human gates in a different colour and label them "requires a second human."
+     Source data: notes/evidence/conduit-measured-evidence.md, Chapter 06 table (1,195 latencies).
+     Caption must carry the recording-vs-reviewing caveat or the figure overclaims. -->
+
+## Where Weak Leadership Shows Up in the New Landscape
 
 Weak leadership in the AI era is not only technical ignorance. It is often operational inconsistency disguised as strategic enthusiasm.
 
@@ -250,7 +284,32 @@ That kind of leadership creates a system in which the old methods seem ineffecti
 
 That is one reason the Sane theme matters. It is not only about AI. It is about refusing to let speed, novelty, or ambition excuse incoherence.
 
-Takeaway Insight: The Toolbox Still Matters, but the Hand Must Get Steadier
+## The Thirty-One-Round Review, and What It Cost Me to Learn
+
+I want to give one more example against myself, because it corrects something this chapter could otherwise be read as endorsing.
+
+If better AI requires more intentional human structure, the obvious move is more review. More seats at the table, more adversarial checking, more rounds until the thing is right.
+
+I tried that. One implementation gate in my system accumulated **106 audit files**, including council findings for rounds one through thirty-one. Round one sent the work back. So did most of what followed. Rounds nineteen through twenty-nine sat flat at three to five send-backs each, with blocking-finding counts of 5, 9, 5, 14, 12, 6, 7 — **no convergence trend whatsoever**. Round thirty-one finally approved unanimously across five named seats.
+
+Thirty-one rounds is not thoroughness. It is a system with no stopping rule, and I built it.
+
+The verdict I recorded at the time is the one I would put in front of any executive about to commission a review board: ***a council that cycles twenty-plus rounds is a strategy error, not a defect backlog.*** Somewhere around round five, the rounds stopped being about the work and started being about the review process. Every additional seat found something, because a sufficiently motivated reviewer always finds something. What none of them could do was decide.
+
+Now compare a healthy instance from the same system. Three rounds, four seats. In round two the adversarial seat caught something genuinely valuable — that **the proposed fix was itself invalid** on protocol grounds. The outcome was that the work got descoped rather than shipped.
+
+Three rounds produced a real decision. Thirty-one produced a queue.
+
+**More review is not better review. Convergence is the signal.** If your review rounds are not trending toward agreement, adding another one will not help, and the thing to examine is the framing of the work rather than the diligence of the reviewers. That is Lean's respect-for-people principle arriving through a completely unromantic door: an endless review is disrespectful of everyone's time, including the reviewers', and it produces worse outcomes than a bounded one.
+
+<!-- EDITORIAL_NOTE (FIGURE IDEA): Small multiples or a single line chart — x-axis round number 1-31,
+     y-axis count of blocking findings, with a second series for send-back verdicts. The story is the
+     FLATNESS of rounds 19-29 (5, 9, 5, 14, 12, 6, 7 — no downward trend) followed by the cliff at 31.
+     Inset the healthy 3-round instance at the same scale for contrast; the size difference is the point.
+     Title it something like "What a missing stopping rule looks like."
+     Source: notes/evidence/conduit-measured-evidence.md, "The 31-round council". -->
+
+## Takeaway Insight: The Toolbox Still Matters, but the Hand Must Get Steadier
 
 There is nothing in the AI era that makes waste suddenly useful, instability suddenly harmless, bad requirements suddenly wise, or weak governance suddenly charming.
 
@@ -272,7 +331,7 @@ That is not flashy.
 
 It is just how adults should probably run important systems.
 
-Closing Scenario: The Methods Start Working Together
+## Closing Scenario: The Methods Start Working Together
 
 By the following year, the CIO’s organization still had the same major methods on paper.
 
@@ -292,7 +351,7 @@ They had finally stopped fighting each other.
 
 That is the practical promise of a sane operating posture. Not novelty for its own sake. Coherence.
 
-Reflection Questions
+## Reflection Questions
 
 - Which of your current methods still solve real problems well, and where are they being over-applied or misunderstood?
 - Where does AI in your environment currently amplify waste, confusion, or weak governance?

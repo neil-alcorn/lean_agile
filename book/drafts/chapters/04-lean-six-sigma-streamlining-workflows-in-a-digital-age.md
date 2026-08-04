@@ -23,7 +23,7 @@ Lisa raised a hand to calm the brewing tension. “It’s not about which softwa
 
 Around the room, faces reflected a mix of resignation and confusion. For the senior employees, this was yet another iteration of a process they’d seen fail before. For the newer ones, it was a baffling mess they had yet to fully understand. And for Lisa, it was another uphill battle against entrenched inefficiencies that seemed impossible to resolve.
 
-Lean Six Sigma Principles in IT
+## Lean Six Sigma Principles in IT
 
 Picture this: you’re walking through a bustling manufacturing plant. Machines hum, assembly lines flow smoothly—until they don’t. A conveyor belt stalls, inventory piles up, or a critical machine grinds to a halt. The inefficiencies are visible, tangible, and undeniably disruptive. They scream for attention.
 
@@ -37,7 +37,7 @@ Six Sigma: A data-driven focus on reducing variation and defects to ensure consi
 
 Together, they offer a toolkit for identifying hidden bottlenecks, streamlining workflows, and unlocking the full potential of IT teams. And in a world where digital processes drive everything from product delivery to customer satisfaction, mastering these principles is no longer optional—it’s essential.
 
-The Invisible Bottlenecks of IT
+## The Invisible Bottlenecks of IT
 
 In manufacturing, inefficiencies are hard to miss. A stalled conveyor belt is impossible to ignore. In IT, inefficiencies are harder to see but just as damaging.
 
@@ -51,7 +51,7 @@ Meetings multiply, agendas blur, and no one is quite sure who owns the next step
 
 Individually, these inefficiencies may seem minor, but collectively, they choke throughput—the rate at which teams deliver value to the organization or customers. Whether it’s deploying new features, resolving incidents, or hitting project milestones, throughput in IT is constantly under threat from these invisible bottlenecks.
 
-Throughput and the Theory of Constraints
+## Throughput and the Theory of Constraints
 
 The Theory of Constraints (TOC), popularized by Eliyahu Goldratt in The Goal, teaches us that a system is only as strong as its weakest link. In manufacturing, that weak link might be a malfunctioning machine. In IT, it’s more likely to be a slow approval process, a siloed team, or unclear requirements.
 
@@ -61,7 +61,7 @@ A developer writes code faster than the QA team can test it. The bottleneck isn�
 
 This is why the Theory of Constraints is so relevant to IT. It shifts the focus from broad inefficiencies to the critical constraint that limits throughput. Fix the constraint, and the entire system flows more smoothly.
 
-Applying Lean Six Sigma in IT
+## Applying Lean Six Sigma in IT
 
 Lean Six Sigma provides a systematic approach to identifying and addressing bottlenecks. Here’s how:
 
@@ -77,7 +77,7 @@ This is also where process management quietly becomes culture management. When t
 
 Unlike the visible inefficiencies of manufacturing, IT waste is sneaky. It hides in the delays between tasks, the duplicated efforts, and the energy spent navigating bureaucracy. Lean Six Sigma brings these hidden inefficiencies into the light.
 
-A New Lens for IT Work
+## A New Lens for IT Work
 
 Applying Lean Six Sigma in IT isn’t just about optimizing workflows; it’s about rethinking the way work is done. Consider these shifts:
 
@@ -87,13 +87,13 @@ Collaboration Over Silos: Bottlenecks often arise when teams work in isolation. 
 
 Iterative Improvement: In IT, progress rarely comes from sweeping changes. It’s the small, consistent adjustments—automating routine tasks, streamlining approvals, refining handoffs—that lead to big wins over time.
 
-Why It Matters
+## Why It Matters
 
 The beauty of Lean Six Sigma is that it forces teams to confront the reality of how they work. It’s not about quick fixes or band-aid solutions—it’s about fundamentally transforming workflows to make them more efficient, adaptable, and focused on delivering value.
 
 In IT, where the work is complex and constantly evolving, this shift is critical. Without it, teams risk falling into a cycle of busywork that masks deeper inefficiencies. But with Lean Six Sigma, IT teams gain the clarity, tools, and mindset to focus on what truly matters: solving problems, creating value, and continuously improving.
 
-The 8 Types of Waste in IT (Lean’s Contribution)
+## The 8 Types of Waste in IT (Lean’s Contribution)
 
 <!-- VISUAL: comparison-table | id:framework-map-ai-era | purpose: Reinforce how Lean identifies waste and flow while complementing Agile, ITIL, PMBOK, and BABOK rather than competing with them. -->
 
@@ -101,7 +101,7 @@ Imagine a manufacturing floor: a malfunctioning conveyor belt stops production, 
 
 In IT, inefficiencies hide in plain sight. They appear in the endless email chains that delay decision-making, the redundant features no one uses, and the projects stuck in limbo while approvals crawl through the system. Unlike in manufacturing, where waste often comes with immediate and obvious costs, IT waste quietly chips away at productivity, morale, and the bottom line over time. Addressing these inefficiencies requires a sharp eye and a framework for identifying and eliminating them. That’s where Lean principles, particularly the 8 types of waste, come into play.
 
-Why the 8 Wastes Matter
+## Why the 8 Wastes Matter
 
 The 8 wastes of Lean, often summarized as DOWNTIME, provide a structured way to categorize inefficiencies. Originating from manufacturing, these categories apply seamlessly to IT and knowledge work, where waste often takes on less physical but equally disruptive forms. By understanding these wastes, teams can uncover hidden inefficiencies, streamline workflows, and create environments that prioritize value.
 
@@ -125,7 +125,7 @@ Excess Processing: Doing more work than necessary to achieve the desired result.
 
 Here’s where it gets interesting: addressing these types of waste isn’t about productivity. It’s about building a culture where every team member’s time and talent are respected, where processes are designed to support—not stifle—creativity, and where value flows freely from the team to the customer.
 
-Exploring the 8 Wastes in IT
+## Exploring the 8 Wastes in IT
 
 1. Defects: The Cost of Doing It Twice
 
@@ -239,7 +239,7 @@ Define Standards: Establish clear guidelines for deliverables to avoid over-engi
 
 Gather Feedback: Understand end-user needs to tailor efforts accordingly.
 
-The Path Forward
+## The Path Forward
 
 The 8 wastes offer a lens through which teams can evaluate their workflows, uncover inefficiencies, and create a culture of continuous improvement. In IT, where waste often hides in plain sight, these principles are invaluable. They remind us that value isn’t just about working harder—it’s about working smarter. By addressing these inefficiencies, teams can unlock their full potential, delivering better results with less friction.
 
@@ -249,13 +249,13 @@ Lean principles give us a language to identify and address waste, but they also 
 
 The eight wastes are a mirror reflecting the gaps in our processes. But with awareness, practical tools, and a commitment to continuous improvement, IT teams can transform waste into opportunity—one workflow at a time.
 
-DMAIC Framework: Six Sigma’s Contribution to IT
+## DMAIC Framework: Six Sigma’s Contribution to IT
 
 If Lean focuses on eliminating waste, Six Sigma hones in on consistency and precision. It’s not enough to work faster; Six Sigma asks whether the work is being done right—and whether it can be improved systematically. At the heart of this philosophy is the DMAIC framework, a structured, data-driven approach to problem-solving that helps teams identify, analyze, and resolve inefficiencies.
 
 In manufacturing, DMAIC might address product defects on an assembly line. In IT, it’s just as applicable but operates in subtler realms: optimizing workflows, reducing errors, and ensuring that solutions stick. DMAIC gives teams the tools to stop guessing at problems and start solving them with confidence.
 
-Breaking Down the DMAIC Framework
+## Breaking Down the DMAIC Framework
 
 1. Define: Clarity is Everything
 
@@ -317,7 +317,7 @@ Why It Matters:
 
 Without control measures, improvements risk becoming one-time fixes. The Control phase locks in progress and creates a foundation for continuous improvement.
 
-DMAIC in Action: A Real-World IT Example
+## DMAIC in Action: A Real-World IT Example
 
 Let’s see how DMAIC could transform a common IT challenge: delays in customer support ticket resolution.
 
@@ -333,27 +333,47 @@ Control: Monthly audits track resolution times, and a feedback loop is establish
 
 The result? Resolution times drop by 50%, customer satisfaction improves, and the support team feels more empowered and efficient.
 
-Why DMAIC Works for IT
+## Why DMAIC Works for IT
 
 The brilliance of DMAIC lies in its adaptability. It provides a framework that’s both structured and flexible, allowing IT teams to tackle problems with the same rigor as manufacturing while accounting for the unique challenges of knowledge work. By moving methodically from problem definition to sustained improvement, DMAIC transforms abstract inefficiencies into actionable insights—and ensures those insights lead to lasting change.
 
 But DMAIC does more than solve problems. It builds confidence. It shows teams that no issue is too complex to tackle and that with the right tools, even the most entrenched inefficiencies can be overcome. In a fast-paced digital world, that’s not just a framework—it’s a lifeline.
 
-Waste is Everywhere
+## Waste is Everywhere
 
 Picture this: a manufacturing supervisor walks the factory floor, clipboard in hand, jotting down notes as they pass by a stalled conveyor belt or piles of discarded materials. The waste is impossible to ignore. It’s tangible, visible, and demands immediate action. In IT and office work, though, waste is a master of disguise. It doesn’t sit in plain sight—it hides in calendars packed with unnecessary meetings, inboxes bloated with unread emails, and minds fractured by constant task-switching.
 
 This is the paradox of IT waste: it thrives in plain sight yet remains invisible. Unlike manufacturing, where waste often comes with physical reminders, IT waste is insidious, blending into the daily hum of work until it feels like business as usual. It’s time to challenge that perception.
 
-Hidden Waste: The Silent Thief of Time
+## Hidden Waste: The Silent Thief of Time
 
 Lean principles teach us that waste is anything that doesn’t add value to the customer, and in IT, much of that waste hides in routine activities. Meetings that drift off course, endless email chains debating minutiae, and multitasking that leaves no task fully complete are just a few examples. These activities don’t raise alarms or trigger audits, but they chip away at productivity and morale every day.
 
+<!-- EDITORIAL_NOTE (2026-08-04): ⚠ NEEDS A CITATION — "research consistently shows" appeals to an unnamed
+     literature for three specific claims (lower productivity, more errors, more stress). Unlike the
+     meetings statistic removed below, this one should be KEPT and cited rather than softened: the
+     task-switching literature is real and the claim is very likely sound, so vaguening it would weaken a
+     true statement. It is the last unsourced appeal to authority in the manuscript.
+     🔎 UNVERIFIED LEAD, do not print without checking: the standard primary is generally taken to be
+     Rubinstein, Meyer & Evans (2001), "Executive Control of Cognitive Processes in Task Switching,"
+     Journal of Experimental Psychology: Human Perception and Performance — plus Monsell's task-switching
+     review work. Neither was opened (search quota exhausted); confirm author, year, journal and what each
+     actually measured before citing. Note the stress claim may come from a different literature than the
+     switching-cost claim — verify all three outcomes, not just the first. -->
 Take multitasking, for instance. At first glance, switching between tasks may seem like an efficient way to handle multiple priorities. But research consistently shows that multitasking reduces overall productivity, increases error rates, and heightens stress. The real cost of multitasking isn’t just inefficiency—it’s the mental fatigue that leaves employees disengaged and unable to focus on high-value work.
 
-Or consider meetings. The average knowledge worker spends 21.5 hours per week in meetings, yet surveys indicate that over 70% of those meetings are deemed unproductive. That’s more than half a workweek lost to discussions that could often be replaced by a single email or a short huddle.
+<!-- EDITORIAL_NOTE (2026-08-04, RESOLVED): This paragraph previously read "The average knowledge worker
+     spends 21.5 hours per week in meetings, yet surveys indicate that over 70% of those meetings are
+     deemed unproductive." Two hard figures resting on an unnamed survey — the only unsourced external
+     claim in the manuscript, and the exact pattern Part 1 of notes/evidence/citations-and-corrections.md
+     retires nine other claims for. Neither figure could be traced to a primary source, so the numbers
+     were removed and the argument kept. See evidence bank §1.10a.
+     ⚠ If you want the quantitative version back, cite a named survey with a year — do not restore
+     "surveys indicate." Every other percentage in this chapter is an illustrative scenario figure
+     inside a fictional worked example and needs no source. -->
+Or consider meetings. Ask almost any knowledge worker how much of their week disappears into them, and how much of that time they would describe as genuinely productive, and the gap between those two answers is the waste. You do not need a survey to find it — you need only look at a calendar and ask which of those blocks could have been an email, a short huddle, or a decision someone was empowered to make alone.
 
-The Cost of Overwork: When Effort Becomes Waste
+## The Cost of Overwork: When Effort Becomes Waste
 
 In many organizations, overwork is worn like a badge of honor. Long hours, rapid-fire emails at midnight, and a constant “hustle” mentality are celebrated as dedication. But the truth is, overburdening teams doesn’t lead to better results—it creates more waste.
 
@@ -361,7 +381,7 @@ When employees are stretched too thin, mistakes multiply. A developer rushing to
 
 Moreover, overburdened teams often disengage. Employees who feel their workloads are unmanageable stop looking for ways to improve processes—they’re too busy surviving the day. This creates a vicious cycle where inefficiencies persist because no one has the bandwidth to address them.
 
-The Challenge: Rethinking Waste
+## The Challenge: Rethinking Waste
 
 Here’s the counterintuitive insight: the biggest sources of waste in IT aren’t found in the obvious problem areas. They’re lurking in the everyday habits, systems, and workflows we’ve come to accept as normal. That’s what makes them so dangerous—they’re the unexamined routines that quietly drain resources and stifle potential.
 
@@ -375,17 +395,17 @@ Are overburdened team members creating more problems than they solve?
 
 The answers to these questions might reveal uncomfortable truths. But here’s the good news: identifying these hidden wastes is the first step toward eliminating them. By confronting the invisible inefficiencies in your workflows, you can free up time, energy, and creativity to focus on what truly matters.
 
-Reframing the Narrative
+## Reframing the Narrative
 
 Waste isn’t just the product of broken systems or ineffective tools—it’s often the result of cultural norms that prioritize busyness over productivity, motion over progress, and volume over value. It’s time to reframe the narrative. Waste doesn’t have to be inevitable, and it doesn’t have to define the way we work. By challenging assumptions and adopting a mindset of continuous improvement, IT teams can uncover opportunities where they once saw obstacles.
 
 The hidden waste in IT is an open secret—it’s everywhere. But with the right lens, it can also become an opportunity. Every inefficiency is a chance to improve, every overlooked detail a path to clarity. The work of uncovering waste is hard, but the rewards? They’re transformative.
 
-Tools for Applying Lean Six Sigma in IT
+## Tools for Applying Lean Six Sigma in IT
 
 Lean Six Sigma provides a powerful framework for tackling inefficiencies, but frameworks alone don’t solve problems. To move from theory to action, you need tools—practical, adaptable tools that fit the unique challenges of IT. These tools don’t just help teams identify inefficiencies; they make it possible to visualize, analyze, and resolve them with precision. Let’s explore four essential tools for bringing Lean Six Sigma to life in IT.
 
-Value Stream Mapping: Seeing the Forest and the Trees
+## Value Stream Mapping: Seeing the Forest and the Trees
 
 Imagine trying to fix a workflow when you can only see one part of it. It’s like trying to solve a maze by staring at a single turn. This is where Value Stream Mapping (VSM) comes in. VSM is a Lean tool that provides a bird’s-eye view of your entire process, from start to finish, highlighting every step, delay, and bottleneck along the way.
 
@@ -401,7 +421,7 @@ Why It’s Powerful:
 
 VSM doesn’t just expose bottlenecks—it shows how work flows (or doesn’t) across teams, tools, and systems. It’s a starting point for targeted improvements that deliver real results.
 
-Root Cause Analysis: Fixing Problems at Their Source
+## Root Cause Analysis: Fixing Problems at Their Source
 
 In IT, it’s easy to patch problems as they arise—fix the bug, rerun the job, reboot the server—but these quick fixes often address symptoms, not causes. Enter Root Cause Analysis (RCA), a systematic approach to uncovering the underlying issues behind recurring problems.
 
@@ -429,7 +449,7 @@ Why It’s Powerful:
 
 RCA prevents teams from wasting time on superficial fixes, ensuring that problems are resolved once and for all.
 
-Process Automation: Letting Machines Handle the Mundane
+## Process Automation: Letting Machines Handle the Mundane
 
 Repetitive, manual tasks are the bane of IT teams. They’re boring, error-prone, and a classic example of waste. That’s where Process Automation comes in. By leveraging tools like Robotic Process Automation (RPA) and AI, teams can offload routine tasks to machines, freeing up time for more meaningful work.
 
@@ -451,7 +471,7 @@ Why It’s Powerful:
 
 Automation doesn’t just save time; it also increases accuracy and ensures consistency, helping teams scale their operations without adding overhead.
 
-Kanban Boards: Clarity at a Glance
+## Kanban Boards: Clarity at a Glance
 
 In the chaos of IT workflows, it’s easy to lose track of what’s being worked on, who’s responsible, and what’s falling behind. Kanban boards bring order to this chaos by visualizing tasks and their statuses in a simple, intuitive format.
 
@@ -467,7 +487,7 @@ Why It’s Powerful:
 
 Kanban boards provide instant clarity, making it easier to prioritize tasks, identify bottlenecks, and improve team collaboration.
 
-Bringing It All Together
+## Bringing It All Together
 
 These tools—Value Stream Mapping, Root Cause Analysis, Process Automation, and Kanban Boards—aren’t just theoretical. They’re practical, adaptable solutions that help IT teams work smarter, not harder. But tools alone aren’t enough. They require a mindset of curiosity, a willingness to challenge assumptions, and a commitment to continuous improvement.
 
@@ -475,7 +495,7 @@ The beauty of these tools lies in their simplicity. They don’t demand massive 
 
 Waste may be everywhere, but so are opportunities to improve. With these tools in hand, IT teams can turn inefficiencies into innovations—and transform the way they work.
 
-Transforming an IT Support Workflow
+## Transforming an IT Support Workflow
 
 Meet Horizon Tech, a mid-sized software company with a growing client base and an overburdened IT support team. Every day, the team fields about 120 support tickets, ranging from simple password resets to critical outages affecting major clients. The backlog grows, resolution times creep up, and customer satisfaction plummets. The support team feels like they’re constantly fighting fires but never making progress. Employees are burned out, customers are frustrated, and leadership knows something has to change.
 
@@ -489,7 +509,7 @@ The team exchanges skeptical glances, but the lead support technician, Rahul, br
 
 “Sounds simple,” Carmen says with a nod. “But if it were working, you wouldn’t have a 400-ticket backlog. Let’s take a closer look.”
 
-Step 1: Mapping the Current State
+## Step 1: Mapping the Current State
 
 Carmen walks the team through a Value Stream Mapping exercise. They start with a typical ticket, from the moment it’s submitted to when it’s resolved. Along the way, they note every step, delay, and handoff.
 
@@ -535,7 +555,7 @@ Tier 3 tickets take an hour.
 
 Carmen writes the numbers on the board. “Now let’s calculate takt time.”
 
-Step 2: Introducing Takt Time
+## Step 2: Introducing Takt Time
 
 “Takt time is the rhythm of your work, the heartbeat of your process if you will” Carmen explains. “It tells us how quickly you need to resolve tickets to meet customer demand.”
 
@@ -551,7 +571,7 @@ The room goes quiet. “Wait,” says Maya. “You’re saying we need to resolv
 
 “I’m not saying it, your process data is saying it.  That’s what it takes to keep up with demand,” Carmen confirms. “Right now, your average is closer to 10 minutes for Tier 1 alone. And that’s just the start.”
 
-Step 3: Analyzing with Little’s Law
+## Step 3: Analyzing with Little’s Law
 
 Carmen gathers the team around the whiteboard. “Now that we’ve mapped your process and workload, let’s figure out why tickets seem to get stuck in the system,” she says. “To do that, we’ll use something called Little’s Law.”
 
@@ -573,7 +593,7 @@ WIP = Arrival Rate × Cycle Time
 
 “Sometimes you’ll see it written with symbols like L for the average number of items or Load, the Greek letter λ (lambda) for the Rate, and W the ‘Waiting time’, but I prefer plain language. Let’s make this even simpler with an example.”
 
-A Simple Example: The Coffee Shop Line
+## A Simple Example: The Coffee Shop Line
 
 “To make this clearer, let’s think about a coffee shop,” Carmen says. “Instead of tickets, imagine customers waiting in line for their coffee.”
 
@@ -601,7 +621,7 @@ Rahul raises his hand. “So in our case, as tickets pile up, it’s like the li
 
 “Exactly,” Carmen says. “This is the feedback loop we’re seeing in your ticketing system.”
 
-Applying Little’s Law to IT Support
+## Applying Little’s Law to IT Support
 
 Carmen turns back to their process. “Let’s calculate how Little’s Law applies to your ticketing system,” she says.
 
@@ -617,7 +637,7 @@ Cycle Time = WIP / Arrival Rate = 60 / 2 = 30 minutes per ticket
 
 “Tickets are spending an average of 30 minutes in the system,” Carmen explains. “If your takt time is 4 minutes—meaning that’s how fast you need to resolve tickets to keep up with demand—this is a big problem.”
 
-The Vicious Cycle of Growing WIP
+## The Vicious Cycle of Growing WIP
 
 The first red flag in Horizon Tech’s workflow is the clear imbalance between cycle time and takt time. If the average time it takes to resolve a ticket (cycle time) exceeds the pace required to meet demand (takt time), a backlog is inevitable. This imbalance signals the presence of a bottleneck—a point in the process where work is piling up because throughput can’t keep up with demand.
 
@@ -641,7 +661,7 @@ Reduce WIP by limiting how much work is in progress at one time, like automating
 
 Shorten Cycle Time by improving workflows, such as eliminating redundant approvals.”
 
-Connecting the Dots
+## Connecting the Dots
 
 The team runs the numbers again and compares their cycle time to their takt time of 4 minutes. The gap is stark. “We’re nowhere near where we need to be,” says Ravi, shaking his head.
 
@@ -649,7 +669,7 @@ The team runs the numbers again and compares their cycle time to their takt time
 
 The team exchanges determined looks. For the first time, they feel like they have a clear path forward, and it starts with breaking the vicious cycle of growing WIP.
 
-Step 4: Streamlining the Workflow
+## Step 4: Streamlining the Workflow
 
 With the need for change identified, quantified, and the mechanics of Little’s Law demystified, the team at Horizon Tech is ready to take action. Carmen, the Lean Six Sigma coach, gathers the group again, this time armed with a list of targeted improvements.
 
@@ -697,9 +717,9 @@ Carmen suggests reallocating more complex tickets to Tier 2 and Tier 3 earlier i
 
 The team implements new guidelines for escalation thresholds, ensuring that Tier 1 focuses on simple, high-volume issues while Tier 2 and Tier 3 take on more specialized problems.
 
-Step 5: The Results
+## Step 5: The Results
 
-Tracking Progress: The Data-Driven Feedback Loop
+## Tracking Progress: The Data-Driven Feedback Loop
 
 Carmen emphasizes the importance of measuring the impact of their changes. “We’re not guessing anymore,” she tells the team. “Every improvement needs data to back it up.”
 
@@ -721,7 +741,7 @@ Customer Satisfaction: Positive feedback climbs by 20%.
 
 Customer feedback highlights faster response times and better overall service
 
-Momentum for Continuous Improvement
+## Momentum for Continuous Improvement
 
 The changes not only improve workflows but also energize the team. “For the first time, it feels like we’re ahead of the game,” Maya says during a retrospective.
 
@@ -729,7 +749,7 @@ Carmen nods. “And this is just the beginning. Continuous improvement isn’t a
 
 The team leaves the session motivated, ready to tackle the next round of challenges. With their streamlined workflow in place, Horizon Tech’s IT support team is no longer drowning in tickets—they’re delivering value with speed, precision, and confidence.
 
-Waste is Measurable—and Solvable
+## Waste is Measurable—and Solvable
 
 The biggest takeaway? Waste in IT isn’t always obvious, but with the right tools and mindset, it becomes both measurable and solvable. Value Stream Mapping made hidden inefficiencies visible, takt time analysis revealed the gap between demand and capacity, and Little’s Law uncovered the dynamics of growing backlogs.
 
@@ -745,7 +765,7 @@ Measure and Analyze: Apply frameworks like Little’s Law and takt time to under
 
 Focus on Solutions: Streamline workflows, balance workloads, and automate repetitive tasks to unlock new capacity.
 
-The Link Between Process and Culture
+## The Link Between Process and Culture
 
 Culture and process are deeply intertwined. Broken processes frustrate employees, sap morale, and foster disengagement, leading to a toxic culture. Leaders who aim to improve culture must first address the root cause: the inefficiencies in how work gets done.
 
@@ -755,7 +775,7 @@ Leadership’s role in this transformation is critical. Empowering employees to 
 
 Improving culture starts with improving processes. Leaders who address bottlenecks and empower employees to own their work pave the way for lasting cultural transformation. It’s not just about solving problems; it’s about creating a workplace where people are motivated to solve them together.
 
-Reflection Questions
+## Reflection Questions
 
 What inefficiencies or bottlenecks do you encounter most often in your daily work?
 

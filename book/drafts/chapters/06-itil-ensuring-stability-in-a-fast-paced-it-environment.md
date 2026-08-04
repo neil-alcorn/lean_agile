@@ -8,7 +8,7 @@ source: Lean and Agile.docx
 
 # Chapter 6: ITIL—Ensuring Stability in a Fast-Paced IT Environment
 
-Opening Scenario: The Outage After the “Helpful” Automation
+## Opening Scenario: The Outage After the “Helpful” Automation
 
 By 8:17 on a Tuesday morning, the support channel looked like a family group text after somebody accidentally hit “reply all” on a controversial meme.
 
@@ -35,7 +35,7 @@ Priya finally stepped in. “Stop. Before we add another tool, another meeting, 
 
 That question, more than any dashboard, is where ITIL begins.
 
-Big Idea: ITIL Exists Because Chaos Is Expensive
+## Big Idea: ITIL Exists Because Chaos Is Expensive
 
 ITIL is often introduced as a framework for IT service management, which is true in the same way that saying a fire extinguisher is a cylinder containing chemicals is technically accurate but not especially useful.
 
@@ -61,7 +61,7 @@ That is not bureaucracy. That is adult supervision.
 
 <!-- VISUAL: concept-diagram | id:governance-upstream | purpose: Show why human judgment and operational governance need to move upstream in AI-era delivery instead of living only in downstream incident response and code review. -->
 
-The Similarity People Miss: ITIL Is Solving the Same Kind of Problem as Lean and Agile
+## The Similarity People Miss: ITIL Is Solving the Same Kind of Problem as Lean and Agile
 
 One reason methodologies get treated like rival gangs is that people usually encounter them in implementation mode rather than problem mode. They meet the ritual before they meet the reason.
 
@@ -83,7 +83,7 @@ These are not competing religions. They are different tools for seeing where wor
 
 That matters now because AI has not repealed any of these problems. It has simply made it easier to hit them at scale.
 
-Similarities, Differences, and Why the Toolbox Matters
+## Similarities, Differences, and Why the Toolbox Matters
 
 If Lean, Agile, and ITIL walked into a meeting together, Lean would ask why the meeting exists, Agile would ask what we can learn this week, and ITIL would ask who approved the meeting invite and whether it might take down production.
 
@@ -122,7 +122,7 @@ That is as true of ITIL evangelists as it is of Agile enthusiasts and Lean puris
 
 <!-- VISUAL: comparison-table | id:framework-map-ai-era | purpose: Compare Lean, Agile, ITIL, PMBOK, BABOK, and the Sane operating posture by what problem each solves, what each sees clearly, and how each fails when over-applied. -->
 
-What ITIL Still Gets Right
+## What ITIL Still Gets Right
 
 ITIL still matters because technology work does not stop mattering after the code is written. Software has to run. Incidents have to be handled. Changes have to be assessed. Services have to be supported. Outages still happen on weekends, which is a rude but dependable habit of reality.
 
@@ -149,7 +149,7 @@ In other words, it needs governance.
 Not governance as a decorative committee.
 Governance as a practical answer to the question: how do we move quickly without quietly wrecking the system?
 
-Counterintuitive Insight: In the AI Era, More Speed Makes Control More Valuable
+## Counterintuitive Insight: In the AI Era, More Speed Makes Control More Valuable
 
 People often talk as if control slows innovation. Sometimes bad control does. Bad process can absolutely turn useful work into a hostage situation.
 
@@ -182,7 +182,7 @@ Those are ITIL-shaped questions, even if the implementation is modern.
 
 <!-- VISUAL: flow-diagram | id:work-lifecycle-map | purpose: Show work moving from need to context to change to verification to release to operation, including where AI assists and where human judgment remains explicit. -->
 
-What a Sane ITIL Posture Looks Like
+## What a Sane ITIL Posture Looks Like
 
 This is where a level head matters.
 
@@ -217,7 +217,7 @@ That is one reason this book keeps returning to the same point: there is less ne
 AI changes the scale and speed of execution.
 It does not repeal the need for quality, trust, discipline, and clarity.
 
-Map, Measure, Manage
+## Map, Measure, Manage
 
 One of the clearest lessons from continuous improvement work is that strong process management is not a side hobby for operations people. It is how a culture of improvement becomes real.
 
@@ -247,7 +247,7 @@ If leadership manages by anecdote, culture will become political.
 
 That chain is more common than most organizations like to admit.
 
-Takeaway Insight: Stability Enables Better Change
+## Takeaway Insight: Stability Enables Better Change
 
 Many organizations still treat stability as the boring cousin of innovation.
 
@@ -259,7 +259,7 @@ When teams understand the service, trust the data, own the process, and know whe
 
 And that is the part people often miss: good governance does not only prevent failure. It protects learning.
 
-Closing Scenario: Control That Lets the Team Breathe
+## Closing Scenario: Control That Lets the Team Breathe
 
 A few months after the Tuesday outage, Priya’s team looked different.
 
@@ -283,7 +283,7 @@ Just enough order to let real work happen.
 
 <!-- CALLOUT: key-idea | Control is not bureaucracy when it prevents expensive chaos. -->
 
-Reflection Questions
+## Reflection Questions
 
 - Where does your organization currently confuse activity with control?
 - Which ITIL practices in your environment create real clarity, and which ones mostly create ceremony?
