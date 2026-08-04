@@ -2,10 +2,28 @@
 
 This directory is the active source tree for the book.
 
+## 🔴 EDIT `drafts/chapters/` — NEVER `chapters/`
+
+**This is the single most important rule in this repository. Read it before editing any prose.**
+
+`drafts/chapters/` is where writing happens. `chapters/` is downstream: it receives content only after
+the author approves it in the review app. **Anyone — human or AI — who edits `chapters/` directly is
+editing the wrong track, and the review app will eventually overwrite it or silently diverge from it.**
+
+**Why this is stated so loudly:** on 2026-08-04 the two tracks had drifted **~9,000 words apart**, with
+`drafts/` ahead and longer in **13 of 14 files** (Chapter 6 by 3.8×). The older wording of this file and
+of `notes/source-review.md` disagreed about which copy was canonical, and a full editing session was
+spent improving `chapters/` — the abandoned copy — before the divergence was noticed. Conclusions about
+chapter quality and length were drawn from the thin track and were wrong. See
+`notes/editorial-feedback.md` → `## TRACK DIVERGENCE`.
+
+**If you need to know how long or how finished a chapter is, measure `drafts/chapters/`.** Measuring
+`chapters/` answers a narrower question than the one you are asking.
+
 ## Canonical Sources
 
-- `chapters/` contains the canonical manuscript source files.
-- `drafts/chapters/` contains the editable working copies used by the review app.
+- **`drafts/chapters/` — the working manuscript. Edit here.** The review app reads and writes this copy.
+- `chapters/` — downstream promoted copy. **Do not hand-edit.** Treat as generated.
 - `assets/images/` contains graphics used by the book.
 - `assets/` contains the production asset folders for diagrams, tables, quotes, callouts, and images.
 - `notes/` contains editorial feedback, chapter review notes, and working guidance that has not yet been folded into prose.
@@ -59,13 +77,30 @@ The goal is to make editing easy without losing the ability to assemble a clean 
 
 ## Copy Model
 
-There are now two chapter tracks:
+There are two chapter tracks, and they are **not** peers:
 
-- `chapters/` is the stable build/source copy
-- `drafts/chapters/` is the editable review copy
+| | `drafts/chapters/` | `chapters/` |
+| --- | --- | --- |
+| Role | **the working manuscript** | downstream promoted copy |
+| Edit by hand? | **yes — this is the only place to write** | **no — treat as generated** |
+| Written by | the author, and the review app | promotion from drafts, after approval |
+| Build output | `build/Lean-and-Agile-draft.md` | `build/Lean-and-Agile.md` |
 
-The review app writes approved edits into `drafts/chapters/`.
-Builds prefer the draft copy when it exists.
+`build_book.py` has two resolvers. `draft_chapter_paths_from_config()` prefers `drafts/chapters/`
+per-file and falls back to `chapters/` only when a draft file is missing; `chapter_paths_from_config()`
+reads `chapters/` exclusively. **Both artifacts are produced on every build, so a green build never tells
+you the two tracks agree.** To compare them:
+
+```bash
+for f in book/chapters/*.md; do
+  b=$(basename "$f"); d="book/drafts/chapters/$b"
+  diff -q "$f" "$d" >/dev/null 2>&1 || echo "DIFFERS: $b ($(wc -w < "$f")w vs $(wc -w < "$d")w)"
+done
+```
+
+⚠ **`chapters/` is currently ~9,000 words behind and should not be read as the book.** Reconciling the
+two tracks is an open task; until it is done, treat `drafts/chapters/` as the manuscript and expect
+`chapters/` to be stale.
 
 ## Review Workflow
 

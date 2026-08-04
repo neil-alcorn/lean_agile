@@ -1,12 +1,21 @@
 # Citations, Corrections, and Claims To Retire
 
-**Status: not manuscript prose.** A sourced reference bank for the manuscript, assembled 2026-08-03/04.
+**Status: not manuscript prose.** A sourced reference bank for the manuscript, assembled 2026-08-03/04,
+extended 2026-08-04 with the METR RCT (§5.2) and psychological safety (PART 7).
 
 **Read the verification labels.** ✅ = verified from a primary source actually opened. 🟡 = verified only
 from a named secondary source. ❌ = could not verify — **do not print**.
 
 Several research passes were cut short by session limits. Sections marked **INCOMPLETE** were not
 finished and should not be treated as exhaustive.
+
+🔧 **How to keep working on this when web search is unavailable.** Search quota and paper quota are
+separate. When `WebSearch` is exhausted, `WebFetch` still works on a known URL, and a fetched PDF is
+saved to disk — from there `PyMuPDF` (installed) extracts the full text locally, which is **more
+reliable than the fetch tool's own summary**. Both sources added on 2026-08-04 were obtained this way
+after search was at 200/200. ⚠ And the reason to extract locally rather than trust the summary: asked
+for the METR confidence interval, the fetch summary returned **"a slowdown of 3–11%"**, a figure that
+does not appear anywhere in the paper. Quote from extracted text, never from a summary of a PDF.
 
 ---
 
@@ -131,6 +140,63 @@ efficiency at all.** Modig & Åhlström define it *qualitatively*, not as the to
 Note also the widely-repeated Modig & Åhlström "2 hours vs 1,008 hours" breast-cancer figures are
 ❌ **unverified from the book** — internally consistent (1,008 h = 42 days) but unchecked.
 
+### 1.10a 🔴 "21.5 hours per week in meetings, over 70% unproductive" ❌ — **it is IN the manuscript**
+
+**Found 2026-08-04 in `drafts/chapters/04`, line ~354.** Flagged in place with an `EDITORIAL_NOTE`.
+
+> "The average knowledge worker spends **21.5 hours per week** in meetings, yet **surveys indicate** that
+> **over 70%** of those meetings are deemed unproductive."
+
+**Two hard figures resting on "surveys indicate," which names no survey.** Not verified — WebSearch quota
+was exhausted when this was found, and **no source should be invented for it.** This is the same defect
+pattern as §1.1–1.9: a plausible, widely-circulated statistic with no traceable primary.
+
+⚠ **This one matters more than the other nine, because the other nine are hypothetical and this one is
+actually printed.** A book that retires the 100:1 rule and the Standish figures while keeping an
+unsourced meetings statistic has a credibility problem at exactly the point a skeptical reader checks.
+
+✅ **RESOLVED 2026-08-04 — option 2 applied.** The numbers were removed and the argument kept; the
+paragraph now invites the reader to compare their own calendar against their own sense of productive
+time, which makes the same point and stakes nothing unverifiable. The manuscript now contains **zero
+unsourced external *statistical* claims.** ⚠ If the quantitative version is ever wanted back, it needs a
+named survey with a year — not "surveys indicate."
+
+### 1.10b ⚠ "Research consistently shows" that multitasking hurts — ch04, KEEP but cite
+
+**Found on the same sweep** (`drafts/04`, ~line 352). Three claims — lower productivity, higher error
+rates, more stress — attributed to an unnamed literature. **This is the last unsourced appeal to
+authority in the manuscript**, and it should be treated *differently* from §1.10a: it invents no
+numbers, and the task-switching literature genuinely exists, so **softening it would weaken a probably-true
+claim.** Cite it; do not vaguen it. Flagged in place.
+
+🔎 **UNVERIFIED LEAD — do not print without opening it.** The usual primary is taken to be Rubinstein,
+Meyer & Evans (2001), "Executive Control of Cognitive Processes in Task Switching," *JEP: Human
+Perception and Performance*, alongside Monsell's task-switching reviews. **Neither was opened** (search
+quota exhausted). Confirm author/year/journal and *what was actually measured* — and note the **stress**
+claim likely comes from a different literature than the switching-cost claim, so all three outcomes need
+separate support.
+
+⚠ **Method note: this was the third too-narrow pattern in one session.** A scan for `research shows`
+missed `research **consistently** shows`. The working sweep strips HTML comments first (otherwise the
+editorial notes quoting removed text match themselves) and covers
+`(research|studies|study|survey|data|evidence|statistics|experts|science) + (consistently|repeatedly|
+clearly)? + (show|indicate|suggest|prove|agree|reveal|confirm)` plus `it is well-known` and
+`widely documented/reported/accepted`. Two of its three hits are false positives — "Data reveals
+behavior" (a rhetorical triad) and "What does the data say" (a question in a list) — so **read the hits,
+do not just count them.**
+
+**The options considered were:** (1) find and cite the primary survey — blocked, search quota exhausted,
+and **no source was invented**; (2) keep the point, drop the numbers — chosen; (3) cut the paragraph.
+
+🔑 **How it was missed, and the lesson for future scans.** An earlier pass this session reported **zero
+numeric claims across the manuscript** — a false negative caused by the regex `[0-9]+\s*%\b`. **`\b`
+after `%` never matches**, because `%` and a following `.` or space are both non-word characters, so
+`"Cut by 50%."` was invisible. The corrected pattern found **16 percentage claims** (15 in ch04, 1 in
+ch05). Fifteen are illustrative scenario figures inside fictional worked examples and need no source.
+**Never trailing-`\b` after a non-word character**, and treat any "we found nothing" search result as a
+hypothesis until the pattern is proven against a known positive.
+[[feedback_truncated_search_reads_like_clean_one]]
+
 ### 1.10 Two Reinertsen principles are worded wrongly — and the book can say so precisely ✅
 
 - **Q3, "capacity utilization increases queues exponentially."** The relationship is
@@ -146,9 +212,45 @@ Computed U-factor, ρ/(1−ρ): 0.50→1.00 · 0.70→2.33 · 0.80→4.00 · **0
 
 ## PART 2 — CORRECTIONS TO SPECIFIC MANUSCRIPT CLAIMS
 
-### 2.1 "Quality is everyone's responsibility" — the introduction inverts Deming ✅
+### 2.1 "Quality is everyone's responsibility" — the introduction inverts Deming ✅ **RESOLVED 2026-08-04**
 
-The research confirms the direction of the problem I flagged in `readability-audit-2026-08-03.md`.
+⚠ **Housekeeping note:** this section previously carried this heading but its body discussed only merit
+rating, which did not actually evidence the inversion claim. The grounding was fetched 2026-08-04 and
+is below. **The fix is now written into the introduction** as the book's opening hook.
+
+**The grounding is Point 10, verbatim from the Deming Institute** — and it is devastating, because the
+popular phrase is not merely absent from Deming, it is an instance of the thing Point 10 prohibits:
+
+> "**Eliminate slogans, exhortations, and targets for the work force** asking for zero defects and new
+> levels of productivity. Such exhortations only create adversarial relationships, as **the bulk of the
+> causes of low quality and low productivity belong to the system and thus lie beyond the power of the
+> work force**."
+
+"Quality is everyone's responsibility" *is* a slogan, *is* an exhortation, and *is* aimed at the work
+force. Deming did not neglect to say it; he told readers to stop saying things of this kind.
+
+★ **The finding that makes this publishable rather than merely pedantic — the phrase is a corruption of
+a real point, not an invention.** Point 14, verbatim:
+
+> "Put everybody in the company to work to accomplish the transformation. **The transformation is
+> everybody's job**."
+
+So the popular version (a) keeps "everybody," (b) substitutes **quality** for **the transformation**,
+and (c) re-aims a sentence addressed to *everybody in the company* — executives included — downward at
+the front line. One noun swap and one change of audience converts a statement of management obligation
+into a mild reproach to workers. **That is the whole mechanism of process-language decay in a single
+example**, which is why it now opens the book.
+
+**Also verified on the same page:** Point 3 — *"Cease dependence on inspection to achieve quality"* —
+which is the primary citation for the book's recurring "quality is built, not inspected" theme, previously
+asserted without one. And Point 8 — *"Drive out fear, so that everyone may work effectively for the
+company"* — for the "fear kills improvement" theme.
+
+⚠ **Rendering caution on Point 12b.** The deming.org 14 Points page renders 12b as only *"Remove
+barriers that rob people in management and in engineering of their right to pride of workmanship."* The
+fuller *Out of the Crisis* text continues *"…This means, inter alia, abolishment of the annual or merit
+rating and of management by objective."* Both are correct; the web page truncates. Quote whichever you
+cite, and do not blend them.
 
 **Deadly Disease 3, verbatim, from the Deming Institute:** *"Evaluation of performance, merit rating,
 or annual review."* ✅ And **Point 12b** requires "abolishment of the annual **or** merit rating and
@@ -413,15 +515,102 @@ by 7.2%." The 2024 report says "reduction in stability"; the 2025 report restate
 "increase in instability" — quote one and attribute it correctly. And **2025 publishes no percentages
 at all** (standardized beta weights only), so any percentage attributed to 2025 is fabricated.
 
-### 5.2 ★ The single most useful external finding for this book ✅
+### 5.2 ★ The single most useful external finding for this book ✅ — **now verified from the primary**
 
-As reported in DORA's 2025 report, citing METR:
+**Upgraded 2026-08-04 from 🟡 to ✅.** The paper itself was opened and read; cite it directly, not via DORA.
 
-> "developers who were **slowed down by AI tools by 19%** still believed the tools had made them
-> **20% more efficient**."
+**Full citation.** Joel Becker, Nate Rush, Beth Barnes, David Rein (Model Evaluation & Threat Research),
+"Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity,"
+arXiv:2507.09089v2 [cs.AI], 25 July 2025.
 
-🟡 Verified as DORA's sentence; the METR study itself was not independently fetched — attribute as
-"as reported in the 2025 DORA report" or verify separately.
+⚠ **The name is Beth Barnes, not Elizabeth Barnes.** Two of the four authors are marked equal
+contribution (Becker, Rush); correspondence is Rush and Becker.
+
+**The design, verbatim from the abstract:**
+
+> "We conduct a randomized controlled trial (RCT) to understand how AI tools at the February–June
+> 2025 frontier affect the productivity of experienced open-source developers. 16 developers with
+> moderate AI experience complete 246 tasks in mature projects on which they have an average of 5
+> years of prior experience. … Before starting tasks, developers forecast that allowing AI will reduce
+> completion time by 24%. After completing the study, developers estimate that allowing AI reduced
+> completion time by 20%. Surprisingly, we find that allowing AI actually **increases completion time
+> by 19%**—AI tooling slowed developers down. This slowdown also contradicts predictions from experts
+> in economics (39% shorter) and ML (38% shorter)."
+
+**The four numbers in one line, which is how the book should print them:** forecast −24%, post-hoc
+estimate −20%, economists −39%, ML experts −38%, **actual +19%**.
+
+**Precision facts the secondary sources drop:**
+- **136** AI-allowed issues, **110** AI-disallowed. Tasks averaged **2.0 hours**.
+- Repositories averaged **23,000 stars**, **~10 years old**, **>1,100,000 lines of code**.
+- Developers averaged **5 years and 1,500 commits** on the repos they worked in.
+- Tools were **Cursor Pro with Claude 3.5/3.7 Sonnet** — state of the art *at that time*.
+- Expert forecasts came from **34 economics experts and 54 ML experts** (not a vague "experts say").
+- **21** properties of the setting were evaluated as candidate explanations — *not* 20.
+
+★ **The finding inside the finding, which is better than the headline.** Developer time forecasts
+correlated with actual time at **r = 0.64** (AI-allowed) and **r = 0.59** (AI-disallowed). Verbatim:
+
+> "developers are broadly well-calibrated on the relative amount of time that issues will take, but
+> their expectations regarding the usefulness of AI assistance are **reversed**."
+
+This is the sharpest version of the argument for this book. These developers were *not* bad estimators.
+Their estimation was sound and their judgment of their own tooling was inverted. A blanket "developers
+can't estimate" reading of this paper gets it backwards.
+
+**The five factors METR judges likely contributors** (their Table 1, with their own evidence):
+
+| Factor | What they measured |
+| --- | --- |
+| Over-optimism about AI usefulness | The −24% / −20% forecast gap itself; may cause developers to *overuse* AI |
+| High developer familiarity with repositories | Developers **slowed down more on issues they knew better** |
+| Large and complex repositories | ~10 years old, >1.1M LOC |
+| Low AI reliability | Developers accepted **<44%** of AI generations; **9% of total time** spent reviewing/cleaning AI output; majority reported making major changes to clean up AI code |
+| Implicit repository context | AI did not use tacit knowledge developers held |
+
+They also record **4% of time waiting on AI generations**, and — from screen recordings — that with AI
+allowed, developers spent *less* time coding and reading, more time prompting, reviewing and waiting,
+and **more time idle**.
+
+🔴 **Three ways to get this citation wrong, all of which the book must avoid.**
+
+**1. Do not invent a confidence interval.** The paper reports 95% CIs using HC3 standard errors, but
+the interval on the headline effect is rendered **graphically in Figure 1** and does not appear as a
+number in the text. Cite the point estimate and the robustness discussion. (A machine extraction of
+this same PDF confidently returned "a slowdown of 3–11%" — that figure is **not in the paper**. Noted
+here because fabricating a plausible interval is exactly the failure this chapter is about.)
+
+**2. The raw difference is 34%, not 19%.** Their footnote 12: the unadjusted ratio of implementation
+times is **34%**, and the regression-adjusted estimate is **19%**, because AI-allowed issues came out
+slightly harder after randomization. **19% is the defensible number.** Anyone quoting 34% is quoting
+an estimator the authors explicitly set aside.
+
+**3. METR disclaims the generalization most people draw.** Their Table 2 lists claims they do *not*
+provide evidence for. First row, verbatim:
+
+> "We do not provide evidence that: **AI systems do not currently speed up many or most software
+> developers** … We do not claim that our developers or repositories represent a majority or
+> plurality of software development work."
+
+They further state they estimate **some developers did experience speedup** (their Figure 17), that
+they studied only software development, that better elicitation or repository-specific finetuning
+could plausibly yield positive speedup, and that near-future systems may speed up developers in this
+exact setting.
+
+⚠ **And the book must apply its own standard here: n = 16 developers.** A manuscript that warns P85
+needs ~100 observations (§3.2) cannot lean on a 16-person study uncritically. The honest framing is
+the one METR uses: a well-instrumented result in a specific setting that contradicted every forecast
+made about it, including by the people in it. **That is enough. It does not need to be more.**
+
+**Why this matters more than anything else here:** it is the same defect the author measured on his
+own team. His `/insights` analysis found **premature confidence in 8 of 9 engineers**, including
+himself declaring a deployment complete from a green pipeline — and concluded *"the team's quality
+control currently depends on individual skepticism, and skepticism is unevenly distributed."*
+
+**METR measured the gap between felt and actual productivity in a controlled trial. The author
+measured the same gap in his own team and named it.** One is external and instrumented with screen
+recordings; the other is first-hand, dated, and includes the author among the offenders. Neither needs
+embellishment, and together they make the argument the current Chapter 11 only gestures at.
 
 **Why this matters more than anything else here:** it is the same defect the author measured on his
 own team. His `/insights` analysis found **premature confidence in 8 of 9 engineers**, including
@@ -462,18 +651,239 @@ tell the difference."
 
 ---
 
+## PART 7 — PSYCHOLOGICAL SAFETY, FOR CHAPTER 3 ✅
+
+**Added 2026-08-04.** Chapter 3 ("Building a Speak-Up Culture") previously had **zero citations** while
+resting entirely on this construct. The founding paper was opened and read in full.
+
+### 7.1 The citation, exactly ✅
+
+Amy Edmondson, "Psychological Safety and Learning Behavior in Work Teams," *Administrative Science
+Quarterly*, Vol. 44, No. 2 (June 1999), pp. 350–383. JSTOR stable URL: `jstor.org/stable/2666999`.
+Author affiliation on the paper is **Harvard University**.
+
+⚠ Note the byline: the 1999 paper is bylined **Amy Edmondson**; her later work is **Amy C. Edmondson**.
+Match the byline to the work you are citing.
+
+### 7.2 The definition — use this wording, not a paraphrase ✅
+
+Verbatim, p. 354:
+
+> "Team psychological safety is defined as **a shared belief that the team is safe for interpersonal
+> risk taking**. For the most part, this belief tends to be **tacit**—taken for granted and not given
+> direct attention either by individuals or by the team as a whole."
+
+The abstract's phrasing — *"a shared belief held by members of a team that the team is safe for
+interpersonal risk taking"* — is the version most often quoted, and both are accurate.
+
+★ **"Tacit" is load-bearing and almost always dropped.** Edmondson's construct is a belief teams hold
+*without discussing it*. That has a direct operational consequence for the book: you cannot establish
+psychological safety by announcing it. A team's real answer is already installed, and it was installed
+by what happened the last time someone spoke up.
+
+### 7.3 🔴 The passage that corrects the most common misreading ✅
+
+This is the highest-value quote in the paper for this manuscript. Verbatim, p. 354:
+
+> "Team psychological safety **is not the same as group cohesiveness**, as research has shown that
+> cohesiveness can **reduce** willingness to disagree and challenge others' views, such as in the
+> phenomenon of groupthink (Janis, 1982), implying a lack of interpersonal risk taking. The term is
+> meant to suggest **neither a careless sense of permissiveness, nor an unrelentingly positive affect**
+> but, rather, a sense of confidence that the team will not embarrass, reject, or punish someone for
+> speaking up."
+
+**Why this matters for Chapter 3.** The popular management reading of psychological safety is
+"niceness" or "team harmony." Edmondson explicitly rules both out **in the paper that introduced the
+term** — and goes further, noting cohesiveness can *work against* the thing she is measuring. A
+chapter arguing for speak-up culture that cites this passage is arguing from the source; one that
+equates safety with comfort is contradicted by it.
+
+### 7.4 Psychological safety vs. trust — a real distinction, not a synonym ✅
+
+Verbatim, p. 354:
+
+> "Trust is defined as the expectation that others' future actions will be favorable to one's
+> interests, such that one is willing to be vulnerable to those actions (Mayer, Davis, and Schoorman,
+> 1995; Robinson, 1996). Team psychological safety **involves but goes beyond interpersonal trust**;
+> it describes a **team climate** characterized by interpersonal trust and mutual respect in which
+> people are comfortable being themselves."
+
+The operative difference for the book: **trust is dyadic and forward-looking; psychological safety is
+a group-level climate.** Edmondson argues explicitly that for it to be a group-level construct it must
+characterize the team rather than individual members, and members must hold similar perceptions of it.
+
+### 7.5 The study and what it actually found ✅
+
+- **51 work teams** at a company pseudonymed **"Office Design Incorporated" (ODI)** — a manufacturer
+  of **office furniture**, ~**5,000 employees**, teams in place since **1979**. Multimethod:
+  quantitative surveys plus qualitative interviews and observed team meetings.
+- Analysis at the **group level (N = 51)**, because members of the same team are not independent.
+- **Team performance was rated by customers**, not self-reported — a real strength worth mentioning.
+
+**The findings, precisely:**
+1. Team psychological safety **is** associated with learning behavior.
+2. Team **efficacy is not**, once psychological safety is controlled for.
+3. **Learning behavior mediates** between psychological safety and team performance.
+
+★ **Point 3 is the one the book should build on.** Psychological safety does not improve performance
+directly in Edmondson's model — it works **through learning behavior**. Safety without any change in
+how the team gets and processes information predicts nothing. That is a far more useful and more
+defensible claim than "safe teams perform better," and it maps directly onto the book's own argument
+that speaking up only matters if the system does something with what was said.
+
+**Sample scale items** (a mix of positively and negatively worded items, to mitigate response-set bias):
+*"If you make a mistake on this team, it is often held against you"* (reverse scored); *"It is safe to
+take a risk on this team"*; *"No one on this team would deliberately act in a way that would undermine
+my efforts."* Learning-behavior items include *"We regularly take time to figure out ways to improve
+our team's work process."*
+
+⚠ **The sampling caveat, in Edmondson's own words** (p. 358) — the book should not overstate this study:
+
+> "this sample was **not selected to ensure representativeness** of the population of all teams at
+> ODI, nor were the four subgroups of team types selected to ensure that they were representative of
+> each type."
+
+Participation was voluntary. One company, one industry, 1999, n = 51 teams. It is the founding
+construct paper and it is well-instrumented; it is **not** a general law of organizations, and this
+book's measurement discipline is better served by saying so.
+
+### 7.6 The error-reporting finding — a verified pointer, not yet a verified quote 🟡
+
+The famous counterintuitive result — that better-performing units **reported more** errors, because
+detection depends on climate rather than error rate — is **Edmondson's 1996 paper, not the 1999 one.**
+Full reference, transcribed verbatim from the 1999 paper's own reference list:
+
+Edmondson, Amy C. 1996. "Learning from mistakes is easier said than done: Group and organizational
+influences on the detection and correction of human error." *Journal of Applied Behavioral Science*,
+32: 5–32.
+
+🟡 **The citation is confirmed; the finding's exact wording and figures are not** — that paper was not
+opened. **Do not print a quote or a number from it** until it is. If the book wants the
+error-reporting argument (and it should — it is the strongest possible opening for Chapter 3), that
+paper is the next thing to read.
+
+⚠ **Project Aristotle** remains unverified and is deliberately *not* written up here. Google's
+internal study is a blog-published, non-peer-reviewed corporate analysis; it is the reason the term
+went mainstream, but it is not citation-grade evidence and should be introduced as "Google reported"
+rather than "research shows." Retrieving it was blocked — `rework.withgoogle.com` has been retired.
+
+★ **What Chapter 3 already has that is stronger than any of this:** an engineer filed two defects
+**against the author's own tool**, and the author wrote them up against himself. That is a first-hand,
+dated instance of exactly what Edmondson's scale items are trying to detect — and no survey instrument
+in the literature is as persuasive to a reader as the author documenting a defect in his own work.
+
+---
+
+## PART 8 — THE LEAN AND TOC CANON THE BOOK ASSERTS THROUGHOUT 🟡
+
+**Added 2026-08-04.** These are asserted repeatedly in the manuscript and were previously unverified.
+All are now sourced — but **all are 🟡, from authoritative secondary sources, not from the primary books.**
+Read §8.4 before printing any of it.
+
+### 8.1 Womack & Jones's five principles ✅ (date) / 🟡 (wording)
+
+**The 1996 date is confirmed.** The Lean Enterprise Institute — Womack's own institute — attributes the
+five principles to **"Womack and Jones 1996, p. 10."** That resolves the open question in the prior
+draft, where the earliest record found was 1998.
+
+LEI's rendering, verbatim:
+
+1. "Specify value from the standpoint of the end customer by product family."
+2. "Identify all the steps in the value stream for each product family, eliminating whenever possible
+   those steps that do not create value."
+3. "Make the value-creating steps occur in tight sequence so the product will flow smoothly toward the
+   customer."
+4. "As flow is introduced, let customers pull value from the next upstream activity."
+5. "As value is specified, value streams are identified, wasted steps are removed, and flow and pull
+   are introduced, repeat this process again and continue it until a state of perfection is reached in
+   which perfect value is created with no waste."
+
+⚠ **LEI's own words are "Adapted from Womack and Jones 1996, p. 10."** *Adapted* — so this is **not** a
+verbatim quotation of Womack and Jones. Cite it as LEI's formulation of their principles, or open the
+book. Do not print it inside quotation marks attributed directly to Womack and Jones.
+
+### 8.2 Ohno's seven wastes 🟡
+
+LEI's enumeration, verbatim, attributed on that page to **Ohno's categorization** — with **no book,
+year, or page given**:
+
+| Waste | LEI's definition, verbatim |
+| --- | --- |
+| Overproduction | "Producing ahead of what's actually needed by the next process or customer." |
+| Waiting | "Operators standing idle as machines cycle, equipment fails, needed parts fail to arrive, etc." |
+| Conveyance | "Moving parts and products unnecessarily, such as from a processing step to a warehouse to a subsequent processing step." |
+| Processing | "Performing unnecessary or incorrect processing, typically from poor tool or product design." |
+| Inventory | "Having more than the minimum stocks necessary for a precisely controlled pull system." |
+| Motion | "Operators making movements that are straining or unnecessary, such as looking for parts, tools, documents, etc." |
+| Correction | "Inspection, rework, and scrap." |
+
+⚠ **Two naming cautions.** LEI's list uses **Conveyance / Processing / Correction**, where most
+secondary sources say **Transport / Over-processing / Defects**. The concepts match; the labels do not.
+And note this is *still* not Ohno — the primary is *Toyota Production System: Beyond Large-Scale
+Production* (1988), which was **not opened**. Also recorded previously: LEI's separate *muda* page does
+**not** enumerate the seven wastes or attribute them to Ohno, so the two LEI pages are inconsistent
+with each other about attribution.
+
+### 8.3 🔴 Goldratt's five focusing steps — the wording problem is worse than recorded 🟡
+
+The prior note flagged a variant in **step 2**. Verification found the variance extends to **step 5**.
+
+The Theory of Constraints Institute renders them:
+
+1. "IDENTIFY the system's constraint"
+2. "**EXPLOIT** the constraint"
+3. "SUBORDINATE everything else to the constraint"
+4. "ELEVATE the constraint"
+5. "**PREVENT INERTIA** from becoming the constraint"
+
+**Two substantive divergences from the commonly printed form:**
+
+- **Step 2.** The fuller wording is "**Decide how to** exploit the constraint." The abbreviated
+  "EXPLOIT" loses the point that step 2 is a **decision** — which is precisely what step 3 then
+  subordinates everything to. Subordinating everything to a *decision* is a coherent instruction;
+  subordinating everything to a verb is not. **If the book uses these steps as an argument, it needs
+  the fuller form.**
+- **Step 5.** Commonly printed as "*If a constraint has been broken, go back to step 1*" — a **loop**.
+  TOC Institute instead renders it as "prevent inertia from becoming the constraint" — a **warning**.
+  These are different instructions. Goldratt's own formulations across editions contain both ideas
+  (the loop, and the inertia warning), which is likely why sources diverge.
+
+⚠ **No page citation was obtained, and no primary text was opened.** *The Goal* is a novel and is not
+where the five steps are cleanly enumerated; the usual primary is ***The Goal*** (2nd rev. ed.) or
+***It's Not Luck*** / ***Theory of Constraints*** (1990). **Do not print a page number for these steps
+until one of those is in hand.**
+
+### 8.4 ⚠ The standard this book has set for itself
+
+Part 1 of this document retires nine claims largely because they were **repeated from secondary sources
+without anyone opening the primary**. Everything in Part 8 is currently in that same category — better
+sourced than folklore, but not primary. Two honest options:
+
+1. **Attribute to the intermediary**: "the Lean Enterprise Institute defines the seven wastes as…"
+   That is accurate, verifiable today, and requires no further work.
+2. **Open the three books** — *Toyota Production System* (1988), *Lean Thinking* (1996) p. 10, and a
+   Goldratt primary — and upgrade to ✅ with page numbers.
+
+**What the book must not do is print these as verbatim quotations of Ohno, Womack, or Goldratt on the
+strength of what is written above.** Option 1 costs nothing and is defensible. Silent upgrading from
+🟡 to unmarked is the exact failure Part 1 documents.
+
+---
+
 ## INCOMPLETE — research cut short, and the highest-value gaps
 
 These passes were terminated by session limits. **Nothing here should be treated as a null result.**
 
+**✅ CLOSED 2026-08-04 — two of the largest gaps are now primary-sourced.** The METR RCT was read in
+full (see §5.2, upgraded 🟡→✅) and Edmondson 1999 was read in full (see the new PART 7). What remains:
+
 | Gap | Why it matters |
 | --- | --- |
-| **Empirical AI-productivity studies** (controlled trials, null/negative results, over-reliance, deskilling) | The whole evidential base for chs 10–12. Only the METR figure survived, and only second-hand. |
-| **Edmondson on psychological safety; Project Aristotle caveats** | Chapter 3 has no citations at all. |
+| **Edmondson 1996** (*JABS* 32: 5–32) — the error-reporting finding | Reference verified, **content not**. The best available opening for Chapter 3. §7.6 has the exact citation to chase. |
+| **Further AI-productivity studies beyond METR** — deskilling, over-reliance, long-run skill effects | METR now anchors chs 10–12, but it is **one RCT with n = 16**. The chapter is one study deep. METR's own Table 3 names comparison studies (Paradis et al.; Yeverechyahu et al.) — that table is the reading list. |
 | **IEC 60050 / Electropedia Part 192** (MTBF, MTTF, mean repair time, availability) | Free and authoritative; blocked by 403. The correct primary citation for reliability terms. |
 | **A primary Six Sigma text for FPY / RTY** | ASQ blocked. Currently only a vendor website can be cited — not citation-grade. |
-| **Ohno's seven wastes verbatim; Womack & Jones's five principles verbatim** | Both asserted throughout the manuscript, neither verified. The 1996 *Lean Thinking* date is also unconfirmed — earliest record found is 1998. |
-| **Goldratt's five focusing steps with a page** | Note the wording **differs** between sources: "**Decide how to** exploit" (fuller) vs "EXPLOIT" (abbreviated). The fuller form preserves that step 2 is a *decision*, which step 3 then subordinates everything to. |
+| ~~Ohno's seven wastes; Womack & Jones's five principles; Goldratt's five steps~~ | **Partially closed 2026-08-04 → see PART 8.** All three are now sourced from authoritative secondaries and the *Lean Thinking* **1996** date is confirmed. Still needs: the three **primary books** for page-level citation, and Part 8 explains why that matters. |
 | **Juran "gold in the mine"; Crosby's 15–20% with a page** | Crosby's only verified primary utterance is a hedged 1995 interview: *"Something like 20% to 25% of revenues."* Estimates, not measurements — worth saying. |
 | **Peer-reviewed critique of the DORA instrument** | None found, but this is a bounded-search null. **Do not write "there is no peer-reviewed critique" as fact.** |
 
