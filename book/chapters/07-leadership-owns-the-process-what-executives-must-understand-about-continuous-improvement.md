@@ -7,7 +7,7 @@ source: Lean and Agile.docx
 ---
 
 # Chapter 7: Leadership Owns the Process—What Executives Must Understand About Continuous Improvement
-Opening Scenario: The “Executive Mandate” That Fizzled Out
+## Opening Scenario — The “Executive Mandate” That Fizzled Out
 
 The CEO of a mid-sized tech firm, Greg, stood in front of his leadership team, arms crossed. “We need to improve efficiency across the board,” he declared. “Too many delays, too much wasted time. I want every department to find 20% improvement opportunities—ASAP.”
 
@@ -19,7 +19,7 @@ Greg sighed, realizing something had gone wrong. But what?
 
 This chapter explores why leadership’s role in continuous improvement isn’t just about setting goals—it’s about creating the right conditions for real change to happen.
 
-The Big Idea: Leaders Don’t "Do" Continuous Improvement—They Enable It
+## Big Idea — Leaders Don’t "Do" Continuous Improvement—They Enable It
 
 Executives and senior leaders often believe their job is to set high-level strategic goals and let managers and employees figure out the details. That’s only half the equation.
 
@@ -27,7 +27,7 @@ True continuous improvement isn’t a top-down initiative—it’s a system that
 
 This chapter emphasizes the executive role in shaping a culture of quality. Leadership must model continuous improvement and align methodologies with strategic goals.
 
-Key Takeaways:
+## Takeaway
 
 Leaders set the tone for quality and empowerment.
 
@@ -45,7 +45,7 @@ Reinforce the Culture – Model the behaviors of continuous learning, listening,
 
 Executives don’t have to solve every problem—but they do need to create an environment where improvement isn’t just possible, but inevitable.
 
-Comparing Methodologies: Lean, Agile, ITIL, and Six Sigma on Leadership’s Role
+## Comparing Methodologies — Lean, Agile, ITIL, and Six Sigma on Leadership’s Role
 
 Every major improvement methodology emphasizes leadership's role—but each does it slightly differently.
 
@@ -133,7 +133,7 @@ Dismounting: The Courage to Let Go
 
 The Dead Horse Theory isn’t just a humorous metaphor; it’s a powerful call to action. Recognizing when a strategy, process, or project is beyond saving requires humility and courage. But the payoff is worth it: by dismounting, organizations free up resources to focus on solutions that actually deliver value.
 
-Key Takeaways for Letting Go:
+## Takeaway
 
 Evaluate the Root Cause: Is the failure systemic, or can it be salvaged with targeted changes?
 
@@ -143,7 +143,7 @@ Prioritize Value Over Comfort: Be willing to disrupt familiar processes if they 
 
 Empower Employees to Speak Up: Often, those closest to the problem know the horse is dead long before leadership does.
 
-Counterintuitive Insight: Your Biggest Problem Isn’t Process—It’s Incentives
+## Counterintuitive Insight — Your Biggest Problem Isn’t Process—It’s Incentives
 
 One of the biggest barriers to improvement isn’t methodology—it’s misaligned incentives.
 
@@ -167,7 +167,7 @@ Celebrate teams that find root causes and fix systemic issues, not just the ones
 
 ✅ Best Practice: Align compensation, promotions, and recognition with improvement behaviors.
 
-Takeaway Insight: The Best Leaders Build Systems, Not Just Strategies
+## Takeaway — The Best Leaders Build Systems, Not Just Strategies
 
 Executives often believe their primary job is to set the vision—and they’re not wrong. But if that vision doesn’t come with systems that enable execution, it’s just words on a slide deck.
 
@@ -178,7 +178,7 @@ Final Thought:
 If your company struggles with continuous improvement, the first question isn’t, “Why aren’t employees doing this?”
 It’s “What barriers have we, as leaders, put in their way?”
 
-Closing Scenario: Greg Tries Again—The Right Way
+## Closing Scenario — Greg Tries Again—The Right Way
 
 Back to Greg, the frustrated CEO.
 
@@ -194,7 +194,7 @@ Six months later, instead of another set of vague reports, he sees real results�
 
 And that’s the real power of leadership in continuous improvement—building a system where better work becomes second nature.
 
-Reflection Questions for Chapter 7
+## Reflection Questions
 
 Have you set clear improvement goals, or are teams left to interpret vague mandates?
 

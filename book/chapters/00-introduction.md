@@ -15,7 +15,7 @@ This book is about making sense of these frameworks in a practical, relatable wa
 
 Why Deming’s Principles Matter in the AI Age
 
-The foundation of this book—and, indeed, of quality management—traces back to Edward Deming’s 14 Points. Deming believed that good management isn’t about issuing orders but about creating systems that empower everyone to perform their best. He argued that when leadership sets the tone, employees feel ownership over their work, and pride in quality becomes a cultural pillar.
+The foundation of this book—and, indeed, of quality management—traces back to W. Edwards Deming’s 14 Points. Deming believed that good management isn’t about issuing orders but about creating systems that empower everyone to perform their best. He argued that when leadership sets the tone, employees feel ownership over their work, and pride in quality becomes a cultural pillar.
 
 In today’s AI-driven organizations, Deming’s principles are more than historical artifacts; they are guideposts for navigating the complexities of automation and human collaboration. AI may promise unparalleled efficiency, but without careful integration, it risks marginalizing the very employees it aims to support. Deming’s philosophy that “quality is everyone’s responsibility” resonates now more than ever, reminding leaders to prioritize systems that uplift human creativity while harnessing technological power.
 

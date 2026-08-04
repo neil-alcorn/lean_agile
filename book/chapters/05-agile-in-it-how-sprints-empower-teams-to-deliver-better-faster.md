@@ -7,7 +7,7 @@ source: Lean and Agile.docx
 ---
 
 # Chapter 5: Agile in IT—How Sprints Empower Teams to Deliver Better, Faster
-Opening Scenario: The Never-Ending Project
+## Opening Scenario — The Never-Ending Project
 
 Meet Jordan, a product manager caught in the loop of shifting priorities, urgent executive requests, and a backlog that seems to expand faster than it shrinks. His team kicks off projects with enthusiasm, carefully mapping out deliverables, timelines, and dependencies. There’s a roadmap, a high-profile kickoff meeting, and even a well-rehearsed executive briefing where leadership nods approvingly.
 
@@ -573,7 +573,7 @@ The Agile Toolbox: What Actually Works
 
 ✔ Kanban Boards: Even if your team doesn’t use Scrum, Kanban helps visualize work in progress. Tools like Trello, Jira, and Asana keep Agile teams focused.
 
-Closing Scenario: The Agile Turnaround
+## Closing Scenario — The Agile Turnaround
 
 Three months ago, Jordan’s team was caught in a cycle of false productivity—constant pivots, urgent executive requests, and a backlog that felt more like a landfill than a strategic roadmap. Meetings filled their calendars, yet nothing meaningful ever seemed to get done. Their burndown chart was more of a burn-it-down chart.
 
@@ -679,7 +679,7 @@ They simply adjust and keep moving forward.
 
 This is Agile in action.
 
-Reflection Questions
+## Reflection Questions
 
 When priorities shift in your team, how does work actually get adjusted? Are changes deliberate, or do they create chaos? How would Agile’s iterative approach change that?
 

@@ -7,7 +7,7 @@ source: Lean and Agile.docx
 ---
 
 # Chapter 3: Building a Speak-Up Culture - From the Frontlines to the Executive Suite
-Opening Scenario: Voices Left Unheard
+## Opening Scenario — Voices Left Unheard
 
 The conference room buzzed as the executive team prepared for their monthly strategy meeting. The CEO, known for emphasizing “transparency” and “open feedback,” began. “Let’s discuss how we can address the delays in project delivery. I want your honest thoughts,” she said, scanning the room.
 
@@ -197,7 +197,7 @@ Facilitating Feedback: Platforms like Officevibe provide a safe way for employee
 
 While AI offers valuable insights, the transformation to a speak-up culture relies on human connection and consistent leadership action.
 
-Closing Scenario: A Culture Transformed
+## Closing Scenario — A Culture Transformed
 
 Months later, the organization had begun to shift. In the executive meeting, the CEO didn’t just ask for feedback. She listened, acknowledged the discomfort of tough conversations, “We haven’t always listened well, but we’re working to improve.” Anonymous feedback channels allowed employees to speak candidly, and leaders visibly acted on the input.  Employees began to see their input as valued rather than risky.
 
@@ -215,7 +215,7 @@ Driving out fear is not a one-time initiative—it’s a continuous commitment. 
 
 And here’s where it gets interesting: When every employee feels safe to speak, the possibilities for innovation, collaboration, and progress are limitless.
 
-Reflection Questions for Chapter 3
+## Reflection Questions
 
 Psychological Safety:
 

@@ -11,7 +11,7 @@ As Dr. W. Edwards Deming famously put it, “Defects are not free. Somebody make
 
 At the heart of Deming’s philosophy is the conviction that quality is everyone’s job, not just the role of management or specialized improvement teams. In the digital age, this concept resonates deeply: whether in IT, operations, HR, or customer support, every employee contributes to or detracts from the organization’s quality. When they are empowered to address problems as they arise, quality can become a collective endeavor. This book challenges leaders at all levels to champion a culture where management philosophy fosters psychological safety, encouraging and allowing every individual to take ownership of quality, contribute ideas without fear, and feel genuinely engaged in building systems that empower both people and processes.
 
-Opening Scenario: A Reactive Quality Fix
+## Opening Scenario — A Reactive Quality Fix
 
 The IT team at a large corporation was frustrated, to say the least. Another critical system failure, another customer complaint, and—predictably—another checklist to enforce quality. After the third unscheduled meeting that week, Lisa, the project manager, sighed. “Do we need a checklist for the checklist?” she joked, though it was clear her patience was thin. The latest directive from management was to add “just one more layer of inspection,” yet everyone knew it was a band-aid approach. Nobody dared mention the root cause of these recurring issues, nor that the endless inspections were slowing progress. Trust was far too low for honest feedback.  Quality was the stated objective but at best it was a poster on the wall, at worst, it was something to check off a list.
 
@@ -71,7 +71,7 @@ Quality is Built, Not Inspected
 
 The team’s story might sound familiar. It’s the traditional, reactive approach to quality—a reliance on inspections, checklists, and post-mortems that ultimately miss the point. Deming’s legacy, encapsulated in his 14 Points for Management, stresses that quality is a proactive, systemic commitment—not a set of afterthoughts. His emphasis on root-cause problem-solving encourages us to see quality not as an add-on but as an embedded part of how we build, develop, and deploy. In the world of IT, this means designing processes that prevent bugs and reduce downtime, fostering a culture where every team member contributes to improvements.
 
-Comparing Methodologies: Lean, Agile, ITIL, and Deming’s Points
+## Comparing Methodologies — Lean, Agile, ITIL, and Deming’s Points
 
 Each of the modern methodologies we explore in this book—Lean, Agile, and ITIL—aligns with Deming’s principles in ways that support this culture of proactive quality:
 
@@ -97,7 +97,7 @@ So as you read on, keep in mind that this book is as much a guide as it is a pep
 
 It’s a simple idea, really. Quality isn’t about perfection. It’s about creating a system where everyone is invested in doing things right the first time because it’s easier, more satisfying, and frankly, a lot less of a hassle than fixing the same problems over and over. As Lisa and her team discovered, sometimes, the most counterintuitive solution is also the simplest: quality isn’t about adding more steps; it’s about cutting out the unnecessary ones. And as Deming might remind us, real quality isn’t a checklist—it’s the way we work, think, and, ultimately, the way we build.
 
-Reflection Questions
+## Reflection Questions
 
 Quality as a Mindset:
 

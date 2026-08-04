@@ -7,13 +7,13 @@ source: Lean and Agile.docx
 ---
 
 # Chapter 8: Coders as Change Agents—How IT Employees Shape Organizational Success
-Opening Scenario: The Reluctant Innovator
+## Opening Scenario — The Reluctant Innovator
 
 James, a senior software developer, sat in yet another “innovation workshop.” The CIO was drumming on about digital transformation, urging IT teams to be “more proactive” in driving change. James knew the real problem—IT wasn’t invited into decision-making until it was too late. By the time leadership sought IT’s input, the solutions were already chosen, leaving his team to make the best of whatever half-baked initiative was thrown their way.
 
 Across the room, his colleague Priya whispered, “Another ‘empowerment’ speech, but the last time we suggested process automation, it took six months for approval.” The cycle was exhausting—coders were expected to be change agents but rarely given a seat at the table. Could things be different?
 
-Big Idea: Coders Aren’t Just Implementers—They’re Architects of Change
+## Big Idea — Coders Aren’t Just Implementers—They’re Architects of Change
 
 Too often, IT employees are seen as executors of decisions rather than drivers of business transformation. In reality, coders, system architects, and IT support staff have an unparalleled vantage point into inefficiencies, opportunities, and systemic flaws—if only their voices were heard.
 
@@ -29,7 +29,7 @@ They Have a Bias for Problem-Solving – Unlike other departments, IT naturally 
 
 But here’s the irony: The people best equipped to drive change are often the last consulted when making it.
 
-Comparing Methodologies: How Different Frameworks View IT’s Role in Change
+## Comparing Methodologies — How Different Frameworks View IT’s Role in Change
 
 Each methodology—Lean, Agile, ITIL, and Six Sigma—takes a different approach to how IT professionals should participate in organizational transformation.
 
@@ -43,7 +43,7 @@ Six Sigma: Coders become data-driven decision-makers, identifying root causes of
 
 The Disconnect: Many companies adopt these frameworks in name only, but fail to grant IT employees true autonomy to identify and execute improvements. Leadership often talks about digital transformation while holding onto rigid, bureaucratic approval cycles that slow change to a crawl.
 
-Counterintuitive Insight: The Most Successful IT-Led Transformations Start Small
+## Counterintuitive Insight — The Most Successful IT-Led Transformations Start Small
 
 Many IT teams assume that large-scale transformation is what gets leadership’s attention. But most game-changing IT initiatives don’t start with a boardroom presentation—they start with a small, undeniable win.
 
@@ -57,9 +57,9 @@ A DevOps engineer implements a CI/CD pipeline that cuts deployment failures in h
 
 In each case, IT professionals didn’t wait for permission to solve problems—they fixed small, specific inefficiencies first. And when the impact was clear, leadership took notice.
 
-Takeaway: Don’t pitch a complete digital overhaul—prove a small success first, and then expand.
+## Takeaway — Don’t pitch a complete digital overhaul—prove a small success first, and then expand.
 
-Takeaway Insight: Leadership Must Remove Barriers, Not Just Set Expectations
+## Takeaway — Leadership Must Remove Barriers, Not Just Set Expectations
 
 Executives love to talk about innovation, but the biggest roadblocks to IT-led transformation often come from company bureaucracy, risk aversion, and a lack of trust in technical teams.
 
@@ -79,7 +79,7 @@ Frame IT Solutions in Business Terms – Speak the language of cost savings, eff
 
 Use Data to Prove the Need for Change – Avoid opinion-based pitches; show how inefficiencies affect revenue, downtime, or employee morale.
 
-Closing Scenario: The Empowered IT Team
+## Closing Scenario — The Empowered IT Team
 
 Months after that frustrating innovation workshop, James and Priya decided to take action differently. Instead of waiting for approval on a massive automation project, they tackled a single, specific issue—automating a repetitive data entry task that saved the finance team 20 hours per month.
 
@@ -87,7 +87,7 @@ Once they proved the success, they used that data to justify further automation 
 
 By taking ownership, proving value in increments, and shifting leadership’s perception of IT from service providers to problem-solvers, James and his team became indispensable change agents.
 
-Reflection Questions for the Reader
+## Reflection Questions
 
 What small inefficiency do you or your team deal with daily that could be automated or streamlined?
 

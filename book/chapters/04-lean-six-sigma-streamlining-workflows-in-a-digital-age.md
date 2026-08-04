@@ -751,7 +751,7 @@ Leadership’s role in this transformation is critical. Empowering employees to 
 
 Improving culture starts with improving processes. Leaders who address bottlenecks and empower employees to own their work pave the way for lasting cultural transformation. It’s not just about solving problems; it’s about creating a workplace where people are motivated to solve them together.
 
-Reflection Questions
+## Reflection Questions
 
 What inefficiencies or bottlenecks do you encounter most often in your daily work?
 
