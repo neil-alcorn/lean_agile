@@ -83,11 +83,11 @@ Revisiting our initial scenario: instead of adding another layer of inspection, 
 
 Each of the modern methodologies we explore in this book—Lean, Agile, and ITIL—aligns with Deming’s principles in ways that support this culture of proactive quality:
 
-Lean: Lean’s focus on eliminating waste, the elimination of steps that don’t add value. Deming would likely approve, as it aligns perfectly with his call to streamline processes in well-designed systems, making sure that every effort directly enhances quality and cuts out the unnecessary.
+**Lean:** Lean’s focus on eliminating waste, the elimination of steps that don’t add value. Deming would likely approve, as it aligns perfectly with his call to streamline processes in well-designed systems, making sure that every effort directly enhances quality and cuts out the unnecessary.
 
-Agile: Agile’s emphasis on rapid iteration and adaptability may seem at odds with Deming’s structured quality, but it actually supports his commitment to continuous improvement. At its core, Agile reflects the essence of Deming’s Plan-Do-Check-Act (PDCA) cycle, encouraging teams to plan their work (sprint planning), execute tasks (do), review outcomes (check through retrospectives), and adapt processes (act) in a continuous feedback loop. Agile encourages teams to quickly address and learn from issues, integrating quality assurance into every sprint, rather than saving it for the end.
+**Agile:** Agile’s emphasis on rapid iteration and adaptability may seem at odds with Deming’s structured quality, but it actually supports his commitment to continuous improvement. At its core, Agile reflects the essence of Deming’s Plan-Do-Check-Act (PDCA) cycle, encouraging teams to plan their work (sprint planning), execute tasks (do), review outcomes (check through retrospectives), and adapt processes (act) in a continuous feedback loop. Agile encourages teams to quickly address and learn from issues, integrating quality assurance into every sprint, rather than saving it for the end.
 
-ITIL: ITIL’s structured approach to IT service management, provides stability and repeatability, echoing Deming’s belief in standardized processes. By defining roles, workflows, and best practices, ITIL helps teams manage complex IT services, allowing quality to be the rule rather than the exception.
+**ITIL:** ITIL’s structured approach to IT service management provides stability and repeatability, echoing Deming’s belief in standardized processes. By defining roles, workflows, and best practices, ITIL helps teams manage complex IT services, allowing quality to be the rule rather than the exception.
 
 Together, these methodologies serve as tools to achieve Deming’s vision of a quality-driven organization, each with its own strengths but unified by the pursuit of built-in quality rather than reactive inspection.
 
