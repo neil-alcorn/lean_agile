@@ -733,7 +733,8 @@ What small, actionable steps could you take this week to encourage openness in y
 ---
 
 # Chapter 4: Lean Six Sigma—Streamlining Workflows in a Digital Age
-The Hidden Costs of Inefficiency / Caught in the Loop
+
+## Opening Scenario: Caught in the Loop
 
 Lisa, a mid-level project manager who had weathered more organizational reorgs than she cared to count, stood in front of the whiteboard, marker in hand. The meeting was in its third hour, and what had started as a routine status check had devolved into frustration. Lisa tapped her pen against the diagram of their current workflow. It looked more like a spaghetti bowl than an efficient process.
 
@@ -1257,7 +1258,12 @@ Tier 2 and Tier 3 often manually re-enter ticket details into separate systems.
 
 The ticket is resolved, and the customer is notified.
 
-[ADD PROCESS MAP IMAGE]
+<!-- EDITORIAL_NOTE (FIGURE IDEA): A simple value-stream map for Horizon Tech's ticket flow — customer
+     submits, Tier 1 reviews, complex issues escalate to Tier 2/3 with manager sign-off, Tier 2/3
+     manually re-enter details into a separate system, ticket resolved. Mark the two waste points the
+     team names in the next lines (approval wait, duplicate data entry) directly on the diagram rather
+     than in a caption, so the bottleneck is visible before Carmen names it. -->
+
 
 “It looks clean on paper,” says Maya, one of the Tier 2 technicians. “But in reality, we spend a lot of time waiting. Approvals take hours, sometimes days.”
 
@@ -1511,9 +1517,7 @@ What inefficiencies or bottlenecks do you encounter most often in your daily wor
 
 How could tools like Value Stream Mapping or Little’s Law help you identify and address them?
 
-Think about the types of waste in your workflow—defects, waiting, over-processing, or underutilized talent.
-
-Which of these wastes are most prevalent in your organization, and what steps could you take to minimize them?
+Of the eight types of waste—defects, overproduction, waiting, non-utilized talent, transportation, inventory, motion, and excess processing—which are most prevalent in your organization, and what steps could you take to minimize them?
 
 How does the current state of your processes impact team morale and overall culture?
 
@@ -1525,9 +1529,7 @@ How empowered do you feel to suggest or implement process improvements?
 
 What could leadership do to better support employee-driven solutions?
 
-Reflect on your organization’s approach to problem-solving.
-
-Are challenges addressed proactively, or does your team often resort to firefighting? How could a Lean Six Sigma mindset shift this dynamic?
+Does your organization address challenges proactively, or does your team often resort to firefighting? How could a Lean Six Sigma mindset shift that dynamic?
 
 What small but impactful change could you make in your current workflow that would reduce frustration for you or your team?
 
