@@ -15,13 +15,13 @@ But there’s a problem. Mike launches into an explanation of how the new workfl
 
 At the end of the meeting, they nod, return to their desks, and… carry on as they always have. Over the next few weeks, productivity remains stagnant, and Mike is frustrated, wondering why his meticulously designed process hasn’t transformed the team’s output.
 
-The Executive’s Role in Championing Change
+## The Executive’s Role in Championing Change
 
 The disconnect here is one we see often in the corporate world; executive buy-in and advocacy. Managers are responsible for creating the structure, and employees need to buy-in and have ownership of the results, but the best-intentioned teams with great workflows can still fall flat. They need executive support from the start, actually before the start, to create a culture of cross team collaboration.  Even the best teams can’t succeed in a vacuum.
 
 Without senior leadership to communicate the “why of these changes —why improvement is essential and how each role contributes to it— even the best efforts at the director/manager level can feel like band-aid solutions. Executives set the tone, aligning everyone on the bigger purpose of change, which then allows managers and employees to collaborate meaningfully on processes and outcomes.  Without it, management and employees lack the direction and motivation to make the process meaningful.
 
-The Dance Between Structure and Ownership
+## The Dance Between Structure and Ownership
 
 In any organization, continuous improvement depends on a multi-tiered partnership among executives, management, and employees. Each play a vital role, but the process begins at the top. Executives must first champion the need for improvement, articulating why change is essential and how it connects to the organization’s strategic goals. They must also design the conditions for success by eliminating barriers, building trust, and investing in long-term stable processes. By creating space for managers and employees to collaborate meaningfully on outcomes, executives lay the foundation for a culture that values adaptability and continuous improvement.
 
@@ -33,7 +33,7 @@ Deming championed this idea by emphasizing that quality is everyone’s responsi
 
 This doesn’t mean that management or executives should take a hands-off approach. Rather, it’s about crafting processes that allow for flexibility and adaptation. One effective way to stay engaged is through the practice of Gemba—going to where the work happens. By observing workflows directly and engaging with employees at the front lines, leaders can better understand challenges and provide meaningful support. In environments where employees feel they’re merely executing tasks without having any say, results tend to suffer. But when they feel ownership over those results, they bring creativity, insight, and pride to their work.
 
-Comparing Methodologies: Lean, Agile, and ITIL
+## Comparing Methodologies: Lean, Agile, and ITIL
 
 Each methodology—Lean, Agile, and ITIL—approaches the balance between process ownership and results ownership in distinct ways. Understanding these can provide practical insights into how executives and managers can design processes that encourage employee ownership and adapt to real-world complexities.
 
@@ -47,7 +47,7 @@ ITIL: ITIL, or the Information Technology Infrastructure Library, focuses on str
 
 Together, these methodologies emphasize process guidance with room for employee-driven adaptation. Each of these methodologies values process structure, but they also underscore the importance of executive support, managerial design, and employee ownership over results. Whether through Lean’s continuous improvement, Agile’s flexibility, or ITIL’s focus on consistency, the goal is the same: build a culture where improvement is a collaborative effort championed by leadership, structured by management, and shaped by those closest to the work.
 
-Why Letting Go Drives Better Results
+## Why Letting Go Drives Better Results
 
 Here’s where it gets interesting: It may seem logical for executives and managers to control both process and outcome, but this approach often backfires. When leaders try to micromanage every detail, they stifle creativity and engagement. Employees end up feeling like cogs in a machine rather than contributors to a larger mission.
 
@@ -55,25 +55,25 @@ Deming’s insight was that quality thrives when employees have the freedom to a
 
 In practice, this might look like executives setting a clear vision for customer satisfaction as a strategic goal, managers providing adaptable processes that align with this vision, and employees implementing the day-to-day improvements that make it a reality. It’s about managers and executives becoming facilitators rather than enforcers, creating space for employees to contribute meaningfully. Too often, managers dictate specific actions and monitor compliance stealing any ownership and pride of work from the employee.  Employees are trained over time not to think and become disengaged from the corporate mission.
 
-True Quality Comes from Empowerment
+## True Quality Comes from Empowerment
 
 Ultimately, true quality emerges not from micromanaging outcomes but from empowering people to bring purpose and pride to their work. It’s about creating a framework that supports, not restricts. When employees feel ownership over the results, they’re not just executing a process—they’re shaping it, improving it, and taking pride in what they create.
 
 For executives, this means championing change and communicating its importance. For managers, it means providing structures that guide without constraining. And for employees, it’s about owning the results and finding fulfillment in their work. In other words, quality isn’t enforced; it’s embraced.
 
-A Collaborative Shift
+## A Collaborative Shift
 
 Let’s return to Mike and his team. Imagine he takes a different approach, with support from senior leadership. The executives have clarified why change is essential and empowered managers like Mike to bring their teams into the process. Instead of presenting his workflow as a finished product, Mike introduces it as a draft and offers his help to employees that are striving to meet executive goals.  He does not need to sell this as his idea or be perceived as trying to further his career.  Instead, he is facilitating a structure for everyone to thrive and invites the team to contribute. They discuss the purpose behind each step, highlight potential roadblocks, and suggest practical adjustments Mike hadn’t considered. Together, they co-create a workflow that feels meaningful to everyone involved.
 
 In the weeks that follow, Mike sees a shift. The team not only uses the new workflow but also adapts it as they encounter new challenges. Productivity rises, and Mike notices that the team’s investment in the results is palpable. What started as his personal project has transformed into a shared, living process—one that evolves with input from all levels and is continually improved. The team’s ownership of the results drives continuous improvement, and Mike feels proud—not because he designed a perfect process, but because he empowered his team to create their own success.
 
-Final Reflection
+## Final Reflection
 
 As you continue through this book, remember that quality isn’t just a process—it’s a relationship built on collaboration, trust, and shared accountability at every level. Executives play a vital role in championing the why, articulating the vision and purpose that guide change. Managers define the how, creating the structure and frameworks that enable teams to succeed. Employees bring it all to life through execution, ownership, and a commitment to continuous improvement.
 
 True continuous improvement doesn’t happen in silos; it’s a shared responsibility. Quality is an ongoing commitment to learning, adaptability, and working together toward better outcomes. By embracing this mindset, organizations can create lasting progress and a culture where everyone contributes to excellence.
 
-Reflection Questions for Chapter 2
+## Reflection Questions
 
 Balancing Structure and Ownership:
 

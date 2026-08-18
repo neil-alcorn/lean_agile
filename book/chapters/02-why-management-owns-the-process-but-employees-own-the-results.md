@@ -31,7 +31,7 @@ Deming championed this idea by emphasizing that quality is everyone’s responsi
 
 This doesn’t mean that management or executives should take a hands-off approach. Rather, it’s about crafting processes that allow for flexibility and adaptation. One effective way to stay engaged is through the practice of Gemba—going to where the work happens. By observing workflows directly and engaging with employees at the front lines, leaders can better understand challenges and provide meaningful support. In environments where employees feel they’re merely executing tasks without having any say, results tend to suffer. But when they feel ownership over those results, they bring creativity, insight, and pride to their work.
 
-Comparing Methodologies: Lean, Agile, and ITIL
+## Comparing Methodologies — Lean, Agile, and ITIL
 
 Each methodology—Lean, Agile, and ITIL—approaches the balance between process ownership and results ownership in distinct ways. Understanding these can provide practical insights into how executives and managers can design processes that encourage employee ownership and adapt to real-world complexities.
 
@@ -69,7 +69,7 @@ As you continue through this book, remember that quality isn’t just a process�
 
 True continuous improvement doesn’t happen in silos; it’s a shared responsibility. Quality is an ongoing commitment to learning, adaptability, and working together toward better outcomes. By embracing this mindset, organizations can create lasting progress and a culture where everyone contributes to excellence.
 
-Reflection Questions for Chapter 2
+## Reflection Questions
 
 Balancing Structure and Ownership:
 

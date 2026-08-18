@@ -19,7 +19,7 @@ W. Edwards Deming understood this better than anyone. He didn’t just teach qua
 
 He also understood something organizations still resist because it ruins several convenient excuses at once: if you want a better culture, you need better process and better use of data. Those are not separate projects. They are different windows into the same system.
 
-Deming’s 14 Points Revisited
+## Deming’s 14 Points Revisited
 
 If you take nothing else from this book, take this: Deming’s 14 Points aren’t just historical artifacts. They are the roadmap for any organization that wants to survive and thrive. So let’s revisit them one last time—not as theory, but as action steps you can take today.
 
@@ -107,7 +107,7 @@ Improvement isn’t the responsibility of a single department—it’s everyone�
 
 🔹 Action: Make continuous improvement a standing agenda item in team meetings, ensuring that everyone contributes ideas.
 
-The 7 Deadly Diseases of Management
+## The 7 Deadly Diseases of Management
 
 Deming didn’t just offer solutions—he warned against common pitfalls that destroy organizations. These include:
 

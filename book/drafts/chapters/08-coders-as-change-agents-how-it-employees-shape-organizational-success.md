@@ -8,7 +8,7 @@ source: Lean and Agile.docx
 
 # Chapter 8: Coders as Change Agents—How IT Employees Shape Organizational Success
 
-Opening Scenario: The “Technical Resource” Who Understood the Business Better Than the Slide Deck
+## Opening Scenario: The “Technical Resource” Who Understood the Business Better Than the Slide Deck
 
 In the weekly steering meeting, the conversation had already achieved that special corporate altitude where nouns become abstract and verbs become expensive.
 
@@ -30,7 +30,7 @@ The issue was not that leadership lacked intelligence. The issue was that the pe
 
 This chapter is about those people.
 
-Big Idea: The People Closest to the Work Often See the System Most Clearly
+## Big Idea: The People Closest to the Work Often See the System Most Clearly
 
 One of the most persistent management mistakes is treating technical employees as execution capacity instead of as a source of operational intelligence.
 
@@ -44,7 +44,7 @@ In older delivery environments, the phrase “developer” implied a relatively 
 
 When production accelerates, the value of people who can judge context, quality, dependencies, and operational impact goes up.
 
-The Shift: From Code Producers to System Stewards
+## The Shift: From Code Producers to System Stewards
 
 This is where the conversation needs some discipline.
 
@@ -74,7 +74,7 @@ That means the technical workforce is shifting from pure production toward stewa
 
 In other words, the role is broadening, not disappearing.
 
-Comparing Methodologies: What Each One Sees About the Builder’s Role
+## Comparing Methodologies: What Each One Sees About the Builder’s Role
 
 Lean sees workers closest to the process as a source of insight. It assumes that improvement should not be reserved for executives or specialist teams. The people doing the work often know where the waste lives because they trip over it daily.
 
@@ -101,7 +101,7 @@ Operations cleans up.
 
 That division creates precisely the kind of rework loop continuous improvement was invented to attack.
 
-What Change Agents Actually Do
+## What Change Agents Actually Do
 
 A technical employee acting as a change agent does not need a heroic title. The role is less glamorous and more useful than that.
 
@@ -123,7 +123,7 @@ In weaker organizations, they are often tolerated only as long as they remain po
 
 That is one reason leadership quality matters so much. A speak-up culture that praises truth in theory but punishes it in practice trains technical employees to lower their ambitions from “improve the system” to “avoid becoming a story in the next meeting.”
 
-Counterintuitive Insight: Better Tools Make Human Judgment More Valuable
+## Counterintuitive Insight: Better Tools Make Human Judgment More Valuable
 
 It is tempting to assume that because AI can produce more, the human role should shrink.
 
@@ -146,7 +146,35 @@ That is a systems problem.
 
 And leaders own the system.
 
-New Workflows, Old Truths
+## Six Defects, Five of Which Were Not Defects
+
+Here is the sharpest example I have of judgment beating output, and it comes from my own work.
+
+An automated analysis reported six defects in a configuration-driven system. Six findings, clearly written, each plausible. I went through them one at a time.
+
+**Five of the six were documented, intentional behaviour** — and the explanatory notes were sitting right there in the file the analysis had already read. The system was doing exactly what someone had decided it should do, for reasons written down next to the decision. The analysis had seen the *what* and had no access to the *why*, so it reported every deliberate choice as an anomaly.
+
+The sixth was real. And the way it was found matters more than the fact that it existed: **it was found by reading the configuration, not by scanning the output.**
+
+That is the whole chapter in one paragraph. The machine read the output and produced six confident findings with a one-in-six hit rate. A person read the intent and found the one that counted. My recorded conclusion at the time was blunter than I would have liked: *anomaly detection over outputs generates plausible-sounding defects at a high rate.*
+
+It gets more humbling. Two further findings from that period had to be **retracted entirely, because my own tooling manufactured them.** One reported "OCR garbage in 141 documents"; the garbage was ordinary CamelCase identifiers. Another reported corrupted characters in a set of titles; the true count was zero. The cause, in my own words: *"my own ascii-safe print substituted legitimate em-dashes. My display manufactured the finding."*
+
+I had built the instrument, the instrument had distorted what it measured, and I had believed the distortion. Nobody was careless. The tool did what it was written to do, and what it was written to do was not what I assumed while reading its output.
+
+Notice what a change agent actually contributed in each of those cases. Not more output. Not faster output. The knowledge that a configuration has reasons, and the instinct to check whether the measuring device was participating in the result. Neither of those is in a prompt. Both come from having lived in the system.
+
+**This is why builders are not interchangeable with the tools they operate.** The person who knows why a setting is set that way is the difference between a real defect and five false alarms — and in a world where generating plausible findings is nearly free, the scarce skill is knowing which ones deserve a day of anyone's attention.
+
+<!-- EDITORIAL_NOTE (FIGURE IDEA): Deliberately understated — six small squares in a row, five in a muted
+     "intentional / documented" treatment and one flagged as the real defect, with a caption noting the
+     real one was found by reading configuration rather than scanning output. The visual joke is the
+     ratio; resist making it a dashboard. Could pair as a sidebar with the two retracted findings
+     (141 "OCR garbage" documents = CamelCase; corrupted titles = 0) under a heading like
+     "When the instrument writes the finding."
+     Source: notes/evidence/conduit-measured-evidence.md, "A measured false-positive rate for AI review". -->
+
+## New Workflows, Old Truths
 
 The AI era does introduce new workflows and skills.
 
@@ -168,7 +196,7 @@ That is why this book does not treat AI as an excuse to discard human contributi
 
 <!-- VISUAL: comparison-table | id:role-shift-map | purpose: Show how project manager, business analyst, developer, QA, architect, service owner, and AI agent roles shift in an AI-native delivery model without pretending old responsibilities disappear. -->
 
-Builders Need Better Inputs, Not Just Better Prompts
+## Builders Need Better Inputs, Not Just Better Prompts
 
 There is a fashionable way to talk about AI that makes everything sound like a prompt problem.
 
@@ -201,7 +229,7 @@ A sane organization does not simply demand more output from builders. It improve
 
 That is how technical talent becomes multiplying force rather than heroic cleanup crew.
 
-Takeaway Insight: Technical Stewardship Is a Leadership Asset
+## Takeaway Insight: Technical Stewardship Is a Leadership Asset
 
 Organizations that treat technical employees as system thinkers gain more than better software.
 
@@ -218,7 +246,47 @@ Most importantly, they reduce the distance between decision and consequence.
 
 That may be the most valuable thing any organization can do in a period of rapid change.
 
-Closing Scenario: The Meeting After Maya Spoke Up
+## The Two Defect Reports I Received About My Own Tool
+
+I can name the moment I stopped theorizing about this.
+
+I had built a tool my team was expected to use. I asked one of my direct reports to act as the feedback partner on it — not a casual "let me know what you think," but a designated role, because I had already learned that a vague invitation to critique your manager's work produces silence.
+
+He filed two defects against it.
+
+The first was that the tool **documented a credential path that did not exist**. The second was that its output was unusable in the system it was supposed to feed. Both were correct. Both were about work I was accountable for, in writing, with his name on them.
+
+I wrote them up against myself, and the note I wrote is the one I would want a new manager to read: *"A documented capability that isn't real cost a user a session. Worse than a missing feature, because it burns trust in the docs generally."*
+
+That is what a change agent looks like from the receiving end. Not a suggestion in a retrospective. A filed, specific, inconvenient defect about the thing his boss built, with a reproducible failure and a real cost attached.
+
+**And here is the part that keeps me honest about it.** In the same period, across roughly eleven people, **eight offered no upward feedback at all.** Each one was recorded identically: *"none offered — ask directly."*
+
+Eight of eleven. So I have exactly one clean example of the behaviour this chapter recommends, and eight examples of its absence, in an organization run by someone who was actively trying to invite it and who had written a philosophy document about psychological safety.
+
+My own diagnosis, from the same corpus: *low psychological safety produces hiding.*
+
+I do not think those eight people were disengaged. I think they had a realistic model of the risk and no evidence that the reward was worth it — and that model was built from years of working elsewhere before they met me. Designating a feedback partner worked. Hoping for feedback did not. The difference between one and eight was not personality. It was whether someone had been given an explicit role that made speaking up part of their job rather than an act of courage.
+
+If you are a leader reading this and your teams do not challenge you, the useful question is not whether they respect you. It is whether anyone's job description makes disagreeing with you safe.
+
+<!-- EDITORIAL_NOTE (FIGURE IDEA): Resist a chart here — the honest version is almost a graphic already.
+     Eleven simple figures/icons, three highlighted as "offered upward feedback," eight greyed with the
+     verbatim label "none offered — ask directly." Stark and uncomfortable, which is correct for this
+     material. Set the two real defect reports beside it as pull-quotes so the reader sees the one
+     working case and the eight silent ones in the same eyeline.
+     ⚠ Verify the exact 3-of-11 vs 8-of-11 split against the source before publishing — the evidence bank
+     records "roughly eleven people" and "eight offered no upward feedback," so the complement is
+     approximate. Source: notes/evidence/conduit-measured-evidence.md, Chapter 03 section. -->
+
+<!-- EDITORIAL_NOTE (2026-08-04): This section may belong in Chapter 3 (speak-up culture) instead of, or
+     in addition to, here. It is the strongest speak-up evidence in the corpus and Chapter 3 currently has
+     no first-hand material. Placed in Chapter 8 because the emphasis here is the BUILDER's act of
+     stewardship rather than the leader's obligation to invite it. Author to decide; do not duplicate the
+     eight-of-eleven statistic across both chapters without reframing it. -->
+
+
+## Closing Scenario: The Meeting After Maya Spoke Up
 
 A week after the steering meeting, Maya was invited back. This time not as a token technical attendee, but as part of the actual problem-definition conversation.
 
@@ -231,7 +299,7 @@ And that is the point.
 The best technical employees are not only there to build what leadership imagines.
 They are there to help the organization imagine better.
 
-Reflection Questions
+## Reflection Questions
 
 - In your organization, are technical employees treated mainly as implementers or as contributors to system design and problem definition?
 - Where do the people closest to the work currently see waste, rework, or contradictions that leadership may be missing?

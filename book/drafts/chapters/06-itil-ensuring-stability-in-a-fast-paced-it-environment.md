@@ -8,7 +8,7 @@ source: Lean and Agile.docx
 
 # Chapter 6: ITIL—Ensuring Stability in a Fast-Paced IT Environment
 
-Opening Scenario: The Outage After the “Helpful” Automation
+## Opening Scenario: The Outage After the “Helpful” Automation
 
 By 8:17 on a Tuesday morning, the support channel looked like a family group text after somebody accidentally hit “reply all” on a controversial meme.
 
@@ -35,7 +35,7 @@ Priya finally stepped in. “Stop. Before we add another tool, another meeting, 
 
 That question, more than any dashboard, is where ITIL begins.
 
-Big Idea: ITIL Exists Because Chaos Is Expensive
+## Big Idea: ITIL Exists Because Chaos Is Expensive
 
 ITIL is often introduced as a framework for IT service management, which is true in the same way that saying a fire extinguisher is a cylinder containing chemicals is technically accurate but not especially useful.
 
@@ -61,7 +61,7 @@ That is not bureaucracy. That is adult supervision.
 
 <!-- VISUAL: concept-diagram | id:governance-upstream | purpose: Show why human judgment and operational governance need to move upstream in AI-era delivery instead of living only in downstream incident response and code review. -->
 
-The Similarity People Miss: ITIL Is Solving the Same Kind of Problem as Lean and Agile
+## The Similarity People Miss: ITIL Is Solving the Same Kind of Problem as Lean and Agile
 
 One reason methodologies get treated like rival gangs is that people usually encounter them in implementation mode rather than problem mode. They meet the ritual before they meet the reason.
 
@@ -83,7 +83,7 @@ These are not competing religions. They are different tools for seeing where wor
 
 That matters now because AI has not repealed any of these problems. It has simply made it easier to hit them at scale.
 
-Similarities, Differences, and Why the Toolbox Matters
+## Similarities, Differences, and Why the Toolbox Matters
 
 If Lean, Agile, and ITIL walked into a meeting together, Lean would ask why the meeting exists, Agile would ask what we can learn this week, and ITIL would ask who approved the meeting invite and whether it might take down production.
 
@@ -122,7 +122,7 @@ That is as true of ITIL evangelists as it is of Agile enthusiasts and Lean puris
 
 <!-- VISUAL: comparison-table | id:framework-map-ai-era | purpose: Compare Lean, Agile, ITIL, PMBOK, BABOK, and the Sane operating posture by what problem each solves, what each sees clearly, and how each fails when over-applied. -->
 
-What ITIL Still Gets Right
+## What ITIL Still Gets Right
 
 ITIL still matters because technology work does not stop mattering after the code is written. Software has to run. Incidents have to be handled. Changes have to be assessed. Services have to be supported. Outages still happen on weekends, which is a rude but dependable habit of reality.
 
@@ -149,7 +149,7 @@ In other words, it needs governance.
 Not governance as a decorative committee.
 Governance as a practical answer to the question: how do we move quickly without quietly wrecking the system?
 
-Counterintuitive Insight: In the AI Era, More Speed Makes Control More Valuable
+## Counterintuitive Insight: In the AI Era, More Speed Makes Control More Valuable
 
 People often talk as if control slows innovation. Sometimes bad control does. Bad process can absolutely turn useful work into a hostage situation.
 
@@ -182,7 +182,7 @@ Those are ITIL-shaped questions, even if the implementation is modern.
 
 <!-- VISUAL: flow-diagram | id:work-lifecycle-map | purpose: Show work moving from need to context to change to verification to release to operation, including where AI assists and where human judgment remains explicit. -->
 
-What a Sane ITIL Posture Looks Like
+## What a Sane ITIL Posture Looks Like
 
 This is where a level head matters.
 
@@ -217,7 +217,7 @@ That is one reason this book keeps returning to the same point: there is less ne
 AI changes the scale and speed of execution.
 It does not repeal the need for quality, trust, discipline, and clarity.
 
-Map, Measure, Manage
+## Map, Measure, Manage
 
 One of the clearest lessons from continuous improvement work is that strong process management is not a side hobby for operations people. It is how a culture of improvement becomes real.
 
@@ -247,21 +247,25 @@ If leadership manages by anecdote, culture will become political.
 
 That chain is more common than most organizations like to admit.
 
-The Numbers That Tell the Truth
+## The Numbers That Tell the Truth
 
-If a service is going to be managed in the open, three numbers do most of the honest work. None of them is exotic. All of them are routinely ruined.
+If a service is going to be managed in the open, a few numbers do most of the honest work. None of them is exotic. Most of them are misunderstood, including one nobody thinks to question.
 
-**Mean time to restore (MTTR)** is total downtime ÷ number of incidents — how long, on average, customers wait for the service to come back. The word to distrust is *average*. A team with an MTTR of two hours may resolve most incidents in twenty minutes and then lose an entire day twice a quarter, and it is those two days the customers will remember. So look at the 85th percentile alongside the mean, and split the clock into its real segments: how long to *detect*, how long to *engage the right person*, how long to *restore*. Organizations are frequently shocked to discover the fix took eleven minutes and finding the person who could apply it took three hours. That is not a technology problem. It is an ownership problem wearing a pager.
+Here is the trap. Ask a room full of IT managers to name the core ITIL metric, and most will say **MTTR** — mean time to restore. It shows up on dashboards everywhere, cited as gospel. It does not appear once in the official AXELOS *Incident Management: ITIL 4 Practice Guide*. Not as MTTR, not as "mean time," not as an average of any kind. Zero occurrences.
 
-**Change success rate** is changes implemented without causing an incident or rollback ÷ total changes. Healthy operations tend to live above 95 percent. But the diagnostic value is in the failures: when the rate sags, the reflex is to add more approval steps, and the approvals almost never help — because most failed changes do not fail from insufficient signatures. They fail from missing context: an undocumented dependency, an environment nobody knew had drifted, a consumer of the service nobody told. A falling change success rate is an upstream information problem, which is exactly why this chapter keeps insisting that context travel with the work.
+What ITIL 4 actually prescribes instead is more interesting than the myth: segmented intervals — time to detection, detection to acceptance, time of diagnosis, waiting time as a share of total handling time, number of reassignments, first-time resolution rate — plus a target called "meeting the agreed resolution time." That last one is not an average at all. It is a threshold-conformance measure: did we hit the promised time, yes or no, what percentage of the time. Structurally, that is a percentile, not a mean. The guide even hedges its own position in writing: "There is no single best solution. Metrics will be based on the overall service strategy and priorities of an organization."
 
-**Availability** is the percentage of time the service actually works, and it is best understood translated out of decimal worship. 99.9 percent availability is about eight and a half hours of downtime a year. 99.99 percent is about fifty-three minutes. Each additional nine costs real money — redundancy, failover, on-call depth — and the sane question is not “how many nines can we get?” but “what does one more nine buy this particular service’s customers, and what would they rather we spend the money on?” A reporting tool and a payment system do not deserve the same answer.
+So the honest version of this book's advice is not "track MTTR." It is: **track the 85th-percentile resolution time against your promised threshold, and split the clock into its real segments** — how long to *detect*, how long to *engage the right person*, how long to *restore*. That upgrade turns out to be more ITIL-4-aligned than MTTR ever was, not a rebellion against the framework but a correction toward what it actually says. Organizations doing this are frequently shocked to discover the fix took eleven minutes and finding the person who could apply it took three hours. That is not a technology problem. It is an ownership problem wearing a pager. Even Google's own SRE practice has arrived at the same place from a different direction: raw MTTR-style averages are, in their own engineers' words, poorly suited for decision-making or trend analysis on incident data that is heavily skewed — a few very long incidents will always distort a mean far more than they distort a percentile.
 
-A worked example, from Priya’s world. Before the reset, her service logged 14 incidents a quarter with an “acceptable” MTTR of two hours — an average concealing two all-day disasters — and a change success rate of 88 percent, which everyone explained away one change at a time. Afterward, with the process mapped and ownership explicit, incidents fell to nine, but the more telling shift was inside the clock: detection time fell by half because monitoring finally watched what customers experience, and engagement time collapsed because nobody had to ask who owned the service anymore. The change success rate climbed to 96 percent — not because approvals multiplied, but because change records started arriving with their context attached. Same team. Same technology. The difference was that the system had become legible enough to improve.
+**Change success rate** is a genuine ITIL 4 metric — it is named directly in the *Change Enablement* practice guide's own table. But there is a second trap sitting right behind the first one: ITIL 4 never defines "success." The guide offers only a prose distinction between output success and outcome success, and leaves the denominator and the failure predicate to whoever implements it. Worse, the same guide tracks change-related incidents as a *separate* success factor entirely — meaning two organizations can both report a 95 percent change success rate while conforming to completely different definitions, and neither one is wrong. The useful move here is not printing a clean formula and implying ITIL handed it to you. It is naming the gap out loud: define your own "success" precisely, write it down, and don't compare your rate to anyone else's without first comparing definitions.
 
-<!-- EDITORIAL_NOTE: Worked-example figures are illustrative pending real data from the measurement research (see notes/ai-era-logic-brief.md); replace or validate with actual MTTR/CSR ranges when available. -->
+**Availability** is the percentage of time the service actually works, best understood translated out of decimal worship. 99.9 percent availability is about eight and a half hours of downtime a year. 99.99 percent is about fifty-three minutes. Each additional nine costs real money — redundancy, failover, on-call depth — and the sane question is not "how many nines can we get?" but "what does one more nine buy this particular service's customers, and what would they rather we spend the money on?" A reporting tool and a payment system do not deserve the same answer.
 
-Takeaway Insight: Stability Enables Better Change
+A worked example, from Priya's world. Before the reset, her service logged 14 incidents a quarter against an "acceptable" resolution average of two hours — a number that concealed two all-day disasters — and a self-reported change success rate of 88 percent that nobody had actually defined. Afterward, with the process mapped and ownership explicit, incidents fell to nine, but the more telling shift was inside the clock: detection time fell by half because monitoring finally watched what customers experience, and engagement time collapsed because nobody had to ask who owned the service anymore. The team also did something smaller but sharper: they wrote down what "successful change" meant for their service before reporting the number again. Same team. Same technology. The difference was that the system had become legible enough to improve, and honest enough to compare against itself.
+
+<!-- EDITORIAL_NOTE: Worked-example figures (14→9 incidents, 88%→96% change success) are illustrative pending real data from the measurement research; replace or validate when available. The MTTR/change-success corrections above are sourced — see book/notes/evidence/citations-and-corrections.md §1.8 and §4.5. -->
+
+## Takeaway Insight: Stability Enables Better Change
 
 Many organizations still treat stability as the boring cousin of innovation.
 
@@ -273,7 +277,7 @@ When teams understand the service, trust the data, own the process, and know whe
 
 And that is the part people often miss: good governance does not only prevent failure. It protects learning.
 
-Closing Scenario: Control That Lets the Team Breathe
+## Closing Scenario: Control That Lets the Team Breathe
 
 A few months after the Tuesday outage, Priya’s team looked different.
 
@@ -297,7 +301,7 @@ Just enough order to let real work happen.
 
 <!-- CALLOUT: key-idea | Control is not bureaucracy when it prevents expensive chaos. -->
 
-Reflection Questions
+## Reflection Questions
 
 - Where does your organization currently confuse activity with control?
 - Which ITIL practices in your environment create real clarity, and which ones mostly create ceremony?

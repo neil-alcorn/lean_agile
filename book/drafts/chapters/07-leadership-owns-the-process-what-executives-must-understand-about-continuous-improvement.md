@@ -8,7 +8,7 @@ source: Lean and Agile.docx
 
 # Chapter 7: Leadership Owns the Process—What Executives Must Understand About Continuous Improvement
 
-Opening Scenario: The Executive Team That Wanted Better Culture by Thursday
+## Opening Scenario: The Executive Team That Wanted Better Culture by Thursday
 
 The executive team had scheduled a two-hour off-site to discuss culture, which is one of the more reliable signs that culture is already in trouble.
 
@@ -22,7 +22,7 @@ The room got still.
 
 That is not a comfortable question because it moves the problem from weather to architecture. If the issue is process, priorities, and management behavior, then leadership can no longer talk about culture as though it were something employees created in the break room while executives were busy doing important things.
 
-Big Idea: Leaders Own the Conditions Under Which Work Happens
+## Big Idea: Leaders Own the Conditions Under Which Work Happens
 
 One of the most damaging myths in organizational life is the idea that leaders own strategy while someone else owns process, morale, quality, and execution. They do not.
 
@@ -40,7 +40,7 @@ When a process is so brittle that every exception becomes a miniature constituti
 
 This is why Deming’s argument still matters: most quality failures are system failures before they become workforce failures. And the people with the greatest power over the system are not the people closest to the keyboard. They are the people closest to the budget, the strategy, and the incentives.
 
-The Difference Between Direction and Theater
+## The Difference Between Direction and Theater
 
 Many leaders think they are providing direction when they are really providing mood.
 
@@ -61,7 +61,7 @@ That is one reason strong leadership is less about charisma and more about opera
 
 Weak leadership usually does not announce itself as weakness. It shows up as drift, contradiction, unmanaged tradeoffs, and a refusal to decide what matters most. It often sounds polished. It can even sound inspiring. But if the organization cannot connect strategy to process and process to measurement, inspiration becomes a fairly expensive hobby.
 
-Alignment Is Not Decorative
+## Alignment Is Not Decorative
 
 One of the clearest lessons from improvement work is that alignment is not a poster. It is a resource decision.
 
@@ -83,7 +83,7 @@ That is one reason a sane organization feels different from a merely energetic o
 
 <!-- VISUAL: matrix-table | id:audience-impact-matrix | purpose: Show how executive decisions affect different audiences—customers, employees, field teams, and partners—in different ways, and why alignment requires explicit tradeoffs. -->
 
-Comparing Methodologies: What Leadership Is Supposed to Do
+## Comparing Methodologies: What Leadership Is Supposed to Do
 
 Each methodology gives leaders a different kind of mirror.
 
@@ -112,7 +112,7 @@ The differences matter, but they do not divide the leadership task. They enrich 
 If anything, they converge on a fairly uncomfortable truth:
 leaders are responsible for whether the system helps good people succeed or quietly trains them to fail.
 
-Map, Measure, Manage: The Leadership Version
+## Map, Measure, Manage: The Leadership Version
 
 At some point, every executive eventually says, “We need more accountability.”
 
@@ -144,7 +144,7 @@ Weak leadership often tries to solve that last problem with morale programming.
 
 Stronger leadership fixes the system that taught people to act that way in the first place.
 
-Standard Work Is for Leaders Too
+## Standard Work Is for Leaders Too
 
 One of the more useful correctives to executive mystique is the idea that standard work exists at every level.
 
@@ -167,7 +167,7 @@ Leader standard work can include:
 
 That last one matters because nothing destroys speak-up culture faster than leaders asking for honesty and then behaving like they have seasonal allergies whenever truth enters the room.
 
-Counterintuitive Insight: Culture Is Not the Soft Side of Process
+## Counterintuitive Insight: Culture Is Not the Soft Side of Process
 
 Many leaders still treat culture as the “people side” of the business and process as the “operational side,” as though one department handles emotions while another handles reality.
 
@@ -190,7 +190,7 @@ If leaders respond to bad news with curiosity instead of theater, trust grows.
 
 That is why weak leadership has to be addressed directly in any serious improvement conversation. Not because leaders are villains, but because the system learns from them whether they intend it to or not.
 
-What Sane Leadership Looks Like
+## What Sane Leadership Looks Like
 
 A sane leadership posture does not mean low standards. It means clear standards, visible tradeoffs, and less managerial make-believe.
 
@@ -212,7 +212,7 @@ Most of all, they recognize that control does not begin with downstream inspecti
 
 <!-- VISUAL: concept-diagram | id:governance-upstream | purpose: Show how executive priorities, process design, context quality, and review gates shape downstream results before frontline execution begins. -->
 
-Takeaway Insight: Employees Live Inside the Logic Leaders Create
+## Takeaway Insight: Employees Live Inside the Logic Leaders Create
 
 It is comforting for leaders to imagine that employees are the main variable. They are not.
 
@@ -226,7 +226,7 @@ If that logic is visible, measured, and honest, people have something sturdy eno
 
 This is one reason Deming’s message remains so stubbornly relevant. Leadership does not own every result directly, but it does own the conditions from which those results reliably emerge.
 
-Closing Scenario: A Better Off-Site
+## Closing Scenario: A Better Off-Site
 
 The executive team reconvened a month later. Same conference room. Same leadership title cards. Considerably less optimism from the catering department.
 
@@ -244,7 +244,7 @@ That is not glamorous leadership.
 
 It is better.
 
-Reflection Questions
+## Reflection Questions
 
 - Where in your organization do leaders talk about culture while ignoring the processes that produce it?
 - What measures currently shape behavior on your team, and what are they actually teaching people to optimize?

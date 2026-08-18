@@ -80,6 +80,22 @@ The foundation under this book goes back to W. Edwards Deming, who understood so
 
 Deming believed management's job was not to stand at the end of the line catching defects like airport security for bad process. Management's job was to build environments where quality could exist in the first place.
 
+Before we go further, let me do something to earn your trust.
+
+You have almost certainly heard that Deming said "quality is everyone's responsibility." It appears on posters. It opens keynotes. It has been printed on a coffee mug and handed to someone on their first day. It is very likely the most quoted thing attributed to the man.
+
+He argued nearly the opposite.
+
+Here is Point 10 of his 14 Points, in his own words: "Eliminate slogans, exhortations, and targets for the work force asking for zero defects and new levels of productivity. Such exhortations only create adversarial relationships, as the bulk of the causes of low quality and low productivity belong to the system and thus lie beyond the power of the work force."
+
+Read that again with the coffee mug in mind. "Quality is everyone's responsibility" is a slogan. It is an exhortation aimed at the work force. It asks people to try harder at something Deming spent a career insisting was mostly not in their control. Said to a team working inside a broken process, it is not encouragement. It is the quiet transfer of blame from the people who designed the system to the people trapped in it. Deming did not merely fail to say it. He told us to stop saying things like it.
+
+Here is the twist, and it is why this particular error is so durable. The phrase was not invented out of thin air. Point 14 reads: "Put everybody in the company to work to accomplish the transformation. The transformation is everybody's job." That is real, and it does say everybody. But look closely at what is everybody's job. Not quality—the transformation. And "everybody in the company" includes the executives who set the targets, which is precisely the group a poster in the break room does not reach.
+
+So the popular version keeps the word "everyone," quietly swaps the transformation for quality, and re-aims a sentence about management's obligation downward at the people with the least power to change anything. One noun, one change of audience.
+
+That is the sort of thing I intend to keep catching in this book. Process language decays in a predictable direction: toward whatever fits on a wall, and toward whoever is easiest to hold accountable. Half the reason Lean, Agile, Six Sigma, and ITIL feel like competing religions is that most of us met them as slogans rather than as arguments. Slogans cannot be reasoned with. Arguments can.
+
 That matters because culture is often discussed as though it floats above the organization like weather.
 
 It does not.
