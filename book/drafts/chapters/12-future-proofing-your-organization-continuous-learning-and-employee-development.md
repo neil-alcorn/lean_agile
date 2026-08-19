@@ -269,21 +269,6 @@ The lessons-to-rules ratio above is the sharpest single number in this book's le
 
 The same governing rule applies here as everywhere else in this book: these numbers diagnose the system. The moment time-to-competence becomes a stopwatch held on individuals, or repeat-issue rate becomes a stick, people will game the checklist and stop connecting incidents to old root causes — and the organization will be measurably ignorant of its own ignorance, which is the most expensive kind.
 
-<!-- EDITORIAL_NOTE (FIGURE IDEA): A simple two-path flow. A single "recurring friction" event branching
-     to (a) "corrected in conversation" looping straight back to the same friction — draw the loop as an
-     actual circle, that is the visual argument — and (b) "promoted to a guardrail" terminating in a check
-     that fails on the next occurrence. Label the loop "re-learned" and the terminus "learned."
-     Optional second panel: the proposed metric as a simple ratio, lessons-as-rules over lessons-as-prose.
-     Source: notes/evidence/conduit-measured-evidence.md, Chapter 12 section. -->
-
-<!-- EDITORIAL_NOTE (2026-08-04): Two further ch12 assets available and NOT yet used, both from
-     notes/evidence/conduit-measured-evidence.md. (1) The dated test-count series — engine 350 (4 May) →
-     675 (8 Jul) → 886 (13 Jul) → 1,397 (30 Jul); application 1,345 → 2,458 (28 Jul) → 2,970 (3 Aug) —
-     usable as a measured proxy for accumulating institutional knowledge, but ⚠ it measures test volume,
-     not learning, and the chapter should say so if it prints it. (2) Edmondson 1999's finding that
-     LEARNING BEHAVIOR MEDIATES psychological safety → performance (evidence bank §7.5): safety alone
-     predicts nothing, which is a strong citation for this chapter's core claim and ties it to Chapter 3. -->
-
 ## What a Sane Learning Culture Looks Like
 
 A sane learning culture is not one where everyone is permanently in training.
