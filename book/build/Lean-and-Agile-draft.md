@@ -1370,13 +1370,10 @@ Agile is designed for this reality. Instead of committing to a rigid master plan
 
 In traditional project management, teams work in a plan-then-execute model. They set a course early, assume they’ve accounted for everything, and then march toward completion, adjusting only when absolutely necessary. Agile takes a different approach:
 
-Instead of mapping out every detail in advance, teams define just enough to get started.
-
-Instead of waiting until the end of a long cycle to see results, Agile delivers something usable every few weeks.
-
-Instead of treating feedback as a final review, Agile teams use feedback continuously to refine their direction.
-
-Rather than assuming success comes from getting the plan right at the beginning, Agile assumes success comes from learning as you go.
+- Instead of mapping out every detail in advance, teams define just enough to get started.
+- Instead of waiting until the end of a long cycle to see results, Agile delivers something usable every few weeks.
+- Instead of treating feedback as a final review, Agile teams use feedback continuously to refine their direction.
+- Rather than assuming success comes from getting the plan right at the beginning, Agile assumes success comes from learning as you go.
 
 ## The Core of Agile: Four Shifts in Mindset
 
@@ -1384,13 +1381,10 @@ The principles behind Agile were first formalized in 2001 by a group of frustrat
 
 While Agile has since evolved beyond software, its core ideas remain the same. Agile prioritizes:
 
-People over processes and tools. Tools can help, but collaboration and communication drive success. A team that isn’t talking to each other won’t be saved by the latest software.
-
-Working solutions over comprehensive documentation. A 50-page project plan means nothing if the result isn’t usable. Agile focuses on delivering something functional rather than just writing about it.
-
-Customer collaboration over rigid contracts. Traditional projects often begin with detailed agreements that specify everything up front, but Agile teams work closely with customers throughout the process to ensure they’re building what’s actually needed.
-
-Responding to change over following a plan. Agile teams know that sticking to a plan that no longer makes sense isn’t discipline—it’s failure. The ability to adapt is what keeps work relevant and valuable.
+- **People over processes and tools.** Tools can help, but collaboration and communication drive success. A team that isn’t talking to each other won’t be saved by the latest software.
+- **Working solutions over comprehensive documentation.** A 50-page project plan means nothing if the result isn’t usable. Agile focuses on delivering something functional rather than just writing about it.
+- **Customer collaboration over rigid contracts.** Traditional projects often begin with detailed agreements that specify everything up front, but Agile teams work closely with customers throughout the process to ensure they’re building what’s actually needed.
+- **Responding to change over following a plan.** Agile teams know that sticking to a plan that no longer makes sense isn’t discipline—it’s failure. The ability to adapt is what keeps work relevant and valuable.
 
 This shift in thinking has allowed Agile to move beyond software development into marketing, product management, operations, and even executive strategy—anywhere work needs to be structured in a way that allows for learning and iteration.
 
@@ -1400,15 +1394,13 @@ Agile was born in software development, where project uncertainty is the norm. A
 
 But this isn’t just a software problem. It’s a challenge that exists in almost every industry:
 
-A marketing team that spends months crafting the perfect campaign might launch it only to realize the message doesn’t resonate. Agile marketing teams test campaign ideas in short cycles, adjusting based on real-time customer response.
-
-A manufacturing team that tries to develop an entire product before releasing it risks wasting time and materials. Agile product teams release features in small increments, validating demand before committing to full-scale production.
-
-A corporate strategy team that plans five years ahead may find their vision outdated within two. Agile leadership embraces quarterly planning cycles, allowing organizations to adjust their priorities based on actual market conditions.
+- A marketing team that spends months crafting the perfect campaign might launch it only to realize the message doesn’t resonate. Agile marketing teams test campaign ideas in short cycles, adjusting based on real-time customer response.
+- A manufacturing team that tries to develop an entire product before releasing it risks wasting time and materials. Agile product teams release features in small increments, validating demand before committing to full-scale production.
+- A corporate strategy team that plans five years ahead may find their vision outdated within two. Agile leadership embraces quarterly planning cycles, allowing organizations to adjust their priorities based on actual market conditions.
 
 Agile isn’t just a framework—it’s a way of thinking about work that prioritizes learning through action rather than excessive planning that might never reflect reality.
 
-But Doesn’t That Sound Like Chaos?
+## But Doesn’t That Sound Like Chaos?
 
 One of the biggest misconceptions about Agile is that it means "no planning"—that teams just wing it and figure things out as they go.
 
@@ -1471,11 +1463,9 @@ A framework like Scrum might look simple on paper—daily stand-ups, sprint plan
 
 Scrum Masters ensure that Agile doesn’t just exist in name but in action. They create the conditions for teams to thrive, ensuring that:
 
-Daily stand-ups aren’t just "What did you do yesterday?" meetings but opportunities to unblock work and remove barriers.
-
-Sprint planning is realistic and meaningful, focusing on work that actually delivers value rather than just filling a backlog.
-
-Retrospectives don’t become repetitive venting sessions but actionable learning experiences that drive real change every sprint.
+- Daily stand-ups aren’t just "What did you do yesterday?" meetings but opportunities to unblock work and remove barriers.
+- Sprint planning is realistic and meaningful, focusing on work that actually delivers value rather than just filling a backlog.
+- Retrospectives don’t become repetitive venting sessions but actionable learning experiences that drive real change every sprint.
 
 Without strong facilitation, Agile devolves into process theater—teams go through the motions without real improvement.
 
@@ -1483,13 +1473,10 @@ Without strong facilitation, Agile devolves into process theater—teams go thro
 
 The best Scrum Masters and Black Belts aren’t just method experts. They are:
 
-Masters of engagement. They draw out insights from teams, ensuring that every voice is heard—not just the loudest ones.
-
-Barriers removers. They don’t just identify problems; they eliminate them—whether that means resolving internal conflicts, streamlining workflows, or coaching leadership on how to better support the team.
-
-Organizational translators. They bridge the gap between executives and teams, ensuring that leadership goals are clear and teams have the autonomy to deliver on them.
-
-Champions of continuous improvement. They ensure that every sprint isn’t just about getting work done, but about getting better at doing the work.
+- **Masters of engagement.** They draw out insights from teams, ensuring that every voice is heard—not just the loudest ones.
+- **Barrier removers.** They don’t just identify problems; they eliminate them—whether that means resolving internal conflicts, streamlining workflows, or coaching leadership on how to better support the team.
+- **Organizational translators.** They bridge the gap between executives and teams, ensuring that leadership goals are clear and teams have the autonomy to deliver on them.
+- **Champions of continuous improvement.** They ensure that every sprint isn’t just about getting work done, but about getting better at doing the work.
 
 A good Scrum Master doesn’t own the work—they own the process that enables the team to do great work. Their job isn’t to have all the answers, but to create an environment where the team finds the answers themselves.
 
@@ -1499,13 +1486,10 @@ Imagine a sports team without a coach. The players are talented. The game rules 
 
 This is exactly what happens to Agile teams without a strong Scrum Master. The process might be in place, but:
 
-Stand-ups turn into empty status updates.
-
-Sprint goals become vague or disconnected from real outcomes.
-
-Retrospectives feel repetitive and uninspired.
-
-Teams focus on looking busy rather than delivering real value.
+- Stand-ups turn into empty status updates.
+- Sprint goals become vague or disconnected from real outcomes.
+- Retrospectives feel repetitive and uninspired.
+- Teams focus on looking busy rather than delivering real value.
 
 Scrum Masters ensure that Agile isn’t just a buzzword, but a functioning reality.
 
@@ -1523,11 +1507,9 @@ That’s why organizations need Scrum Masters—to ensure that Agile isn’t jus
 
 Both roles are multipliers—they unlock the potential of teams by creating an environment where:
 
-People collaborate effectively.
-
-Problems are identified and solved quickly.
-
-The process doesn’t become bureaucratic—it becomes a tool for progress.
+- People collaborate effectively.
+- Problems are identified and solved quickly.
+- The process doesn’t become bureaucratic—it becomes a tool for progress.
 
 ## The Facilitator Mindset: It’s Not About You
 
@@ -1577,11 +1559,9 @@ Think of traditional project planning as writing a script for a movie that hasn�
 
 In an Agile environment:
 
-Teams still set goals and define roadmaps, but they remain flexible to adjust to new insights and changing priorities.
-
-Sprint planning ensures that work is structured and intentional, but it doesn’t lock teams into long-term assumptions that may become irrelevant.
-
-The feedback loop of planning, executing, reviewing, and adjusting ensures that teams make informed decisions based on real data, not guesses.
+- Teams still set goals and define roadmaps, but they remain flexible to adjust to new insights and changing priorities.
+- Sprint planning ensures that work is structured and intentional, but it doesn’t lock teams into long-term assumptions that may become irrelevant.
+- The feedback loop of planning, executing, reviewing, and adjusting ensures that teams make informed decisions based on real data, not guesses.
 
 Agile doesn’t abandon planning. It makes planning smarter, more adaptable, and more realistic.
 
@@ -1597,11 +1577,9 @@ Some organizations fall into the trap of expecting that because Agile teams are 
 
 Here’s what Agile actually does:
 
-Increases visibility—teams can quickly see what’s working and adjust before wasting time on features or solutions that aren’t valuable.
-
-Reduces rework—because feedback happens sooner, teams don’t spend months building something only to find out later that it’s wrong.
-
-Helps teams focus on priority work—sprints force teams to prioritize what truly matters, reducing time wasted on low-impact tasks.
+- **Increases visibility** — teams can quickly see what’s working and adjust before wasting time on features or solutions that aren’t valuable.
+- **Reduces rework** — because feedback happens sooner, teams don’t spend months building something only to find out later that it’s wrong.
+- **Helps teams focus on priority work** — sprints force teams to prioritize what truly matters, reducing time wasted on low-impact tasks.
 
 What Agile doesn’t do is bend the laws of time and physics. If a company was delivering work too slowly before adopting Agile, switching to sprints won’t magically fix that unless the underlying bottlenecks and inefficiencies are addressed.
 
@@ -1613,13 +1591,10 @@ Agile was originally designed for software development, and because of that, man
 
 Agile has been successfully applied in:
 
-Marketing and Content Creation – Instead of launching massive campaigns all at once, marketing teams use Agile to test messaging, iterate on creative work, and optimize based on audience feedback.
-
-Human Resources and Recruiting – Hiring processes benefit from Agile by streamlining job postings, refining candidate assessments, and adapting hiring strategies based on changing business needs.
-
-Operations and Supply Chain – Agile allows companies to respond to shifts in demand, supply chain disruptions, and evolving market conditions more effectively.
-
-Leadership Strategy and Organizational Change – Instead of rolling out company-wide transformations in a single, disruptive event, leadership teams use Agile approaches to test changes in smaller pilots, gather feedback, and scale what works.
+- **Marketing and content creation** — instead of launching massive campaigns all at once, marketing teams use Agile to test messaging, iterate on creative work, and optimize based on audience feedback.
+- **Human resources and recruiting** — hiring processes benefit from Agile by streamlining job postings, refining candidate assessments, and adapting hiring strategies based on changing business needs.
+- **Operations and supply chain** — Agile allows companies to respond to shifts in demand, supply chain disruptions, and evolving market conditions more effectively.
+- **Leadership strategy and organizational change** — instead of rolling out company-wide transformations in a single, disruptive event, leadership teams use Agile approaches to test changes in smaller pilots, gather feedback, and scale what works.
 
 Agile is a mindset shift, not just a development framework. Wherever there is uncertainty, complexity, and the need for adaptation, Agile has value.
 
@@ -1627,33 +1602,11 @@ The key question isn’t “Does Agile apply to my industry?” It’s “Where 
 
 “AI Will Replace Agile”
 
-With the rise of AI-powered tools, some believe that Agile will become obsolete—that machine learning algorithms will automate planning, prioritize backlogs, and optimize workflows without human involvement. But Agile isn’t just about mechanics—it’s about decision-making, creativity, and collaboration.
+With the rise of AI-powered tools, some believe that Agile will become obsolete—that machine learning algorithms will automate planning, prioritize backlogs, and optimize workflows without human involvement. But Agile isn’t just about mechanics—it’s about decision-making, creativity, and collaboration, and the specific ways AI actually helps and where it stops are worth a closer look — see "How AI Enhances Agile" later in this chapter.
 
-AI can enhance Agile teams by:
+The short version: AI might suggest a change in priorities, but the team still decides whether it aligns with business goals and customer needs. It can optimize a workflow, but it can’t replace the collaboration that leads to innovation. It can flag a trend in team dynamics, but it can’t coach, mentor, or facilitate human engagement. Agile is not just a process—it’s a cultural shift, about how teams think, work, and solve problems together. AI may refine how Agile teams work, but it won’t replace why Agile exists.
 
-Automating backlog prioritization based on historical data and business impact.
-
-Providing predictive analytics to highlight potential sprint bottlenecks before they happen.
-
-Running automated tests to catch defects earlier in the development cycle.
-
-Detecting patterns in team performance, allowing Scrum Masters to address issues proactively.
-
-What AI cannot replace is the human side of Agile—the conversations, creativity, and decision-making that make Agile work in the first place.
-
-For example:
-
-AI might suggest a change in priorities, but the team must decide if it aligns with business goals and customer needs.
-
-AI can optimize workflows, but it can’t replace the collaboration that leads to innovation.
-
-AI can flag trends in team dynamics, but it can’t coach, mentor, or facilitate human engagement.
-
-Agile is not just a process—it’s a cultural shift. It’s about how teams think, work, and solve problems together. AI is a powerful tool within that system, but it is not a replacement for human judgment, communication, and adaptability.
-
-AI may refine how Agile teams work, but it won’t replace why Agile exists.
-
-## Final Thoughts: Agile Is Often Misunderstood Because It Challenges Old Habits
+## Why the Myths Persist
 
 Many of these myths persist because Agile runs counter to traditional business thinking. People are used to:
 
@@ -1675,105 +1628,16 @@ Because Agile isn’t a theory—it’s a practice. And done right, it delivers 
 
 ## How AI Enhances Agile
 
-The promise of Agile has always been about iteration, adaptation, and efficiency—but teams still struggle with prioritization, bottlenecks, and unforeseen risks. Enter AI and automation, which don’t replace Agile principles but amplify them by removing friction and enabling teams to make better decisions, faster.
+The promise of Agile has always been iteration, adaptation, and efficiency — but teams still struggle with prioritization, bottlenecks, and unforeseen risk. AI doesn’t replace Agile principles; it removes friction around them, in a few specific places:
 
-To understand AI’s role in Agile, imagine a high-performing sports team. The players, coaches, and strategies make the team great—but data-driven insights from performance analytics, injury predictions, and opponent scouting elevate the game. AI plays the same role in Agile: it informs, optimizes, and supports the human-driven process.
+- **Prioritization.** AI-assisted backlog tools can analyze historical data, feedback, and velocity to rank tasks by likely impact — a real help, since traditional grooming sessions run on gut instinct and whoever talks loudest. It still doesn’t make the call; it narrows the argument.
+- **Testing and deployment.** Automated testing and CI/CD pipelines catch issues before a sprint demo does, freeing testers and DevOps engineers from the grunt work of catching preventable mistakes.
+- **Sprint analytics.** Pattern detection across past velocity and work distribution can flag an overloaded team member or a sprint heading off track before it derails — an early-warning system rather than a post-mortem.
+- **Team health signals.** Sentiment analysis across team communication can surface early signs of burnout or disengagement that a Scrum Master reading the room alone might catch too late.
 
-But AI is not a silver bullet. It won’t replace Agile, but it will make it more intelligent, proactive, and efficient. Let’s look at how.
+None of this replaces the Scrum Master or the team. AI can suggest a priority order, but the team still decides if it matches business strategy. It can flag a stress signal, but a dysfunctional team still needs a human to fix the dysfunction. Agile is built on trust, collaboration, and continuous learning — things a dashboard can surface but never supply.
 
-## Prioritization: Cutting Through Backlog Chaos
-
-Backlog management is one of the hardest parts of Agile. It’s easy for teams to accumulate hundreds of user stories, tasks, and feature requests, many of which linger untouched.
-
-In a traditional backlog grooming session, product owners and teams debate which tasks matter most—often influenced by gut instinct, internal politics, or the loudest voice in the room. AI changes the game by introducing data-driven prioritization.
-
-AI-powered backlog tools (like Jira Advanced Roadmaps or ClickUp’s AI-driven prioritization) analyze historical data, customer feedback, and team velocity to rank tasks based on real impact.
-
-AI can detect dependencies that might cause bottlenecks if certain tasks aren’t completed first, helping teams make smarter sequencing decisions.
-
-Some AI models even integrate customer sentiment analysis to weigh backlog items based on actual user pain points rather than assumptions.
-
-This means teams don’t just guess what’s important—they use AI to validate what will deliver the most value first.
-
-However, AI doesn’t make the final decision. It suggests priorities, but human judgment is still required to align with business strategy and context. The best Agile teams use AI as a guide, not a rulebook.
-
-## Automated Testing & Deployment: Faster, More Reliable Releases
-
-One of the most painful parts of Agile software development is the moment before a sprint demo—when last-minute testing reveals a critical bug that delays deployment.
-
-AI-powered testing and deployment tools eliminate much of this stress by automating quality control:
-
-Automated testing platforms like Selenium and Test.ai run thousands of test cases in minutes, catching issues long before they reach production.
-
-AI-driven code review assistants, like GitHub Copilot, help developers spot security vulnerabilities, syntax errors, or performance issues as they write code—not after.
-
-CI/CD pipelines with AI integration (Jenkins, CircleCI) ensure that as soon as code is committed, it’s automatically tested, built, and deployed, reducing manual intervention and human error.
-
-For Agile teams, this means:
-
-Less time spent firefighting broken deployments.
-
-Faster delivery of working increments.
-
-More confidence in sprint demos and releases.
-
-AI doesn’t replace skilled testers or DevOps engineers—but it removes the grunt work, allowing teams to focus on solving real problems rather than catching preventable mistakes.
-
-## Sprint Analytics: Identifying Bottlenecks Before They Slow You Down
-
-Most teams only realize there’s a problem once a sprint is already in trouble. Maybe tasks aren’t closing, developers are stuck, or a key dependency is missing—but by the time these issues surface, it’s too late to adjust without derailing the entire sprint.
-
-AI-powered sprint analytics tools prevent this by acting as an early warning system:
-
-AI analyzes past sprint velocity and work distribution to detect patterns, helping teams predict when a sprint is likely to go off track.
-
-Real-time dashboards highlight who is overloaded, ensuring work is distributed fairly rather than piling up on the same few people.
-
-AI can flag stalled tasks or dependencies that aren’t moving, so teams can address blockers before they become sprint-killers.
-
-For example, tools like Microsoft Azure DevOps or Atlassian’s Compass use AI to predict sprint risks based on historical trends—helping Scrum Masters make proactive adjustments before the sprint reaches crisis mode.
-
-The best Agile teams don’t just react to problems—they anticipate and prevent them. AI makes that possible.
-
-## Detecting Team Health and Burnout Risks
-
-Scrum Masters and Agile coaches spend much of their time reading the room—understanding team morale, workload balance, and collaboration dynamics. AI is starting to assist in quantifying what has traditionally been intuition-driven coaching.
-
-AI-powered sentiment analysis tools, such as Officevibe or Microsoft Viva, analyze team messages, sprint feedback, and survey responses to detect signs of burnout, disengagement, or frustration.
-
-If AI identifies a rise in negative sentiment or stress indicators, leaders can intervene before productivity and morale decline.
-
-AI-powered meeting transcriptions can identify communication gaps, helping Agile leaders ensure that everyone’s voice is heard—not just the most vocal team members.
-
-This doesn’t mean AI should replace human empathy or leadership. But it does provide early signals that help managers address issues before they escalate into turnover or disengagement.
-
-## Where AI Fails: What It Can’t Do for Agile
-
-For all its strengths, AI has limits. Agile is about people, collaboration, and adaptability—and no algorithm can replace those human elements.
-
-Here’s what AI won’t do:
-
-It won’t replace leadership. AI can surface trends, but human leaders must make decisions, foster culture, and drive Agile adoption.
-
-It won’t create alignment. AI can suggest priorities, but teams still need to communicate, negotiate, and adjust based on business needs.
-
-It won’t solve cultural problems. AI can detect burnout signals, but a dysfunctional work environment still requires human intervention.
-
-Agile is built on trust, collaboration, and continuous learning—things that data alone can’t provide. AI is a powerful enhancement, but Agile remains a human-driven process.
-
-## Final Thoughts: AI and Agile Are Stronger Together
-
-AI is not a replacement for Agile—it’s an accelerator. When teams use AI wisely, they:
-
-Spend less time on busywork and more time on innovation.
-
-Spot bottlenecks early rather than scrambling to fix them mid-sprint.
-
-Prioritize work that matters, rather than guessing.
-
-The best Agile teams will embrace AI as a tool, but stay focused on Agile’s core principles: adaptability, collaboration, and delivering value.
-
-Because at the end of the day, AI can process data—but it can’t build relationships, inspire creativity, or replace human leadership. And that’s what makes Agile successful.
+Chapters 10 and 11 dig into the deeper argument — the real evidence on where AI actually speeds delivery versus where it quietly slows experienced people down, and why leadership discipline matters more, not less, as these tools accelerate. This chapter’s point is narrower and stays true regardless of how the broader argument lands: AI is an accelerant for a process that already works. It is not a substitute for one that doesn’t.
 
 ## Making Agile Work: Practical Applications for Your Team
 
@@ -1781,7 +1645,7 @@ Understanding Agile in theory is one thing—applying it effectively in the real
 
 Let’s break down how to actually make Agile work—not just in name, but in practice.
 
-1. Don’t Just Run Stand-Ups—Make Them Useful
+### 1. Don’t Just Run Stand-Ups—Make Them Useful
 
 A poorly run stand-up is a waste of time. If your team is just going around the circle saying, “Yesterday I worked on X, today I’ll work on Y,” then congratulations—you’ve mastered status updates, not Agile.
 
@@ -1800,7 +1664,7 @@ Instead of a routine meeting, treat it as a tactical alignment session:
 
 If stand-ups aren’t helping the team move faster, fix them or get rid of them. Agile is about flowing work efficiently, not holding meetings for the sake of meetings.
 
-2. Define “Done” (and Stick to It)
+### 2. Define “Done” (and Stick to It)
 
 One of the biggest process failures in Agile is a vague definition of “done.” If half the work in your backlog is labeled “In Progress” or “Almost Done,” you have a bottleneck problem, not a backlog problem.
 
@@ -1808,7 +1672,7 @@ One of the biggest process failures in Agile is a vague definition of “done.�
 ✅ Avoid “work in progress” overload. If a task is started but not finished, ask why. Is it waiting for another team? Is someone spread too thin? Identify the constraint and resolve it.
 ✅ Track cycle time, not just velocity. Measuring how many story points you finish is helpful—but tracking how long it takes from start to finish will tell you where you’re really getting stuck.
 
-3. Sprint Planning: Don’t Overcommit
+### 3. Sprint Planning: Don’t Overcommit
 
 A common Agile mistake? Teams overloading their sprints—taking on more than they can finish. Then they carry unfinished work forward, sprint after sprint, creating a perpetual backlog of unfinished business.
 
@@ -1819,7 +1683,7 @@ How to plan smarter:
 
 Planning isn’t about filling every available space with work—it’s about ensuring consistent delivery of value.
 
-4. Retrospectives: Change One Thing Per Sprint
+### 4. Retrospectives: Change One Thing Per Sprint
 
 Most teams hold retrospectives—but not all of them use retrospectives effectively.
 
@@ -1841,7 +1705,7 @@ Follow up. In the next retro, start by asking: Did we fix the problem we identif
 
 Continuous improvement isn’t about identifying a hundred things wrong—it’s about making small, consistent changes that compound over time.
 
-5. Backlog Management: Focus on Value, Not Just Tasks
+### 5. Backlog Management: Focus on Value, Not Just Tasks
 
 A cluttered, unfocused backlog is a productivity killer. If your backlog has hundreds of tasks, you’re not prioritizing—you’re just storing ideas with no strategy.
 
@@ -1851,7 +1715,7 @@ A cluttered, unfocused backlog is a productivity killer. If your backlog has hun
 
 A good backlog is a reflection of clear priorities, not a dumping ground for wish-list items.
 
-6. AI Can Help, But It Won’t Save You
+### 6. AI Can Help, But It Won’t Save You
 
 AI-powered Agile tools are getting smarter—offering backlog prioritization, sprint analytics, and automated testing—but they won’t fix a broken Agile process.
 
@@ -1873,7 +1737,7 @@ Unclear priorities. AI can help sort your backlog, but humans still need to deci
 
 Use AI to enhance Agile, not replace critical thinking.
 
-7. Leadership Must Support Agile, Not Just Approve It
+### 7. Leadership Must Support Agile, Not Just Approve It
 
 Executives often say they want Agile, but their actions don’t align. They expect Agile teams to deliver faster while still demanding annual budgeting, fixed deadlines, and rigid roadmaps.
 
@@ -1884,7 +1748,7 @@ How leadership can actually support Agile:
 
 Agile isn’t just a team-level change—it’s an organizational mindset shift.
 
-## Final Thoughts: Doing Agile vs. Being Agile
+## Doing Agile vs. Being Agile
 
 Most teams that struggle with Agile aren’t doing it wrong—they’re missing the mindset shift. Agile isn’t just about following a process—it’s about adapting continuously, focusing on delivering value, and removing friction in how work gets done.
 
