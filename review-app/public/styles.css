@@ -282,10 +282,14 @@ button.quiet.danger:hover:not(:disabled) {
   position: relative;
 }
 
-.ms-pair,
-.ms-row.same {
+.ms-pair {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) max-content;
+  align-items: start;
+}
+
+.ms-pair.single {
+  grid-template-columns: minmax(0, 1fr) max-content;
 }
 
 .ms-cell {
@@ -298,8 +302,7 @@ button.quiet.danger:hover:not(:disabled) {
   min-width: 0;
 }
 
-.ms-row.same .ms-cell + .ms-cell,
-.ms-pair .ms-cell + .ms-cell {
+.ms-pair:not(.single) .ms-cell + .ms-cell {
   border-left: 1px solid var(--rule);
 }
 
@@ -333,14 +336,16 @@ button.quiet.danger:hover:not(:disabled) {
 }
 
 .change-tag {
-  position: absolute;
-  top: 6px;
-  right: 8px;
+  position: static;
+  align-self: start;
+  justify-self: end;
   font-family: system-ui, sans-serif;
   font-size: 0.68rem;
   font-weight: 700;
   border-radius: 999px;
   padding: 1px 9px;
+  margin: 8px 10px 0 8px;
+  white-space: nowrap;
   pointer-events: none;
 }
 
@@ -644,7 +649,6 @@ textarea:focus-visible {
   }
 
   .ms-pair,
-  .ms-row.same,
   .manuscript-head {
     grid-template-columns: 1fr;
   }
@@ -653,9 +657,13 @@ textarea:focus-visible {
     display: none;
   }
 
-  .ms-row.same .ms-cell + .ms-cell,
-  .ms-pair .ms-cell + .ms-cell {
+  .ms-pair:not(.single) .ms-cell + .ms-cell {
     border-left: none;
     border-top: 1px dashed var(--rule);
+  }
+
+  .change-tag {
+    justify-self: start;
+    margin: 2px 22px 8px;
   }
 }

@@ -1,4 +1,6 @@
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 
 const {
   parseMarkdownDocument,
@@ -144,4 +146,22 @@ run("createAlignedBlocks keeps alignment across insertions", () => {
   assert.match(changed[0].proposedText, /Inserted paragraph/);
   const same = aligned.filter((b) => !b.changed);
   assert.equal(same.length, 4);
+});
+
+run("unchanged manuscript rows render one full-width cell", () => {
+  const appSource = fs.readFileSync(path.join(__dirname, "../public/app.js"), "utf8");
+
+  assert.match(appSource, /pair\.className = `ms-pair\$\{block\.changed \? "" : " single"\}`/);
+  assert.match(appSource, /block\.changed\s*\? `[\s\S]*?<div class="ms-cell">[\s\S]*?<div class="ms-cell">[\s\S]*?`\s*:\s*`[\s\S]*?<div class="ms-cell ms-cell-single">/);
+});
+
+run("status chips use a dedicated grid column instead of overlaying text", () => {
+  const styles = fs.readFileSync(path.join(__dirname, "../public/styles.css"), "utf8");
+  const changeTagRule = styles.match(/\.change-tag\s*\{[\s\S]*?\}/)?.[0] || "";
+
+  assert.match(styles, /\.ms-pair\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\) minmax\(0, 1fr\) max-content;/);
+  assert.match(styles, /\.ms-pair\.single\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0, 1fr\) max-content;/);
+  assert.match(changeTagRule, /position:\s*static;/);
+  assert.doesNotMatch(changeTagRule, /position:\s*absolute;/);
+  assert.match(changeTagRule, /margin:\s*8px 10px 0 8px;/);
 });

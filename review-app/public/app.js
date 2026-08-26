@@ -251,7 +251,7 @@ function renderManuscript() {
     row.className = rowClass;
 
     const pair = document.createElement("div");
-    pair.className = "ms-pair";
+    pair.className = `ms-pair${block.changed ? "" : " single"}`;
     pair.title = isOpen
       ? "Click to close the editor"
       : block.changed
@@ -265,11 +265,16 @@ function renderManuscript() {
       ? block.editHtml || "<span class='ghost'>removed in Edit Copy</span>"
       : escapeHtml(block.proposedText);
 
-    pair.innerHTML = `
-      <div class="ms-cell">${decorateCellHtml(leftHtml, block.currentText || "")}</div>
-      <div class="ms-cell">${decorateCellHtml(rightHtml, block.proposedText || "")}</div>
-      ${tag}
-    `;
+    pair.innerHTML = block.changed
+      ? `
+        <div class="ms-cell">${decorateCellHtml(leftHtml, block.currentText || "")}</div>
+        <div class="ms-cell">${decorateCellHtml(rightHtml, block.proposedText || "")}</div>
+        ${tag}
+      `
+      : `
+        <div class="ms-cell ms-cell-single">${decorateCellHtml(rightHtml, block.proposedText || "")}</div>
+        ${tag}
+      `;
     pair.addEventListener("click", () => {
       state.openBlockId = isOpen ? "" : block.id;
       renderManuscript();
