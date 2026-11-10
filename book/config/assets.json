@@ -2,16 +2,16 @@
   "hidden-costs-of-rework": {
     "type": "image",
     "status": "ready",
-    "source_path": "book/assets/images/hidden-costs-of-rework.png",
-    "caption": "Hidden costs of rework.",
-    "footer": "",
-    "reference": "",
-    "alt_text": "Graphic illustrating the hidden costs of rework.",
+    "source_path": "book/assets/images/hidden-costs-of-rework-v2.png",
+    "caption": "A 4P fishbone view of the conditions that feed hidden rework.",
+    "footer": "Categories: People, Process, Platforms, and Policies.",
+    "reference": "Author-developed 4P cause-and-effect diagram.",
+    "alt_text": "Fishbone diagram with People, Process, Platforms, and Policies as the four main cause categories feeding the effect Hidden Rework.",
     "chapter_hint": 1,
-    "credit": "",
-    "credit_role": "",
+    "credit": "Author and OpenAI",
+    "credit_role": "Concept and AI-assisted illustration",
     "rights_status": "internal_or_author_owned",
-    "usage_notes": "Confirm final attribution and publication rights before external release."
+    "usage_notes": "Revised from the author's review note to use explicit 4P fishbone categories and legible matching subcauses. Pending editorial approval."
   },
   "bottleneck-shift-map": {
     "type": "concept-diagram",

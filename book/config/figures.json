@@ -1,8 +1,8 @@
 {
   "hidden-costs-of-rework": {
-    "path": "book/assets/images/hidden-costs-of-rework.png",
-    "alt": "Hidden costs of rework",
-    "caption": "A visual reminder that rework creates invisible cost throughout the system.",
+    "path": "book/assets/images/hidden-costs-of-rework-v2.png",
+    "alt": "A 4P fishbone diagram grouping causes of hidden rework under People, Process, Platforms, and Policies",
+    "caption": "A 4P fishbone view of the people, process, platform, and policy conditions that feed hidden rework.",
     "status": "ready"
   }
 }

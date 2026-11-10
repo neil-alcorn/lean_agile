@@ -6,3 +6,4 @@ review-app/sessions/
 book/tests/.tmp/
 __pycache__/
 *.pyc
+review-app/*.log
